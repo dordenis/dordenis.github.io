@@ -2,9 +2,9 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: linux | Ajaxblog]]></title>
-  <link href="http://dordenis.github.io/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://dordenis.github.io/categories/linux/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2013-07-16T11:28:18+04:00</updated>
+  <updated>2013-07-16T11:57:52+04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[AjaxBlog]]></name>
