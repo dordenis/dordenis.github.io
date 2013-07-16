@@ -4,10 +4,10 @@
   <title><![CDATA[Ajaxblog]]></title>
   <link href="http://dordenis.github.io/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2013-07-15T21:10:10+04:00</updated>
+  <updated>2013-07-16T10:52:54+04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
-    <name><![CDATA[Denis&Co]]></name>
+    <name><![CDATA[AjaxBlog]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -62,8 +62,9 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>И получаем графическое меню
-<img src="http://dordenis.github.io/images/blog/rasbbery_1-627x412.png"></p>
+<p>И получаем графическое меню</p>
+
+<p><img src="http://dordenis.github.io/images/post/rasbbery_1-627x412.png"></p>
 
 <ul>
 <li><strong>expand_rootfs</strong> — здесь вы можете увеличить root размер на весь размер карты памяти</li>

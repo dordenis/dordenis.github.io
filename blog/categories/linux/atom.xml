@@ -4,10 +4,10 @@
   <title><![CDATA[Category: linux | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2013-07-15T21:10:10+04:00</updated>
+  <updated>2013-07-16T10:52:54+04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
-    <name><![CDATA[Denis&Co]]></name>
+    <name><![CDATA[AjaxBlog]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -58,8 +58,9 @@
 <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo raspi-config
 </span></code></pre></td></tr></table></div></figure></notextile></div>
-И получаем графическое меню
-<img src="/images/blog/rasbbery_1-627x412.png"></p>
+И получаем графическое меню</p>
+
+<p><img src="/images/post/rasbbery_1-627x412.png"></p>
 
 <ul>
 <li><strong>expand_rootfs</strong> — здесь вы можете увеличить root размер на весь размер карты памяти</li>

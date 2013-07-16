@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<title>Превращаем Raspberry Pi в домашний web-server  | Ajaxblog</title>
 
-<meta name="author" content="Denis&Co"> 
+<meta name="author" content="AjaxBlog">
 
 <meta name="description" content="Не так давно приобрел забавную игрушку Raspberry Pi. Я планирую использовать ее в качестве «мозгов» для робота на базе Arduino, но об этом в другой &hellip;"> <meta name="keywords" content="">
 
@@ -15,9 +15,15 @@
 	<link href="/atom.xml" rel="alternate" title="Ajaxblog" type="application/atom+xml">
 	<link rel="canonical" href="">
 	<link href="/favicon.png" rel="shortcut icon">
+
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/font-awesome.css" rel="stylesheet" type="text/css">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 7]><link href="/stylesheets/font-awesome-ie7.css" rel="stylesheet" type="text/css"><![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
 
 <script language="Javascript" type="text/javascript">
@@ -138,8 +144,9 @@ $(document).ready(
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>И получаем графическое меню
-<img src="/images/blog/rasbbery_1-627x412.png"></p>
+<p>И получаем графическое меню</p>
+
+<p><img src="/images/post/rasbbery_1-627x412.png"></p>
 
 <ul>
 <li><strong>expand_rootfs</strong> — здесь вы можете увеличить root размер на весь размер карты памяти</li>
@@ -288,7 +295,7 @@ $(document).ready(
   
 
 
-<time datetime="2013-07-15T20:21:00+04:00" pubdate data-updated="true">Jul 15<span>th</span>, 2013</time></div>
+<time datetime="2013-07-15T20:21:00+04:00" pubdate data-updated="true">15 Июля 2013</time></div>
 	<div class="tags">
 
 
@@ -303,8 +310,6 @@ $(document).ready(
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	
-	<a class="addthis_button_tweet"></a>
-	
 	
 <!---	<a class="addthis_counter addthis_pill_style"></a> --->
 	</div>
@@ -312,14 +317,32 @@ $(document).ready(
 </div>
 
 
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-	<footer id="footer" class="inner">Copyright &copy; 2013
+</section>
+</div>
 
-    Denis&Co
-
-<br>
-Powered by Octopress.
-</footer>
+    <footer id="footer">
+        <div class="inner">
+            <div class="row-fluid">
+    <span class="span12"><section>
+  <h3>Категории</h3>
+    <ul id="category-list"><li><a href='/blog/categories/linux'>linux (1)</a></li></ul>
+</section>
+</span>
+</div>
+            <div class="copyright">
+    Copyright &copy; 2013
+    
+        AjaxBlog
+    
+    Powered by Octopress.
+</div>
+        </div>
+    </footer>
 	<script src="/javascripts/slash.js"></script>
 <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
@@ -328,6 +351,22 @@ Powered by Octopress.
 })(jQuery);
 </script> <!-- Delete or comment this line to disable Fancybox -->
 
+
+<script type="text/javascript">
+      var disqus_shortname = 'ajaxblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://dordenis.github.io/linux/1/';
+        var disqus_url = 'http://dordenis.github.io/linux/1/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
