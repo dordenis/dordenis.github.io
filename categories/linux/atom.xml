@@ -4,7 +4,7 @@
   <title><![CDATA[Category: linux | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/categories/linux/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2013-07-16T11:57:52+04:00</updated>
+  <updated>2013-07-19T12:25:32+04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[AjaxBlog]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Превращаем Raspberry Pi в домашний web-server]]></title>
-    <link href="http://dordenis.github.io/linux/1/"/>
+    <link href="http://dordenis.github.io/linux/raspberry-pi-transform-the-home-web-server/"/>
     <updated>2013-07-15T20:21:00+04:00</updated>
-    <id>http://dordenis.github.io/linux/1</id>
+    <id>http://dordenis.github.io/linux/raspberry-pi-transform-the-home-web-server</id>
     <content type="html"><![CDATA[<p>Не так давно приобрел забавную игрушку Raspberry Pi. Я планирую использовать ее в качестве «мозгов» для робота на базе Arduino, но об этом в другой раз. Что бы «малина» не валялась без дела. пока я проектирую робота, решил на базе нее поднять домашний web-server.
 И так приступим…</p>
 
