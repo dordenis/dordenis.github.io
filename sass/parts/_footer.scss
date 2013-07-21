@@ -1,7 +1,28 @@
-footer{
-	padding: 15px 0;
-	border-top: 1px solid $color-gray05;
-	text-align: center;
-	font-size: 0.9em;
+footer {
+	padding: 15px 0 15px;
+    /*background-color: $base02;*/
+	background: url("../images/footer-bg.png") repeat scroll 0 0 #202020;
+    color: #ccc;
+	font-size: 14px;
+
+    #category-list {
+        list-style-type: none;
+        margin: 0;
+        li {
+            display: block;
+            float: left;
+            width: 25%;
+        }
+    }
+
+    .copyright {
+        margin-top: 50px;
+        font-size: 0.9em;
+        color: $base01;
+    }
+
+    .icon-border {
+        border-color: $base01;
+    }
 }
 

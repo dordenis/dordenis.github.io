@@ -38,23 +38,28 @@ $solarized: light !default;
   $base3:   $_base03;
 }
 
-$pre-bg: $color-gray04;
-$pre-border: $color-gray03;
+$pre-bg: #073642;
+$pre-bg-code: #002B36;
+
+$pre-border: #073642;
+$pre-line: #586E75;
+$pre-code: #93A1A1;
 
 article{
 	code, pre{
 		background: $pre-bg;
 		border: 1px solid $pre-border;
-		font-family: $font-mono;
+		font-family: $font-code;
+        font-size: 13px;
 	}
 	code{
-		font-size: 0.9em;
+		#font-size: 0.9em;
 		padding: 1px 3px;
 		margin: 0 3px;
 		@include border-radius(5px);
 	}
 	pre{
-		font-size: 1 / 0.9em;
+		#font-size: 1 / 0.9em;
 		line-height: 1.5;
 		margin-top: 10px;
 		padding: 5px 15px;
@@ -74,16 +79,17 @@ figure.code{
 	background: $pre-bg;
 	border: 1px solid $pre-border;
 	margin-top: 10px;
-	padding: 5px 15px;
 	@include border-radius(5px);
-	figcaption{
+	figcaption {
+        margin-left: 30px;
 		font-size: 0.9em;
 		position: relative;
 		span{
-			margin: -5px -15px 0;
 			padding: 5px 15px;
+            color: $pre-line;
 			display: block;
-			@include background(linear-gradient(top, $pre-border, $pre-bg));
+            background-color: $pre-bg-code;
+			/*@include background(linear-gradient(top, $pre-bg, $pre-code));*/
 			&:empty{
 				display: none;
 			}
@@ -91,7 +97,7 @@ figure.code{
 		a{
 			position: absolute;
 			top: 5px;
-			right: 0;
+			right: 15px;
 		}
 	}
 	code, pre{
@@ -105,23 +111,28 @@ figure.code{
 		overflow-x: auto;
 	}
 	.line-numbers{
-		border-right: 1px solid $pre-border;
+        padding: 10px;
+        color: $pre-line;
+        border-right: 1px solid $pre-border;
 		font-family: $font-mono;
-		padding-right: 15px;
 		text-align: right;
 	}
 	table{
 		border: none;
+        background: transparent;
 		text-align: left;
-		margin-top: 0;
+		margin: 0;
 		td{
 			text-align: left;
 		}
 	}
 	td.code{
+        padding: 10px;
 		width: 100%;
 		padding-left: 15px;
 		overflow-x: auto;
+        color: $pre-code;
+        background-color: $pre-bg-code;
 	}
 }
 .entry-content .gist{
@@ -384,4 +395,5 @@ figure.code, .gist-highlight{
 		color: $solar-cyan !important;
 	}
 	/* Literal.String.Single */
+    div { .gd, .gd .x, .gi, .gi .x { display: inline-block; width: 100%; }}
 }

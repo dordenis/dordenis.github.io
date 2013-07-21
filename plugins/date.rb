@@ -1,5 +1,23 @@
+# encoding: utf-8
+
 module Octopress
   module Date
+
+    MONTHNAMES_RU = [nil,
+      "Января", "Февраля", "Марта", "Апреля", "Мая", "Июня",
+      "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря" ]
+    ABBR_MONTHNAMES_RU = [nil,
+      "Янв", "Фев", "Мар", "Апр", "Май", "Июн",
+      "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек" ]
+    DAYNAMES_RU = [
+      "Воскресенье", "Понедельник", "Вторник", "Среда",
+      "Четверг", "Пятница", "Суббота" ]
+    ABBR_DAYNAMES_RU = [
+      "Вс", "Пн", "Вт", "Ср",
+      "Чт", "Пт", "Сб" ]
+
+
+
 
     # Returns a datetime if the input is a string
     def datetime(date)
@@ -11,8 +29,7 @@ module Octopress
 
     # Returns an ordidinal date eg July 22 2007 -> July 22nd 2007
     def ordinalize(date)
-      date = datetime(date)
-      "#{date.strftime('%b')} #{ordinal(date.strftime('%e').to_i)}, #{date.strftime('%Y')}"
+      format_date(date, "%e %B %Y") # 13 ИЮЛЯ 2012
     end
 
     # Returns an ordinal number. 13 -> 13th, 21 -> 21st etc.
@@ -33,13 +50,19 @@ module Octopress
     # Adds %o as ordinal representation of the day
     def format_date(date, format)
       date = datetime(date)
-      if format.nil? || format.empty? || format == "ordinal"
-        date_formatted = ordinalize(date)
-      else
-        date_formatted = date.strftime(format)
-        date_formatted.gsub!(/%o/, ordinal(date.strftime('%e').to_i))
-      end
-      date_formatted
+        if format.nil? || format.empty? || format == "ordinal"
+          date_formatted = ordinalize(date)
+        else
+          format.gsub!(/%a/, ABBR_DAYNAMES_RU[date.wday])
+          format.gsub!(/%A/, DAYNAMES_RU[date.wday])
+          format.gsub!(/%b/, ABBR_MONTHNAMES_RU[date.mon])
+          format.gsub!(/%B/, MONTHNAMES_RU[date.mon])
+          date_formatted = date.strftime(format)
+          # date_formatted = date.strftime(format)
+          # date_formatted.gsub!(/%o/, ordinal(date.strftime('%e').to_i))
+        end
+        date_formatted
+
     end
 
   end
@@ -61,6 +84,7 @@ module Jekyll
         "url"               => self.url,
         "date"              => self.date,
         # Monkey patch
+        "short_formatted"   => format_date(self.date, "%e %B"),
         "date_formatted"    => format_date(self.date, date_format),
         "updated_formatted" => self.data.has_key?('updated') ? format_date(self.data['updated'], date_format) : nil,
         "id"                => self.id,
