@@ -1,0 +1,318 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Создание плагинов для Octopress | Ajaxblog</title>
+
+<meta name="author" content="AjaxBlog">
+
+<meta name="description" content="Octopress идет с несколькими предустановленными плагинами. Которые охватывают практически все аспекты блоггерства, от категории до видео. Плагины &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Ajaxblog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 7]><link href="/stylesheets/font-awesome-ie7.css" rel="stylesheet" type="text/css"><![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">Ajaxblog</a></h1>
+<h4></h4>
+<nav id="main-nav"><!-- ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul -->
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><!-- ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul -->
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:dordenis.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Создание плагинов для Octopress</h2>
+	<div class="entry-content"><p>Octopress идет с несколькими предустановленными плагинами. Которые охватывают практически все аспекты блоггерства, от категории до видео. Плагины можно легко создавать, расширяя базовый функционал Octopress. Создадим плагин который добавит новый тег для шаблонизатора Liquid.</p>
+
+<p>В качестве примера, создадим новый тег, который позволит вставлять картинки размещенные на S3 Amazon.</p>
+
+<!-- more -->
+
+
+<p>Создадим файл s3_image_tag.rb.</p>
+
+<ul>
+<li>Определим новый класс наследуемый от Liquid::Tag</li>
+</ul>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">module</span> <span class="nn">Jekyll</span>
+</span><span class='line'>  <span class="k">class</span> <span class="nc">S3ImageTag</span> <span class="o">&lt;</span> <span class="ss">Liquid</span><span class="p">:</span><span class="ss">:Tag</span>
+</span><span class='line'>    <span class="c1"># здесь будет наш код</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Все теги шаблонизатора Liquid наследуютьса от класса Liquid::Tag. Liquid ожидает что класс имеет метод render который и  реализует отрисовку тега.</p>
+
+<ul>
+<li>Инициализация параметров</li>
+</ul>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">tag_name</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">token</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">super</span>
+</span><span class='line'>  <span class="vi">@text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">strip</span>
+</span><span class='line'>  <span class="vi">@text</span> <span class="o">=~</span> <span class="sr">/(\w+\.\w+)(\sbucket:)?(\w*)/i</span>
+</span><span class='line'>  <span class="vi">@file_name</span> <span class="o">=</span> <span class="vg">$1</span>
+</span><span class='line'>  <span class="vi">@bucket_name</span> <span class="o">=</span> <span class="vg">$3</span><span class="o">.</span><span class="n">empty?</span> <span class="p">?</span> <span class="no">Jekyll</span><span class="o">.</span><span class="n">configuration</span><span class="p">({})</span><span class="o">[</span><span class="s1">&#39;aws_bucket&#39;</span><span class="o">]</span> <span class="p">:</span> <span class="vg">$3</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Обратите внимание, что Liquid вызовет наш метод инициализации с тремя параметрами: имя тега, текст в самом теге, и маркер.</p>
+
+<p>Во первых, мы вызвали метод super, для инициализации родительского класса. Далее, мы очистили текст от начальных и конечных пробелов. С помощью регулярного выражения нашли необходимые значения для наших переменных. Для переменной @bucket_name, если она не найдена, берем значения из конфигфайла _config.yml.</p>
+
+<ul>
+<li>Определим метод render</li>
+</ul>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="vi">@file_name</span> <span class="o">&amp;&amp;</span> <span class="vi">@bucket_name</span>
+</span><span class='line'>    <span class="s2">&quot;&lt;img src=&#39;https://s3.amazonaws.com/</span><span class="si">#{</span><span class="vi">@bucket_name</span><span class="si">}</span><span class="s2">/</span><span class="si">#{</span><span class="vi">@file_name</span><span class="si">}</span><span class="s2">&#39;&gt;&quot;</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>    <span class="s2">&quot;Error processing input.&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Отдаем HTML тег для нужного изображения. Если один из параметров отсутствует, возвращаемся сообщением об ошибке.</p>
+
+<ul>
+<li>Регистрируем новый тег</li>
+</ul>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="ss">Liquid</span><span class="p">:</span><span class="ss">:Template</span><span class="o">.</span><span class="n">register_tag</span><span class="p">(</span><span class="s1">&#39;s3_image&#39;</span><span class="p">,</span> <span class="ss">Jekyll</span><span class="p">:</span><span class="ss">:S3ImageTag</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Liquid::Template привязывает тег s3_image к нашему классу Jekyll::S3ImageTag, который и будет его обрабатывать.</p>
+
+<ul>
+<li><p>Добавляем наш файл s3_image_tag.rb в папку plugins нашего блога.  Octopress автоматически загружает все плагины из этой папки.</p></li>
+<li><p>Зададим значение по умолчанию для переменой aws_bucket в конфиге _config.yml</p></li>
+</ul>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="c"># ----------------------- #</span>
+</span><span class='line'><span class="c">#   3rd Party Settings    #</span>
+</span><span class='line'><span class="c"># ----------------------- #</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Amazon S3 Images</span>
+</span><span class='line'>aws_bucket: thoughts_on_rails
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Пример использование нового тега в наших постах</li>
+</ul>
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'>Here is an image:   {% s3_image foo.jpeg bucket:bar %}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>P.S. Оригинальный источник <a href="http://www.thoughtsonrails.com/creating-plugins-for-octopress/">http://www.thoughtsonrails.com/creating-plugins-for-octopress/</a></p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-22T01:04:00+04:00" pubdate data-updated="true">22 Июля 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/categories/octopress/'>octopress</a>
+
+
+</div>
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+
+    <footer id="footer">
+        <div class="inner">
+            <div class="row-fluid">
+    <span class="span12"><section>
+  <h3>Категории</h3>
+    <ul id="category-list"><li><a href='/categories/linux'>linux (1)</a></li><li><a href='/categories/octopress'>octopress (2)</a></li><li><a href='/categories/yii'>yii (1)</a></li></ul>
+</section>
+</span>
+</div>
+            <div class="copyright">
+    Copyright &copy; 2013
+    
+        AjaxBlog
+    
+    Powered by Octopress.
+</div>
+        </div>
+    </footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'ajaxblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://dordenis.github.io/octopress/creating-plugins-for-octopress/';
+        var disqus_url = 'http://dordenis.github.io/octopress/creating-plugins-for-octopress/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+</body>
+</html>
