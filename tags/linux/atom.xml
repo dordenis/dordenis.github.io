@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: linux | Ajaxblog]]></title>
-  <link href="http://dordenis.github.io/categories/linux/atom.xml" rel="self"/>
+  <title><![CDATA[Tag: linux | Ajaxblog]]></title>
+  <link href="http://dordenis.github.io/tags/linux/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
   <updated>2013-07-21T17:21:49+04:00</updated>
   <id>http://dordenis.github.io/</id>

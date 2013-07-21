@@ -1,24 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Ajaxblog]]></title>
-  <link href="http://dordenis.github.io/atom.xml" rel="self"/>
-  <link href="http://dordenis.github.io/"/>
-  <updated>2013-07-21T17:21:49+04:00</updated>
-  <id>http://dordenis.github.io/</id>
-  <author>
-    <name><![CDATA[AjaxBlog]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Мультиязычный сайт с помощью Yii | Ajaxblog</title>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Мультиязычный сайт с помощью Yii]]></title>
-    <link href="http://dordenis.github.io/yii/multilanguage-website-with-yii/"/>
-    <updated>2013-07-21T15:33:00+04:00</updated>
-    <id>http://dordenis.github.io/yii/multilanguage-website-with-yii</id>
-    <content type="html"><![CDATA[<p>Для одного из проекта, возникла необходимость в организации поддержки мультиязычности на сайте. Причем URL должны быть в определенном виде:</p>
+<meta name="author" content="AjaxBlog">
+
+<meta name="description" content="Для одного из проекта, возникла необходимость в организации поддержки мультиязычности на сайте. Причем URL должны быть в определенном виде: http:// &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Ajaxblog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 7]><link href="/stylesheets/font-awesome-ie7.css" rel="stylesheet" type="text/css"><![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">Ajaxblog</a></h1>
+<h4></h4>
+<nav id="main-nav"><!-- ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul -->
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><!-- ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul -->
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:dordenis.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Мультиязычный сайт с помощью Yii</h2>
+	<div class="entry-content"><p>Для одного из проекта, возникла необходимость в организации поддержки мультиязычности на сайте. Причем URL должны быть в определенном виде:</p>
 
 <p><a href="http://site.ru/ru/contacts">http://site.ru/ru/contacts</a> для русского языка  <br/>
 <a href="http://site.ru/en/contacts">http://site.ru/en/contacts</a> для английского языка</p>
@@ -382,416 +463,97 @@
 <li>Проверить работу bindtextdomain(), должно вернуться путь до файлов перевода</li>
 </ol>
 
-]]></content>
-  </entry>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
-  <entry>
-    <title type="html"><![CDATA[Octopress - блоггинг для гиков]]></title>
-    <link href="http://dordenis.github.io/octopress/octopress-blogging-for-geeks/"/>
-    <updated>2013-07-18T20:20:00+04:00</updated>
-    <id>http://dordenis.github.io/octopress/octopress-blogging-for-geeks</id>
-    <content type="html"><![CDATA[<p>Меня всем устраивал мой маленький блог на Rasberry Pi, пока жестокая реальность не напомнила мне в какой стране я живу. После аварийных выключений света, у меня убился раздел на флешки с установленной ОС. Переустанавливать было лень, и я прекрасно понимал, что это не последняя переустановка. Нужно искать другой вариант&hellip; на горизонте появился Octopress.</p>
-
-<!-- more -->
-
-
-<p>Octopress &ndash; генератор статических сайтов. Мы берем шаблоны статей, созданные нами и переводим в статические html страницы.</p>
 
-<p>Плюсы:</p>
 
-<ul>
-<li><strong>Скорость.</strong> Мы разгружаем сервак, так как на нем только html+js+css+images.</li>
-<li><strong>Дешевизна.</strong> Нам не нужно устанавливать php, базы данных, кеш сервера и т.д. Соответственно мы можем арендовать самый дешевый сервер.</li>
-<li><strong>Удобство.</strong> Все посты хранятса в формате <a href="http://ru.wikipedia.org/wiki/Markdown">маркдаун</a>. Набирать текст в нем одно удовольствие. Ты тратишь время над содержимое статьи, а не ее внешний вид.</li>
-</ul>
-
-
-<p>Минусы:</p>
-
-<ul>
-<li>Главный и единственный минус, проистекает от его плюсов. У нас нет динамического контента. Если мы хотим добавить динамику нашему сайту. то нужно использовать js. Благо уровень текущего js вырос. Да и сторонних сервисов которые предоставляют API для нашего js, предостаточно.</li>
-</ul>
-
-
-<h1>1. Устанавливаем Octopress</h1>
-
-<p>1. Устанавливаем <a href="https://rvm.beginrescueend.com/rvm/install/">rvm</a></p>
-
-<p>2. Устанавливаем Ruby</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>rvm install x.x.x
-</span><span class='line'>rvm use x.x.x
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>3. <a href="http://octopress.org/docs/setup/">Устанавливаем Octopress</a></p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>apt-get install python-dev <span class="c"># для плагина подсветки синтаксиса</span>
-</span><span class='line'>git clone git://github.com/imathis/octopress.git octopress
-</span><span class='line'><span class="nb">cd </span>octopress
-</span><span class='line'>ruby --version <span class="c"># report Ruby 1.9.3</span>
-</span><span class='line'>gem install bundler
-</span><span class='line'>bundle install
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>4. <a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">Выбираем тему</a> по душе</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>git clone GIT_URL .themes/THEME_NAME
-</span><span class='line'>rake install<span class="o">[</span><span class="s1">&#39;THEME_NAME&#39;</span><span class="o">]</span>
-</span><span class='line'>rake generate
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>5. Редактируем <a href="http://octopress.org/docs/configuring/">конфигурационный файл</a> <strong>_config.yml</strong></p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>root: /
-</span><span class='line'>permalink: /:categories/:title/
-</span><span class='line'><span class="nb">source</span>: <span class="nb">source</span>
-</span><span class='line'>destination: public
-</span><span class='line'>plugins: plugins
-</span><span class='line'>code_dir: downloads/code
-</span><span class='line'>category_dir: categories
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>6. <a href="http://octopress.org/docs/theme/template/">Правим файлы</a> под свои предпочтения в директориях</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sass                       <span class="c"># цветовая гамма и стили</span>
-</span><span class='line'><span class="nb">source</span>/                   <span class="c"># папка с исходными файлами. </span>
-</span><span class='line'>      _includes/          <span class="c"># шаблоны частей сайта</span>
-</span><span class='line'>      _layouts/           <span class="c"># основные шаблоны для страниц, постов и архивов</span>
-</span><span class='line'>              asides/     <span class="c"># шаблоны боковой панели</span>
-</span><span class='line'>              custom/     <span class="c"># пользовательские шаблоны</span>
-</span><span class='line'>              post/       <span class="c"># шаблоны страницы post (metadata, sharing &amp; comment)</span>
-</span><span class='line'>      _posts/             <span class="c"># все посты в markdown</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>7. <a href="http://maxmikheev.ru/blog/2012/07/13/russian-dates-in-octopress/">Русифицируем даты</a> в Octopress</p>
-
-<p>8. Ставим <a href="https://github.com/imathis/octopress/wiki/3rd-party-plugins">сторонние плагины</a>. Некоторые интересные плагины:</p>
-
-<ul>
-<li><a href="https://github.com/neerajcse/octopress-calendar-aside">octopress-calendar-aside</a> &ndash; календарик как в WordPress</li>
-<li><a href="https://github.com/matthiasbeyer/jekyll_category_tree">jekyll_category_tree</a> &ndash; категории деревом</li>
-<li><a href="https://github.com/alswl/octopress-category-list">Tag Cloud for Octopress</a> &ndash; категории списком и облако тегов</li>
-<li><a href="https://github.com/tokkonopapa/octopress-tagcloud">Tag Cloud for Octopress</a> &ndash; альтернатива вышестоящего плагина</li>
-<li><a href="https://github.com/octopress-themes/popular-posts">Octopress Popular Posts Plugin</a> &ndash; список популярных постов на основе Google page rank</li>
-<li><a href="https://github.com/jcftang/octopress-relatedposts">Related posts for Octopress</a> &ndash; список похожих постов</li>
-<li><a href="https://github.com/robbyedwards/octopress-tag-pages">Plugin for Octopress to generate tag pages</a> &ndash; плагин создает страницы тегов</li>
-</ul>
-
-
-<h1>2. Размещение на Github Pages</h1>
-
-<p>Создаем на Github репозиторий с именем <a href="http://octopress.org/docs/deploying/github/">ваш_логин.github.io</a></p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>rake setup_github_pages
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Вводим свой урл до репозитория.</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>rake generate
-</span><span class='line'>rake deploy
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>git add .
-</span><span class='line'>git commit -m <span class="s1">&#39;your message&#39;</span>
-</span><span class='line'>git push origin <span class="nb">source</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h1>3. Персональный домен</h1>
-
-<p>Создаем файл с именем CNAME содержащий ваше доменное имя.</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nb">echo</span> <span class="s1">&#39;your-domain.com&#39;</span> &gt;&gt; <span class="nb">source</span>/CNAME
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>На вашем DNS сервере <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">прописываем А запись</a></p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>example.com.  3259    IN      A       204.232.175.78
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h1>4. Автоматизация</h1>
-
-<p>Octopress поддерживает автоматизацию типовых задач пользователя.</p>
-
-<p>Список все задач можно посмотреть командой</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>rake --task
-</span><span class='line'>rake clean                     <span class="c"># Clean out caches: .pygments-cache, .gist-cache, .sass-cache</span>
-</span><span class='line'>rake copydot<span class="o">[</span><span class="nb">source</span>,dest<span class="o">]</span>      <span class="c"># copy dot files for deployment</span>
-</span><span class='line'>rake deploy                    <span class="c"># Default deploy task</span>
-</span><span class='line'>rake gen_deploy                <span class="c"># Generate website and deploy</span>
-</span><span class='line'>rake generate                  <span class="c"># Generate jekyll site</span>
-</span><span class='line'>rake install<span class="o">[</span>theme<span class="o">]</span>            <span class="c"># Initial setup for Octopress: copies the default theme into the path of J...</span>
-</span><span class='line'>rake integrate                 <span class="c"># Move all stashed posts back into the posts directory, ready for site gen...</span>
-</span><span class='line'>rake isolate<span class="o">[</span>filename<span class="o">]</span>         <span class="c"># Move all other posts than the one currently being worked on to a tempora...</span>
-</span><span class='line'>rake list                      <span class="c"># list tasks</span>
-</span><span class='line'>rake new_page<span class="o">[</span>filename<span class="o">]</span>        <span class="c"># Create a new page in source/(filename)/index.markdown</span>
-</span><span class='line'>rake new_post<span class="o">[</span>title<span class="o">]</span>           <span class="c"># Begin a new post in source/_posts</span>
-</span><span class='line'>rake preview                   <span class="c"># preview the site in a web browser</span>
-</span><span class='line'>rake push                      <span class="c"># deploy public directory to github pages</span>
-</span><span class='line'>rake rsync                     <span class="c"># Deploy website via rsync</span>
-</span><span class='line'>rake set_root_dir<span class="o">[</span>dir<span class="o">]</span>         <span class="c"># Update configurations to support publishing to root or sub directory</span>
-</span><span class='line'>rake setup_github_pages<span class="o">[</span>repo<span class="o">]</span>  <span class="c"># Set up _deploy folder and deploy branch for Github Pages deployment</span>
-</span><span class='line'>rake update_source<span class="o">[</span>theme<span class="o">]</span>      <span class="c"># Move source to source.old, install source theme updates, replace source/...</span>
-</span><span class='line'>rake update_style<span class="o">[</span>theme<span class="o">]</span>       <span class="c"># Move sass to sass.old, install sass theme updates, replace sass/custom w...</span>
-</span><span class='line'>rake watch                     <span class="c"># Watch the site and regenerate when it changes</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Превращаем Raspberry Pi в домашний web-server]]></title>
-    <link href="http://dordenis.github.io/linux/raspberry-pi-transform-the-home-web-server/"/>
-    <updated>2013-07-15T20:21:00+04:00</updated>
-    <id>http://dordenis.github.io/linux/raspberry-pi-transform-the-home-web-server</id>
-    <content type="html"><![CDATA[<p>Не так давно приобрел забавную игрушку Raspberry Pi. Я планирую использовать ее в качестве «мозгов» для робота на базе Arduino, но об этом в другой раз. Что бы «малина» не валялась без дела. пока я проектирую робота, решил на базе нее поднять домашний web-server.
-И так приступим…</p>
-
-<!-- more -->
-
-
-<h1>1. Устанавливаем образ “wheezy”</h1>
-
-<p>Скачиваем образ с <a href="http://www.raspberrypi.org/downloads">официального сайта</a>
-Распаковываем, на данный момент это 2013-05-29-wheezy-armel.img
-Подключаем карточку флешь память к компьютеру
-Копируем образ на флеш-карту <strong>dd if=/home/user/Download/2013-05-29-wheezy-armel.img of=/dev/sdN</strong>, где sdN — имя вашей флешь-карточки
-После того как создали образ, заходим в <strong>/etc/network/interfaces</strong> и прописываем сетевые настройки</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>auto lo
-</span><span class='line'>iface lo inet loopback
-</span><span class='line'>
-</span><span class='line'>auto eth0
-</span><span class='line'>iface eth0 inet static
-</span><span class='line'>
-</span><span class='line'>address 192.168.1.10
-</span><span class='line'>netmask 255.255.255.0
-</span><span class='line'>gateway 192.168.1.1
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h1>2. Настройка операционной системы</h1>
-
-<p>В консоле набираем</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo raspi-config
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>И получаем графическое меню</p>
-
-<p><img src="http://dordenis.github.io/images/post/rasbbery_1-627x412.png"></p>
-
-<ul>
-<li><strong>expand_rootfs</strong> — здесь вы можете увеличить root размер на весь размер карты памяти</li>
-<li><strong>change_pass</strong> — смена пароля пользователя «pi». При вводе пароль не отображается. Обязательно нужно сделать</li>
-<li><strong>change_locate</strong> — установка языка системы</li>
-<li><strong>memory_split</strong> — распределение памяти Raspberry Pi ставим 256</li>
-<li><strong>overclock</strong> — разгон процессора Raspberry Pi, ставим Turbo тем более разработчики официально разрешили</li>
-</ul>
-
-
-<p>Остальные настройки по вашему желанию. После этого перегружаемся.
-Не забудем обновить систему, командами</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get update sudo apt-get upgrade
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h1>3. Установка web-server</h1>
-
-<p>Устанавливаем все необходимое</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install nginx
-</span><span class='line'>sudo apt-get install php5-fpm php5-common php5-mysql php5-gd
-</span><span class='line'>sudo apt-get install mysql-server php5-mysql
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Запускаем</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>/etc/init.d/nginx nginx restart /etc/init.d/nginx php5-fpm restart
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Проверяем, набираем в браузере <a href="http://192.168.1.10,">http://192.168.1.10,</a> если все сделали правильно, то должны увидеть надпись <strong>Welcome to nginx!</strong></p>
-
-<h1>4. Настройка web-server</h1>
-
-<p>Создаем файл /etc/nginx/sites-enabled/ajaxblog</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>server <span class="o">{</span>
-</span><span class='line'>    listen 8080;
-</span><span class='line'>
-</span><span class='line'>    index index.php index.html;
-</span><span class='line'>
-</span><span class='line'>    server_name 192.168.1.10 ajaxblog.ru, www.ajaxblog.ru;
-</span><span class='line'>    root /var/www/html/ajaxblog;
-</span><span class='line'>
-</span><span class='line'>    <span class="c"># Делаем красивые урлы location / {</span>
-</span><span class='line'>        try_files <span class="nv">$uri</span> <span class="nv">$uri</span>/ /index.php?q<span class="o">=</span><span class="nv">$uri</span>&amp;<span class="nv">$args</span>;
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c"># Статичный контент отдаем напрямую с диска location ~* \.(xml|ogg|ogv|svg|svgz|eot|otf|woff|mp4|ttf|css|rss|atom|js|jpg|jpeg|gif|png|ico|zip|tgz|gz|rar|bz2|doc|xls|exe|ppt|tar|mid|midi|wav|bmp|rtf)$ {</span>
-</span><span class='line'>        try_files <span class="nv">$uri</span> <span class="o">=</span>404; access_log off; expires 7d;
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c"># И наконец обработка php location ~ \.php$ {</span>
-</span><span class='line'>        fastcgi_buffers 8 256k;
-</span><span class='line'>        fastcgi_buffer_size 128k;
-</span><span class='line'>        fastcgi_intercept_errors on;
-</span><span class='line'>
-</span><span class='line'>        include fastcgi_params;
-</span><span class='line'>        fastcgi_pass unix:/var/run/php5-fpm.sock;
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Создаем папку <strong>/var/www/html/ajaxblog</strong> куда заливаем wordpress</p>
-
-<ol>
-<li>Настройка DNS</li>
-</ol>
-
-
-<p>Наш сайт пока мы можем видеть только по локальному адресу <a href="http://192.168.1.10.">http://192.168.1.10.</a>
-Для того чтобы мы могли видеть сайт по доменому имени <a href="http://ajaxblog.ru,">http://ajaxblog.ru,</a> нам нужно:</p>
-
-<p>Прописать DNS запись у регистратора домена</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>@ A X.X.X.X www A X.X.X.X <span class="c"># X.X.X.X - IP адрес моего провайдера</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Теперь нужно чтобы запрос пришедший на X.X.X.X, был перенаправлен домашним роутером на Raspberry Pi.
-Для этого в админки вашего роутера нужно настроить перенаправление.
-Заходим на вкладку <strong>NAT Setting — Virtual Server</strong></p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>Port Range  80
-</span><span class='line'>Local IP    192.168.1.10 <span class="c">#локальный ip Raspberry Pi</span>
-</span><span class='line'>Local Port  80
-</span><span class='line'>Protocol    TCP
-</span><span class='line'>Description HTTP Server
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Через какое-то время обновиться DNS запись у провайдера и можно смело смотреть свой блог по адресу <a href="http://ajaxblog.ru">http://ajaxblog.ru</a></p>
-]]></content>
-  </entry>
-  
-</feed>
+<time datetime="2013-07-21T15:33:00+04:00" pubdate data-updated="true">21 Июля 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/categories/yii/'>yii</a>
+
+
+</div>
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+
+    <footer id="footer">
+        <div class="inner">
+            <div class="row-fluid">
+    <span class="span12"><section>
+  <h3>Категории</h3>
+    <ul id="category-list"><li><a href='/categories/linux'>linux (1)</a></li><li><a href='/categories/octopress'>octopress (1)</a></li><li><a href='/categories/yii'>yii (1)</a></li></ul>
+</section>
+</span>
+</div>
+            <div class="copyright">
+    Copyright &copy; 2013
+    
+        AjaxBlog
+    
+    Powered by Octopress.
+</div>
+        </div>
+    </footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'ajaxblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://dordenis.github.io/yii/multilanguage-website-with-yii/';
+        var disqus_url = 'http://dordenis.github.io/yii/multilanguage-website-with-yii/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+</body>
+</html>
