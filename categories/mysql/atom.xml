@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mysql | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/categories/mysql/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2013-08-06T19:17:05+04:00</updated>
+  <updated>2013-08-06T19:20:45+04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[AjaxBlog]]></name>
@@ -29,9 +29,9 @@
 
 <p>Разберем пример простейшее использования, задампим базу данных &ldquo;database&rdquo; при помощи перенаправления потока в файл &ldquo;database.sql&rdquo;:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">h</span> <span class="mi">82</span><span class="p">.</span><span class="mi">82</span><span class="p">.</span><span class="mi">82</span><span class="p">.</span><span class="mi">82</span> <span class="o">-</span><span class="n">p</span> <span class="k">database</span> <span class="o">&gt;</span> <span class="k">database</span><span class="p">.</span><span class="k">sql</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sql %}
+mysqldump -u root -h 82.82.82.82 -p database > database.sql
+{% endcodeblock %}</p>
 
 <ul>
 <li><strong>-u</strong> или <strong>-–user</strong>=&hellip; &ndash; имя пользователя</li>
@@ -46,37 +46,36 @@
 
 <p>Перенаправляем поток в обратную сторону и развертываем базу данных:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">mysql</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">h</span> <span class="mi">82</span><span class="p">.</span><span class="mi">82</span><span class="p">.</span><span class="mi">82</span><span class="p">.</span><span class="mi">82</span> <span class="o">-</span><span class="n">p</span> <span class="k">database</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="k">database</span><span class="p">.</span><span class="k">sql</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sql %}
+mysql -uroot -h 82.82.82.82 -p database &lt; database.sql
+{% endcodeblock %}</p>
 
 <p>Или через mysql console:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">use</span> <span class="k">database</span><span class="p">;</span>
-</span><span class='line'><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">source</span> <span class="k">database</span><span class="p">.</span><span class="k">sql</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sql %}
+mysql> use database;
+mysql> source database.sql
+{% endcodeblock %}</p>
 
 <h1>Пример использование некоторых параметров</h1>
 
 <p>Например, нам нужны данные с &ldquo;продакшен версии базы&rdquo; для &ldquo;версии разработчика&rdquo;, то есть нам нужна &ldquo;песочница&rdquo;. Выбираем не более 100 записей:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">mysqldump</span> <span class="o">&amp;</span><span class="n">ndash</span><span class="p">;</span> <span class="n">uroot</span> <span class="o">-</span><span class="n">h</span> <span class="mi">82</span><span class="p">.</span><span class="mi">82</span><span class="p">.</span><span class="mi">82</span><span class="p">.</span><span class="mi">82</span> <span class="o">-</span><span class="n">p</span> <span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="k">where</span><span class="o">=&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="k">true</span> <span class="k">limit</span> <span class="mi">100</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span> <span class="k">database</span> <span class="o">&gt;</span> <span class="k">database</span><span class="p">.</span><span class="k">sql</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sql %}
+mysqldump &ndash; uroot -h 82.82.82.82 -p &mdash;where=&ldquo;true limit 100&rdquo; database > database.sql
+{% endcodeblock %}</p>
 
 <p>Или нам нужна только структура, без данных:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">h</span> <span class="mi">82</span><span class="p">.</span><span class="mi">82</span><span class="p">.</span><span class="mi">82</span><span class="p">.</span><span class="mi">82</span> <span class="o">-</span><span class="n">p</span> <span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="k">no</span><span class="o">-</span><span class="k">data</span> <span class="k">database</span> <span class="o">&gt;</span> <span class="k">database</span><span class="p">.</span><span class="k">sql</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sql %}
+mysqldump -u root -h 82.82.82.82 -p &mdash;no-data database > database.sql
+{% endcodeblock %}</p>
 
 <p>Делаем дамп в архив:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span> <span class="k">database</span> <span class="o">|</span> <span class="n">gzip</span> <span class="o">&gt;</span> <span class="o">~/</span><span class="k">database</span><span class="p">.</span><span class="k">sql</span><span class="p">.</span><span class="n">gz</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sql %}
+mysqldump -u root -p database | gzip > ~/database.sql.gz
+{% endcodeblock %}</p>
 
 <h1>Шпаргалка по параметрам</h1>
 
