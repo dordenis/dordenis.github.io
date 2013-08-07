@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <atom:link rel="hub" href="http://pubsubhubbub.appspot.com" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        <title>Ajaxblog</title>
+        <link>http://dordenis.github.io</link>
+
+        
+        <item>
+            <title>Шпарагалка по mysqldump</title>
+            <description><p>Утилита mysqldump позволяет получить дамп содержимого базы данных или совокупности баз для создания резервной копии или пересылки данных на другой SQL-сервер (не обязательно MySQL-сервер). Дамп будет содержать набор команд SQL для создания и/или заполнения таблиц.</p>
+
+<p>Так же mysqldump имеет возможность развертывания баз данных из созданного sql-файла.</p>
+
+</description>
+            <link>http://dordenis.github.io/mysql/cheatsheet-on-mysqldump/</link>
+            <pubDate>2013-08-05T19:55:00+04:00</pubDate>
+            <guid>http://dordenis.github.io/mysql/cheatsheet-on-mysqldump</guid>
+        </item>
+        
+        <item>
+            <title>Создание плагинов для Octopress</title>
+            <description><p>Octopress идет с несколькими предустановленными плагинами. Которые охватывают практически все аспекты блоггерства, от категории до видео. Плагины можно легко создавать, расширяя базовый функционал Octopress. Создадим плагин который добавит новый тег для шаблонизатора Liquid.</p>
+
+<p>В качестве примера, создадим новый тег, который позволит вставлять картинки размещенные на S3 Amazon.</p>
+
+</description>
+            <link>http://dordenis.github.io/octopress/creating-plugins-for-octopress/</link>
+            <pubDate>2013-07-22T01:04:00+04:00</pubDate>
+            <guid>http://dordenis.github.io/octopress/creating-plugins-for-octopress</guid>
+        </item>
+        
+        <item>
+            <title>Мультиязычный сайт с помощью Yii</title>
+            <description><p>Для одного из проекта, возникла необходимость в организации поддержки мультиязычности на сайте. Причем URL должны быть в определенном виде:</p>
+
+<p><a href="http://site.ru/ru/contacts">http://site.ru/ru/contacts</a> для русского языка  <br/>
+<a href="http://site.ru/en/contacts">http://site.ru/en/contacts</a> для английского языка</p>
+
+</description>
+            <link>http://dordenis.github.io/yii/multilanguage-website-with-yii/</link>
+            <pubDate>2013-07-21T15:33:00+04:00</pubDate>
+            <guid>http://dordenis.github.io/yii/multilanguage-website-with-yii</guid>
+        </item>
+        
+        <item>
+            <title>Octopress - блоггинг для гиков</title>
+            <description><p>Меня всем устраивал мой маленький блог на Rasberry Pi, пока жестокая реальность не напомнила мне в какой стране я живу. После аварийных выключений света, у меня убился раздел на флешки с установленной ОС. Переустанавливать было лень, и я прекрасно понимал, что это не последняя переустановка. Нужно искать другой вариант&hellip; на горизонте появился Octopress.</p>
+
+</description>
+            <link>http://dordenis.github.io/octopress/octopress-blogging-for-geeks/</link>
+            <pubDate>2013-07-18T20:20:00+04:00</pubDate>
+            <guid>http://dordenis.github.io/octopress/octopress-blogging-for-geeks</guid>
+        </item>
+        
+        <item>
+            <title>Превращаем Raspberry Pi в домашний web-server</title>
+            <description><p>Не так давно приобрел забавную игрушку Raspberry Pi. Я планирую использовать ее в качестве «мозгов» для робота на базе Arduino, но об этом в другой раз. Что бы «малина» не валялась без дела. пока я проектирую робота, решил на базе нее поднять домашний web-server.
+И так приступим…</p>
+
+</description>
+            <link>http://dordenis.github.io/linux/raspberry-pi-transform-the-home-web-server/</link>
+            <pubDate>2013-07-15T20:21:00+04:00</pubDate>
+            <guid>http://dordenis.github.io/linux/raspberry-pi-transform-the-home-web-server</guid>
+        </item>
+        
+    </channel>
+</rss>
