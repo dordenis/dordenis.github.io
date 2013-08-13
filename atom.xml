@@ -4,7 +4,7 @@
   <title><![CDATA[Ajaxblog]]></title>
   <link href="http://dordenis.github.io/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2013-08-08T16:15:16+04:00</updated>
+  <updated>2013-08-13T11:50:20+04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[AjaxBlog]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Загрузка файлов на сервер с помощью CURL]]></title>
+    <link href="http://dordenis.github.io/php/uploading-files-to-a-server-using-CURL/"/>
+    <updated>2013-08-13T11:43:00+04:00</updated>
+    <id>http://dordenis.github.io/php/uploading-files-to-a-server-using-CURL</id>
+    <content type="html"><![CDATA[<p>Для одного из проектов нужно было загрузить файлы на сервер, с использованием CURL.</p>
+
+<p>Делается это так:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;image&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;@{$full_path_file}&#39;</span><span class="p">);</span> <span class="c1">//полный путь до файла</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="s1">&#39;http://localhost/upload.php&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>На локальном сервере работало на ура, но когда я залил на сервер клиента, все перестала работать.</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Шпарагалка по mysqldump]]></title>
