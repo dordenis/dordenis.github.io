@@ -75,17 +75,6 @@ $header-height: 30px;
 			>a{
 				padding: 38px 0;
 				margin-top: -38px;
-				&:after{
-					content: "\f078";
-					color: $color-gray03;
-					font: 12px $font-icon;
-					padding-left: 10px;
-				}
-				&:only-child{
-					&:after{
-						content: "";
-					}
-				}
 				@media screen and (max-width: 1040px){
 					padding: 18px 0;
 				}
