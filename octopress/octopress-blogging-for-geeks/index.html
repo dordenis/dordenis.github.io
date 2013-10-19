@@ -1,0 +1,412 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Octopress - блоггинг для гиков | Ajaxblog</title>
+
+<meta name="author" content="AjaxBlog">
+
+<meta name="description" content="Меня всем устраивал мой маленький блог на Rasberry Pi, пока жестокая реальность не напомнила мне в какой стране я живу. После аварийных выключений &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Ajaxblog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 7]><link href="/stylesheets/font-awesome-ie7.css" rel="stylesheet" type="text/css"><![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">Ajaxblog</a></h1>
+<h4></h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Блог</a></li>
+	<li><a href="/resume">Резюме</a></li>
+	<!-- li><a href="/portfolio">Portfolio</a></li -->
+	<li><a href="/archives">Архив</a></li>
+	<li><i class="icon icon-rss"></i> <a href="/atom.xml">RSS</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Блог</a></li>
+	<li><a href="/resume">Резюме</a></li>
+	<!-- li><a href="/portfolio">Portfolio</a></li -->
+	<li><a href="/archives">Архив</a></li>
+	<li><i class="icon icon-rss"></i> <a href="/atom.xml">RSS</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:dordenis.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Octopress - блоггинг для гиков</h2>
+	<div class="entry-content"><p>Меня всем устраивал мой маленький блог на Rasberry Pi, пока жестокая реальность не напомнила мне в какой стране я живу. После аварийных выключений света, у меня убился раздел на флешки с установленной ОС. Переустанавливать было лень, и я прекрасно понимал, что это не последняя переустановка. Нужно искать другой вариант&hellip; на горизонте появился Octopress.</p>
+
+<!-- more -->
+
+
+<p>Octopress &ndash; генератор статических сайтов. Мы берем шаблоны статей, созданные нами и переводим в статические html страницы.</p>
+
+<p>Плюсы:</p>
+
+<ul>
+<li><strong>Скорость.</strong> Мы разгружаем сервак, так как на нем только html+js+css+images.</li>
+<li><strong>Дешевизна.</strong> Нам не нужно устанавливать php, базы данных, кеш сервера и т.д. Соответственно мы можем арендовать самый дешевый сервер.</li>
+<li><strong>Удобство.</strong> Все посты хранятса в формате <a href="http://ru.wikipedia.org/wiki/Markdown">маркдаун</a>. Набирать текст в нем одно удовольствие. Ты тратишь время над содержимое статьи, а не ее внешний вид.</li>
+</ul>
+
+
+<p>Минусы:</p>
+
+<ul>
+<li>Главный и единственный минус, проистекает от его плюсов. У нас нет динамического контента. Если мы хотим добавить динамику нашему сайту. то нужно использовать js. Благо уровень текущего js вырос. Да и сторонних сервисов которые предоставляют API для нашего js, предостаточно.</li>
+</ul>
+
+
+<h1>1. Устанавливаем Octopress</h1>
+
+<p>1. Устанавливаем <a href="https://rvm.beginrescueend.com/rvm/install/">rvm</a></p>
+
+<p>2. Устанавливаем Ruby</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>rvm install x.x.x
+</span><span class='line'>rvm use x.x.x
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3. <a href="http://octopress.org/docs/setup/">Устанавливаем Octopress</a></p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>apt-get install python-dev <span class="c"># для плагина подсветки синтаксиса</span>
+</span><span class='line'>git clone git://github.com/imathis/octopress.git octopress
+</span><span class='line'><span class="nb">cd </span>octopress
+</span><span class='line'>ruby --version <span class="c"># report Ruby 1.9.3</span>
+</span><span class='line'>gem install bundler
+</span><span class='line'>bundle install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>4. <a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">Выбираем тему</a> по душе</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>git clone GIT_URL .themes/THEME_NAME
+</span><span class='line'>rake install<span class="o">[</span><span class="s1">&#39;THEME_NAME&#39;</span><span class="o">]</span>
+</span><span class='line'>rake generate
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>5. Редактируем <a href="http://octopress.org/docs/configuring/">конфигурационный файл</a> <strong>_config.yml</strong></p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>root: /
+</span><span class='line'>permalink: /:categories/:title/
+</span><span class='line'><span class="nb">source</span>: <span class="nb">source</span>
+</span><span class='line'>destination: public
+</span><span class='line'>plugins: plugins
+</span><span class='line'>code_dir: downloads/code
+</span><span class='line'>category_dir: categories
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>6. <a href="http://octopress.org/docs/theme/template/">Правим файлы</a> под свои предпочтения в директориях</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sass                       <span class="c"># цветовая гамма и стили</span>
+</span><span class='line'><span class="nb">source</span>/                   <span class="c"># папка с исходными файлами. </span>
+</span><span class='line'>      _includes/          <span class="c"># шаблоны частей сайта</span>
+</span><span class='line'>      _layouts/           <span class="c"># основные шаблоны для страниц, постов и архивов</span>
+</span><span class='line'>              asides/     <span class="c"># шаблоны боковой панели</span>
+</span><span class='line'>              custom/     <span class="c"># пользовательские шаблоны</span>
+</span><span class='line'>              post/       <span class="c"># шаблоны страницы post (metadata, sharing &amp; comment)</span>
+</span><span class='line'>      _posts/             <span class="c"># все посты в markdown</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>7. <a href="http://maxmikheev.ru/blog/2012/07/13/russian-dates-in-octopress/">Русифицируем даты</a> в Octopress</p>
+
+<p>8. Ставим <a href="https://github.com/imathis/octopress/wiki/3rd-party-plugins">сторонние плагины</a>. Некоторые интересные плагины:</p>
+
+<ul>
+<li><a href="https://github.com/neerajcse/octopress-calendar-aside">octopress-calendar-aside</a> &ndash; календарик как в WordPress</li>
+<li><a href="https://github.com/matthiasbeyer/jekyll_category_tree">jekyll_category_tree</a> &ndash; категории деревом</li>
+<li><a href="https://github.com/alswl/octopress-category-list">Tag Cloud for Octopress</a> &ndash; категории списком и облако тегов</li>
+<li><a href="https://github.com/tokkonopapa/octopress-tagcloud">Tag Cloud for Octopress</a> &ndash; альтернатива вышестоящего плагина</li>
+<li><a href="https://github.com/octopress-themes/popular-posts">Octopress Popular Posts Plugin</a> &ndash; список популярных постов на основе Google page rank</li>
+<li><a href="https://github.com/jcftang/octopress-relatedposts">Related posts for Octopress</a> &ndash; список похожих постов</li>
+<li><a href="https://github.com/robbyedwards/octopress-tag-pages">Plugin for Octopress to generate tag pages</a> &ndash; плагин создает страницы тегов</li>
+</ul>
+
+
+<h1>2. Размещение на Github Pages</h1>
+
+<p>Создаем на Github репозиторий с именем <a href="http://octopress.org/docs/deploying/github/">ваш_логин.github.io</a></p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>rake setup_github_pages
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Вводим свой урл до репозитория.</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>rake generate
+</span><span class='line'>rake deploy
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>git add .
+</span><span class='line'>git commit -m <span class="s1">&#39;your message&#39;</span>
+</span><span class='line'>git push origin <span class="nb">source</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>3. Персональный домен</h1>
+
+<p>Создаем файл с именем CNAME содержащий ваше доменное имя.</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nb">echo</span> <span class="s1">&#39;your-domain.com&#39;</span> &gt;&gt; <span class="nb">source</span>/CNAME
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>На вашем DNS сервере <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">прописываем А запись</a></p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>example.com.  3259    IN      A       204.232.175.78
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>4. Автоматизация</h1>
+
+<p>Octopress поддерживает автоматизацию типовых задач пользователя.</p>
+
+<p>Список все задач можно посмотреть командой</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>rake --task
+</span><span class='line'>rake clean                     <span class="c"># Clean out caches: .pygments-cache, .gist-cache, .sass-cache</span>
+</span><span class='line'>rake copydot<span class="o">[</span><span class="nb">source</span>,dest<span class="o">]</span>      <span class="c"># copy dot files for deployment</span>
+</span><span class='line'>rake deploy                    <span class="c"># Default deploy task</span>
+</span><span class='line'>rake gen_deploy                <span class="c"># Generate website and deploy</span>
+</span><span class='line'>rake generate                  <span class="c"># Generate jekyll site</span>
+</span><span class='line'>rake install<span class="o">[</span>theme<span class="o">]</span>            <span class="c"># Initial setup for Octopress: copies the default theme into the path of J...</span>
+</span><span class='line'>rake integrate                 <span class="c"># Move all stashed posts back into the posts directory, ready for site gen...</span>
+</span><span class='line'>rake isolate<span class="o">[</span>filename<span class="o">]</span>         <span class="c"># Move all other posts than the one currently being worked on to a tempora...</span>
+</span><span class='line'>rake list                      <span class="c"># list tasks</span>
+</span><span class='line'>rake new_page<span class="o">[</span>filename<span class="o">]</span>        <span class="c"># Create a new page in source/(filename)/index.markdown</span>
+</span><span class='line'>rake new_post<span class="o">[</span>title<span class="o">]</span>           <span class="c"># Begin a new post in source/_posts</span>
+</span><span class='line'>rake preview                   <span class="c"># preview the site in a web browser</span>
+</span><span class='line'>rake push                      <span class="c"># deploy public directory to github pages</span>
+</span><span class='line'>rake rsync                     <span class="c"># Deploy website via rsync</span>
+</span><span class='line'>rake set_root_dir<span class="o">[</span>dir<span class="o">]</span>         <span class="c"># Update configurations to support publishing to root or sub directory</span>
+</span><span class='line'>rake setup_github_pages<span class="o">[</span>repo<span class="o">]</span>  <span class="c"># Set up _deploy folder and deploy branch for Github Pages deployment</span>
+</span><span class='line'>rake update_source<span class="o">[</span>theme<span class="o">]</span>      <span class="c"># Move source to source.old, install source theme updates, replace source/...</span>
+</span><span class='line'>rake update_style<span class="o">[</span>theme<span class="o">]</span>       <span class="c"># Move sass to sass.old, install sass theme updates, replace sass/custom w...</span>
+</span><span class='line'>rake watch                     <span class="c"># Watch the site and regenerate when it changes</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-18T20:20:00+04:00" pubdate data-updated="true">18 Июля 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/categories/octopress/'>octopress</a>
+
+
+</div>
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+
+    <footer id="footer">
+        <div class="inner">
+            <div class="row-fluid">
+    <span class="span12"><section>
+  <h3>Категории</h3>
+    <ul id="category-list"><li><a href='/categories/linux'>linux (1)</a></li><li><a href='/categories/mysql'>mysql (1)</a></li><li><a href='/categories/octopress'>octopress (2)</a></li><li><a href='/categories/php'>php (1)</a></li><li><a href='/categories/yii'>yii (1)</a></li></ul>
+</section>
+</span>
+</div>
+            <div class="copyright">
+    Copyright &copy; 2013
+    
+        AjaxBlog
+    
+    Powered by Octopress.
+</div>
+        </div>
+    </footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'ajaxblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://dordenis.github.io/octopress/octopress-blogging-for-geeks/';
+        var disqus_url = 'http://dordenis.github.io/octopress/octopress-blogging-for-geeks/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+</body>
+</html>

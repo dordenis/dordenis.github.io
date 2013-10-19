@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: mysqldump | Ajaxblog]]></title>
+  <link href="http://dordenis.github.io/tags/mysqldump/atom.xml" rel="self"/>
+  <link href="http://dordenis.github.io/"/>
+  <updated>2013-08-13T11:50:20+04:00</updated>
+  <id>http://dordenis.github.io/</id>
+  <author>
+    <name><![CDATA[AjaxBlog]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Шпарагалка по mysqldump]]></title>
+    <link href="http://dordenis.github.io/mysql/cheatsheet-on-mysqldump/"/>
+    <updated>2013-08-05T19:55:00+04:00</updated>
+    <id>http://dordenis.github.io/mysql/cheatsheet-on-mysqldump</id>
+    <content type="html"><![CDATA[<p>Утилита mysqldump позволяет получить дамп содержимого базы данных или совокупности баз для создания резервной копии или пересылки данных на другой SQL-сервер (не обязательно MySQL-сервер). Дамп будет содержать набор команд SQL для создания и/или заполнения таблиц.</p>
+
+<p>Так же mysqldump имеет возможность развертывания баз данных из созданного sql-файла.</p>
+
+<!-- more -->
+
+
+<h1>Создание дампа</h1>
+
+<p>Разберем пример простейшее использования, задампим базу данных &ldquo;database&rdquo; при помощи перенаправления потока в файл &ldquo;database.sql&rdquo;:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">h</span> <span class="mi">82</span><span class="p">.</span><span class="mi">82</span><span class="p">.</span><span class="mi">82</span><span class="p">.</span><span class="mi">82</span> <span class="o">-</span><span class="n">p</span> <span class="k">database</span> <span class="o">&gt;</span> <span class="k">database</span><span class="p">.</span><span class="k">sql</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<ul>
+<li><strong>-u</strong> или <strong>-–user</strong>=&hellip; &ndash; имя пользователя</li>
+<li><strong>-h</strong> или <strong>&mdash;host</strong>=&hellip; &ndash; удаленный хост (для локального хоста можно опустить этот параметр)</li>
+<li><strong>-p</strong> или <strong>&mdash;password</strong> &ndash; запросить пароль</li>
+<li><strong>database</strong> &ndash; имя базы данных</li>
+<li><strong>database.sql</strong> &ndash; файл для дампа</li>
+</ul>
+
+
+<h1>Развертывание дампа</h1>
+
+<p>Перенаправляем поток в обратную сторону и развертываем базу данных:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">mysql</span> <span class="o">-</span><span class="n">uroot</span> <span class="o">-</span><span class="n">h</span> <span class="mi">82</span><span class="p">.</span><span class="mi">82</span><span class="p">.</span><span class="mi">82</span><span class="p">.</span><span class="mi">82</span> <span class="o">-</span><span class="n">p</span> <span class="k">database</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="k">database</span><span class="p">.</span><span class="k">sql</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Или через mysql console:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">mysql</span><span class="o">&gt;</span> <span class="n">use</span> <span class="k">database</span><span class="p">;</span>
+</span><span class='line'><span class="n">mysql</span><span class="o">&gt;</span> <span class="k">source</span> <span class="k">database</span><span class="p">.</span><span class="k">sql</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h1>Пример использование некоторых параметров</h1>
+
+<p>Например, нам нужны данные с &ldquo;продакшен версии базы&rdquo; для &ldquo;версии разработчика&rdquo;, то есть нам нужна &ldquo;песочница&rdquo;. Выбираем не более 100 записей:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">mysqldump</span> <span class="o">&amp;</span><span class="n">ndash</span><span class="p">;</span> <span class="n">uroot</span> <span class="o">-</span><span class="n">h</span> <span class="mi">82</span><span class="p">.</span><span class="mi">82</span><span class="p">.</span><span class="mi">82</span><span class="p">.</span><span class="mi">82</span> <span class="o">-</span><span class="n">p</span> <span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="k">where</span><span class="o">=&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="k">true</span> <span class="k">limit</span> <span class="mi">100</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span> <span class="k">database</span> <span class="o">&gt;</span> <span class="k">database</span><span class="p">.</span><span class="k">sql</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Или нам нужна только структура, без данных:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">h</span> <span class="mi">82</span><span class="p">.</span><span class="mi">82</span><span class="p">.</span><span class="mi">82</span><span class="p">.</span><span class="mi">82</span> <span class="o">-</span><span class="n">p</span> <span class="o">&amp;</span><span class="n">mdash</span><span class="p">;</span><span class="k">no</span><span class="o">-</span><span class="k">data</span> <span class="k">database</span> <span class="o">&gt;</span> <span class="k">database</span><span class="p">.</span><span class="k">sql</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Делаем дамп в архив:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sql'><span class='line'><span class="n">mysqldump</span> <span class="o">-</span><span class="n">u</span> <span class="n">root</span> <span class="o">-</span><span class="n">p</span> <span class="k">database</span> <span class="o">|</span> <span class="n">gzip</span> <span class="o">&gt;</span> <span class="o">~/</span><span class="k">database</span><span class="p">.</span><span class="k">sql</span><span class="p">.</span><span class="n">gz</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h1>Шпаргалка по параметрам</h1>
+
+<p>Приведу некоторые параметры, которые могут понадобится при работе с утилитой mysqldump.</p>
+
+<ul>
+<li><strong>&mdash;add-drop-database</strong> Добавляет оператор DROP DATABASE перед каждым оператором CREATE DATABASE.</li>
+<li><strong>&mdash;add-drop-table</strong> Добавляет оператор DROP TABLE перед каждым оператором CREATE TABLE.</li>
+<li><strong>&mdash;add-locks</strong> Добавляет оператор LOCK TABLES перед выполнением и UNLOCK TABLE после выполнения каждого дампа таблицы (для ускорения доступа к MySQL).</li>
+<li><strong>&mdash;all-databases, -A</strong> Сохраняет все таблицы из всех баз данных, которые находятся под управлением текущего сервера.</li>
+<li><strong>&mdash;allow-keywords</strong> Разрешить создавать имена столбцов, которые совпадают с ключевыми словами. Отсутствие конфликтов обеспечивается прибавлением имени таблицы в качестве префикса к имени каждого столбца.</li>
+<li><strong>&mdash;comments, -i</strong> Данный параметр позволяет добавить в дамп дополнительную информацию, такую, как версия mysqldump, версия MySQL, имя хоста, на котором расположен сервер MySQL.</li>
+<li><strong>&mdash;compact</strong> Данный параметр требует от mysqldump создать дамп, используя как можно более компактный формат. Параметр является противоположным &mdash;comments.</li>
+<li><strong>&mdash;compatible=name</strong> Параметр генерирует вывод, который совместим с другими СУБД или более старыми версиями MySQL. Вместо ключевого слова name можно использовать: &ldquo;ansi&rdquo;, &ldquo;mysql323&rdquo;, &ldquo;mysql40&rdquo;, &ldquo;postgresql&rdquo;, &ldquo;oracle&rdquo;, &ldquo;mssql&rdquo;, &ldquo;db2&rdquo;, &ldquo;maxdb&rdquo;, &ldquo;no_key_options&rdquo;, &ldquo;no_table_options&rdquo;, &ldquo;no_field_options&rdquo;. Можно использовать несколько значений, разделив их запятыми.</li>
+<li><strong>&mdash;complete-insert, -c</strong> Используется полная форма оператора INSERT (с именами столбцов).</li>
+<li><strong>&mdash;create-options</strong> Добавляет дополнительную информацию в операторы CREATE TABLE. Это может быть тип таблицы, начальное значение AUTO_INCREMENT и другие параметры.</li>
+<li><strong>&mdash;databases, -B</strong> Параметр позволяет указать имена нескольких баз данных, для которых необходимо создать дамп.</li>
+<li><strong>&mdash;delayed</strong> Использовать команду INSERT DELAYED при вставке строк.</li>
+<li><strong>&mdash;delete-master-logs</strong> На главном сервере репликации автоматически удаляются бинарные логи (logbin) после того, как дамп был успешно создан при помощи mysqldump. Этот параметр автоматически включает параметр &ldquo;&mdash;master-data&rdquo;.</li>
+<li><strong>&mdash;disable-keys, -K</strong> Для каждой таблицы, окружает оператор INSERT выражениями /<em>!40000 ALTER TABLE tbl_name DISABLE KEYS </em>/; и /<em>!40000 ALTER TABLE tbl_name ENABLE KEYS </em>/; в выводе результата дампа. Это ускорит загрузку данных на сервер для таблиц типа MyISAM, так как индексы создаются после внесения всех данных.</li>
+<li><strong>&mdash;extended-insert, -e</strong> Использовать команду INSERT с новым многострочным синтаксисом (повышает компактность и быстродействие операторов ввода).</li>
+<li><strong>&mdash;flush-logs, -F</strong> Записать на диск данные системного журнала из буфера MySQL-сервера перед началом выполнения дампа.</li>
+<li><strong>&mdash;force, -f</strong> Продолжать даже если в процессе создания дампа произошла ошибка.</li>
+<li><strong>&mdash;hex-blob</strong> Параметр позволяет представить бинарные данные в полях типа BINARY, VARBINARY, BLOB и BIT в шестнадцатеричном формате. Так последовательность &ldquo;abc&rdquo; будет заменена на 0x616263.</li>
+<li><strong>&mdash;ignore-table=db_name.tbl_name</strong> Позволяет игнорировать таблицу tbl_name базы данных db_name при создании дампа. Если из дампа необходимо исключить несколько таблиц, необходимо использовать несколько параметров &ldquo;&mdash;ignore-table&rdquo;, указывая по одной таблице в каждом из параметров.</li>
+<li><strong>&mdash;insert-ignore</strong> Добавляет ключевое слово IGNORE в оператор INSERT.</li>
+<li><strong>&mdash;lock-all-tables, -x</strong> Указание этого параметра приводит к блокировке всех таблиц во всех базах данных на время создания полного дампа всех баз данных.</li>
+<li><strong>&mdash;lock-tables, -l</strong> Указание этого параметра приводит к блокировке таблиц базы данных, для которой создается дамп.</li>
+<li><strong>&mdash;no-autocommit</strong> Включает все операторы INSERT, относящиеся к одной таблице, в одну транзакцию, что приводит к увеличению скорости загрузки данных.</li>
+<li><strong>&mdash;no-create-db, -n</strong> Подавляет создание в дампе операторов CREATE DATABASE, которые автоматически добавляются при использовании параметров &mdash;databases и &mdash;all-databases.</li>
+<li><strong>&mdash;no-data, -d</strong> Подавляет создание операторов INSERT в дампе, что может быть полезно при создании дампа структуры базы данных без самих данных.</li>
+<li><strong>&mdash;opt</strong> Параметр предназначен для оптимизации скорости резервирования данных и является сокращением, включающим следующие опции: &mdash;quick &mdash;add-drop-table &mdash;add-locks &mdash;create-options &mdash;disable-keys &mdash;extended-insert &mdash;lock-tables &mdash;set-charset. Начиная с MySQL 4.1, параметр &mdash;opt используется по умолчанию, т.е. все вышеперечисленные параметры включаются по умолчанию, даже если они не указываются. Для того чтобы исключить такое поведение, необходимо воспользоваться параметров &mdash;skip-opt</li>
+<li><strong>&mdash;order-by-primary</strong> Указание параметра приводит к тому. что каждая таблица сортируется по первичному ключу или первому уникальному индексу.</li>
+<li><strong>&mdash;port, -P</strong> Номер TCP порта, используемого для подключения к хосту.</li>
+<li><strong>&mdash;protocol={TCP|SOCKET|PIPE|MEMORY}</strong> Параметр позволяет задать протокол подключения к серверу.</li>
+<li><strong>&mdash;quick, -q</strong> Позволяет начать формирование дампа, не дожидаясь полной загрузки данных с сервера и экономя тем самым память.</li>
+<li><strong>&mdash;quote-names, -Q</strong> Помещает имена баз данных, таблиц и столбцов в обратные апострофы `. Начиная с MySQL 4.1, данный параметр включен по умолчанию.</li>
+<li><strong>&mdash;replace</strong> Добавляет ключевое слово REPLACE в оператор INSERT. Данный параметр впервые появился в MySQL 5.1.3.</li>
+<li><strong>&mdash;result-file=/path/to/file, -r /path/to/file</strong> Параметр направляет дамп в файл file. Этот параметр особенно удобен в Windows, без использования командной строки. когда можно перенаправить результат в файл при помощи последовательностей > и >>.</li>
+<li><strong>&mdash;routines, -R</strong> Данный параметр создает дамп хранимых процедур и функций. Доступен с MySQL 5.1.2.</li>
+<li><strong>&mdash;single-transaction</strong> Параметр создает дамп в виде одной транзакции.</li>
+<li><strong>&mdash;skip-comments</strong> Данный параметр позволяет подавить вывод в дамп дополнительной информации.</li>
+<li><strong>&mdash;socket=/path/to/socket, -S /path/to/socket</strong> Файл сокета для подсоединения к localhost.</li>
+<li><strong>&mdash;tab=/path/, -T /path/</strong> При использовании этого параметра в каталоге path для каждой таблицы создаются два отдельных файла: tbl_name.sql, содержащий оператор CREATE TABLE, и tbl_name.txt, который содержит данные таблиц, разделенные символом табуляции. Формат данных может быть переопределен явно с помощью параметров &mdash;fields-xxx и &mdash;lines-xxx.</li>
+<li><strong>&mdash;tables</strong> Перекрывает действия параметра &mdash;databases (-B). Все аргументы, следующие за этим параметром, трактуются как имена таблиц.</li>
+<li><strong>&mdash;triggers</strong> Создается дамп триггеров. Этот параметр включен по умолчанию. для его отключения следует использовать параметр &mdash;skip-triggers.</li>
+<li><strong>&mdash;events, -E</strong> Создается дамп событий. Смотрите MySQL Event Scheduler или встроенный диспетчер событий в MySQL.</li>
+<li><strong>&mdash;tz-utc</strong> при использовании данного параметра в дамп будет добавлен оператор вида SET TIME_ZONE=&lsquo;+00:00&rsquo;, который позволит обмениваться дампа в различных временных зонах.</li>
+<li><strong>&mdash;verbose, -v</strong> Расширенный режим вывода. Вывод более детальной информации о работе программы.</li>
+<li><strong>&mdash;version, -V</strong> Вывести информацию о версии программы.</li>
+<li><strong>&mdash;where=&lsquo;where-condition&rsquo;, -w &lsquo;where-condition&rsquo;</strong> Выполнить дамп только выбранных записей. Обратите внимание, что кавычки обязательны.</li>
+<li><strong>&mdash;xml, -X</strong> Представляет дамп базы данных в виде XML.</li>
+<li><strong>&mdash;first-slave, -x</strong> Блокирует все таблицы во всех базах данных.</li>
+<li><strong>&mdash;debug=&hellip;, &ndash;#</strong> Отслеживать прохождение программы (для отладки).</li>
+<li><strong>&mdash;help</strong> Вывести справочную информацию и выйти из программы.</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: linux | Ajaxblog]]></title>
+  <link href="http://dordenis.github.io/categories/linux/atom.xml" rel="self"/>
+  <link href="http://dordenis.github.io/"/>
+  <updated>2013-08-13T11:50:20+04:00</updated>
+  <id>http://dordenis.github.io/</id>
+  <author>
+    <name><![CDATA[AjaxBlog]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Превращаем Raspberry Pi в домашний web-server]]></title>
+    <link href="http://dordenis.github.io/linux/raspberry-pi-transform-the-home-web-server/"/>
+    <updated>2013-07-15T20:21:00+04:00</updated>
+    <id>http://dordenis.github.io/linux/raspberry-pi-transform-the-home-web-server</id>
+    <content type="html"><![CDATA[<p>Не так давно приобрел забавную игрушку Raspberry Pi. Я планирую использовать ее в качестве «мозгов» для робота на базе Arduino, но об этом в другой раз. Что бы «малина» не валялась без дела. пока я проектирую робота, решил на базе нее поднять домашний web-server.
+И так приступим…</p>
+
+<!-- more -->
+
+
+<h1>1. Устанавливаем образ “wheezy”</h1>
+
+<p>Скачиваем образ с <a href="http://www.raspberrypi.org/downloads">официального сайта</a>
+Распаковываем, на данный момент это 2013-05-29-wheezy-armel.img
+Подключаем карточку флешь память к компьютеру
+Копируем образ на флеш-карту <strong>dd if=/home/user/Download/2013-05-29-wheezy-armel.img of=/dev/sdN</strong>, где sdN — имя вашей флешь-карточки
+После того как создали образ, заходим в <strong>/etc/network/interfaces</strong> и прописываем сетевые настройки</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>auto lo
+</span><span class='line'>iface lo inet loopback&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;auto eth0
+</span><span class='line'>iface eth0 inet static&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;address 192.168.1.10
+</span><span class='line'>netmask 255.255.255.0
+</span><span class='line'>gateway 192.168.1.1
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h1>2. Настройка операционной системы</h1>
+
+<p>В консоле набираем
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo raspi-config
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+И получаем графическое меню</p>
+
+<p><img src="/images/post/rasbbery_1-627x412.png"></p>
+
+<ul>
+<li><strong>expand_rootfs</strong> — здесь вы можете увеличить root размер на весь размер карты памяти</li>
+<li><strong>change_pass</strong> — смена пароля пользователя «pi». При вводе пароль не отображается. Обязательно нужно сделать</li>
+<li><strong>change_locate</strong> — установка языка системы</li>
+<li><strong>memory_split</strong> — распределение памяти Raspberry Pi ставим 256</li>
+<li><strong>overclock</strong> — разгон процессора Raspberry Pi, ставим Turbo тем более разработчики официально разрешили</li>
+</ul>
+
+
+<p>Остальные настройки по вашему желанию. После этого перегружаемся.
+Не забудем обновить систему, командами
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get update sudo apt-get upgrade
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h1>3. Установка web-server</h1>
+
+<p>Устанавливаем все необходимое
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install nginx
+</span><span class='line'>sudo apt-get install php5-fpm php5-common php5-mysql php5-gd
+</span><span class='line'>sudo apt-get install mysql-server php5-mysql
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Запускаем
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>/etc/init.d/nginx nginx restart /etc/init.d/nginx php5-fpm restart
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Проверяем, набираем в браузере <a href="http://192.168.1.10,">http://192.168.1.10,</a> если все сделали правильно, то должны увидеть надпись <strong>Welcome to nginx!</strong></p>
+
+<h1>4. Настройка web-server</h1>
+
+<p>Создаем файл /etc/nginx/sites-enabled/ajaxblog
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>server <span class="o">{</span>&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;listen 8080;
+</span><span class='line'>
+</span><span class='line'>index index.php index.html;
+</span><span class='line'>
+</span><span class='line'>server_name 192.168.1.10 ajaxblog.ru, www.ajaxblog.ru;
+</span><span class='line'>root /var/www/html/ajaxblog;
+</span><span class='line'>
+</span><span class='line'><span class="c"># Делаем красивые урлы location / {</span>
+</span><span class='line'>    try_files <span class="nv">$uri</span> <span class="nv">$uri</span>/ /index.php?q<span class="o">=</span><span class="nv">$uri</span>&amp;amp;<span class="nv">$args</span>;
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Статичный контент отдаем напрямую с диска location ~* \.(xml|ogg|ogv|svg|svgz|eot|otf|woff|mp4|ttf|css|rss|atom|js|jpg|jpeg|gif|png|ico|zip|tgz|gz|rar|bz2|doc|xls|exe|ppt|tar|mid|midi|wav|bmp|rtf)$ {</span>
+</span><span class='line'>    try_files <span class="nv">$uri</span> <span class="o">=</span>404; access_log off; expires 7d;
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># И наконец обработка php location ~ \.php$ {</span>
+</span><span class='line'>    fastcgi_buffers 8 256k;
+</span><span class='line'>    fastcgi_buffer_size 128k;
+</span><span class='line'>    fastcgi_intercept_errors on;
+</span><span class='line'>
+</span><span class='line'>    include fastcgi_params;
+</span><span class='line'>    fastcgi_pass unix:/var/run/php5-fpm.sock;
+</span><span class='line'><span class="o">}</span>
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;<span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Создаем папку <strong>/var/www/html/ajaxblog</strong> куда заливаем wordpress</p>
+
+<ol>
+<li>Настройка DNS</li>
+</ol>
+
+
+<p>Наш сайт пока мы можем видеть только по локальному адресу <a href="http://192.168.1.10.">http://192.168.1.10.</a>
+Для того чтобы мы могли видеть сайт по доменому имени <a href="http://ajaxblog.ru,">http://ajaxblog.ru,</a> нам нужно:</p>
+
+<p>Прописать DNS запись у регистратора домена
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>@ A X.X.X.X www A X.X.X.X <span class="c"># X.X.X.X &amp;ndash; IP адрес моего провайдера</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Теперь нужно чтобы запрос пришедший на X.X.X.X, был перенаправлен домашним роутером на Raspberry Pi.
+Для этого в админки вашего роутера нужно настроить перенаправление.
+Заходим на вкладку <strong>NAT Setting — Virtual Server</strong></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>Port Range  80
+</span><span class='line'>Local IP    192.168.1.10 <span class="c">#локальный ip Raspberry Pi</span>
+</span><span class='line'>Local Port  80
+</span><span class='line'>Protocol    TCP
+</span><span class='line'>Description HTTP Server
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Через какое-то время обновиться DNS запись у провайдера и можно смело смотреть свой блог по адресу <a href="http://ajaxblog.ru">http://ajaxblog.ru</a></p>
+]]></content>
+  </entry>
+  
+</feed>
