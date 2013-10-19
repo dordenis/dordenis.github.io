@@ -10,11 +10,23 @@
     </url>
     <url>
         <loc>http://dordenis.github.io/yii/multilanguage-website-with-yii/</loc>
-        <lastmod>2013-10-13T01:35:02+04:00</lastmod>
+        <lastmod>2013-10-19T23:27:38+04:00</lastmod>
     </url>
     <url>
-        <loc>http://dordenis.github.io/profiling-php-applications-using-xhgui/</loc>
-        <lastmod>2013-10-19T22:15:43+04:00</lastmod>
+        <loc>http://dordenis.github.io/octopress/creating-plugins-for-octopress/</loc>
+        <lastmod>2013-10-20T01:00:21+04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dordenis.github.io/mysql/cheatsheet-on-mysqldump/</loc>
+        <lastmod>2013-10-20T01:17:57+04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dordenis.github.io/php/uploading-files-to-a-server-using-CURL/</loc>
+        <lastmod>2013-10-20T01:05:08+04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dordenis.github.io/php/profiling-php-applications-using-xhgui/</loc>
+        <lastmod>2013-10-19T23:52:45+04:00</lastmod>
     </url>
     <url>
         <loc>http://dordenis.github.io/robots.txt</loc>
@@ -22,18 +34,22 @@
     </url>
     <url>
         <loc>http://dordenis.github.io/blog/archives/</loc>
-        <lastmod>2013-10-19T22:15:43+04:00</lastmod>
+        <lastmod>2013-10-20T01:17:57+04:00</lastmod>
     </url>
     <url>
         <loc>http://dordenis.github.io/blog/</loc>
-        <lastmod>2013-10-19T22:15:43+04:00</lastmod>
+        <lastmod>2013-10-20T01:17:57+04:00</lastmod>
     </url>
     <url>
         <loc>http://dordenis.github.io/archives/</loc>
-        <lastmod>2013-10-19T22:15:43+04:00</lastmod>
+        <lastmod>2013-10-20T01:17:57+04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://dordenis.github.io/resume/</loc>
+        <lastmod>2013-10-20T00:36:17+04:00</lastmod>
     </url>
     <url>
         <loc>http://dordenis.github.io/</loc>
-        <lastmod>2013-10-19T22:15:43+04:00</lastmod>
+        <lastmod>2013-10-20T01:17:57+04:00</lastmod>
     </url>
 </urlset>

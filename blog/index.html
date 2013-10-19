@@ -107,7 +107,7 @@ $(document).ready(
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/profiling-php-applications-using-xhgui/">
+		<a href="/php/profiling-php-applications-using-xhgui/">
 		
 			Профайлинг приложения PHP с помощью XHGui</a>
 	</h2>
@@ -122,7 +122,7 @@ XHGui призван улучшить интерфейс для доступа �
 
 
 		
-		<a href="/profiling-php-applications-using-xhgui/" class="more-link">Дальше интереснее &rarr;</a>
+		<a href="/php/profiling-php-applications-using-xhgui/" class="more-link">Дальше интереснее &rarr;</a>
 	</div>
 
 
@@ -141,6 +141,164 @@ XHGui призван улучшить интерфейс для доступа �
 
 <time datetime="2013-10-19T21:53:00+04:00" pubdate data-updated="true">19 Октября 2013</time></div>
 	<div class="tags">
+
+
+	<a class='category' href='/categories/php/'>php</a>
+
+
+</div>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/php/uploading-files-to-a-server-using-CURL/">
+		
+			Загрузка файлов на сервер с помощью CURL</a>
+	</h2>
+	<div class="entry-content">
+		<p>Для одного из проектов нужно было загрузить файлы на сервер, с использованием CURL.</p>
+
+<p>Делается это так:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;image&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;@{$full_path_file}&#39;</span><span class="p">);</span> <span class="c1">//полный путь до файла</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="s1">&#39;http://localhost/upload.php&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>На локальном сервере работало на ура, но когда я залил на сервер клиента, все перестала работать.</p>
+
+
+		
+		<a href="/php/uploading-files-to-a-server-using-CURL/" class="more-link">Дальше интереснее &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-13T00:00:00+04:00" pubdate data-updated="true">13 Августа 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/categories/php/'>php</a>
+
+
+</div>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/mysql/cheatsheet-on-mysqldump/">
+		
+			Шпарагалка по Mysqldump</a>
+	</h2>
+	<div class="entry-content">
+		<p>Утилита mysqldump позволяет получить дамп содержимого базы данных или совокупности баз для создания резервной копии или пересылки данных на другой SQL-сервер (не обязательно MySQL-сервер). Дамп будет содержать набор команд SQL для создания и/или заполнения таблиц.</p>
+
+<p>Так же mysqldump имеет возможность развертывания баз данных из созданного sql-файла.</p>
+
+
+		
+		<a href="/mysql/cheatsheet-on-mysqldump/" class="more-link">Дальше интереснее &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-05T00:00:00+04:00" pubdate data-updated="true"> 5 Августа 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/categories/mysql/'>mysql</a>
+
+
+</div>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/octopress/creating-plugins-for-octopress/">
+		
+			Создание плагинов для Octopress</a>
+	</h2>
+	<div class="entry-content">
+		<p>Octopress идет с несколькими предустановленными плагинами. Которые охватывают практически все аспекты блоггерства, от категории до видео. Плагины можно легко создавать, расширяя базовый функционал Octopress. Создадим плагин который добавит новый тег для шаблонизатора Liquid.</p>
+
+<p>В качестве примера, создадим новый тег, который позволит вставлять картинки размещенные на S3 Amazon.</p>
+
+<p>Создадим файл s3_image_tag.rb.</p>
+
+
+		
+		<a href="/octopress/creating-plugins-for-octopress/" class="more-link">Дальше интереснее &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-22T10:10:00+04:00" pubdate data-updated="true">22 Июля 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/categories/octopress/'>octopress</a>
+
 
 </div>
 	
@@ -284,7 +442,7 @@ XHGui призван улучшить интерфейс для доступа �
             <div class="row-fluid">
     <span class="span12"><section>
   <h3>Категории</h3>
-    <ul id="category-list"><li><a href='/categories/linux'>linux (1)</a></li><li><a href='/categories/octopress'>octopress (1)</a></li><li><a href='/categories/yii'>yii (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/categories/linux'>linux (1)</a></li><li><a href='/categories/mysql'>mysql (1)</a></li><li><a href='/categories/octopress'>octopress (2)</a></li><li><a href='/categories/php'>php (2)</a></li><li><a href='/categories/yii'>yii (1)</a></li></ul>
 </section>
 </span>
 </div>
