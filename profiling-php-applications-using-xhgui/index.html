@@ -1,0 +1,341 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Профайлинг приложения PHP с помощью XHGui | Ajaxblog</title>
+
+<meta name="author" content="AjaxBlog">
+
+<meta name="description" content="Профайлинг &ndash; средство, редко используется в обычной практике разработки приложения.
+Потребность в нем возникает, когда наше приложения &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Ajaxblog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="/stylesheets/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 7]><link href="/stylesheets/font-awesome-ie7.css" rel="stylesheet" type="text/css"><![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">Ajaxblog</a></h1>
+<h4></h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Блог</a></li>
+	<li><a href="/resume">Резюме</a></li>
+	<!-- li><a href="/portfolio">Portfolio</a></li -->
+	<li><a href="/archives">Архив</a></li>
+	<li><i class="icon icon-rss"></i> <a href="/atom.xml">RSS</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Блог</a></li>
+	<li><a href="/resume">Резюме</a></li>
+	<!-- li><a href="/portfolio">Portfolio</a></li -->
+	<li><a href="/archives">Архив</a></li>
+	<li><i class="icon icon-rss"></i> <a href="/atom.xml">RSS</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:dordenis.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Профайлинг приложения PHP с помощью XHGui</h2>
+	<div class="entry-content"><p>Профайлинг &ndash; средство, редко используется в обычной практике разработки приложения.
+Потребность в нем возникает, когда наше приложения находиться под нагрузкой, и мы хотим понять какое место в коде тормозит работы его.</p>
+
+<p>На данный момент у нас есть два отличный инструмента для профайлинга. Одно от Derick Rethans &ndash; Xdebug, другое от  Facebook &ndash; XHProf.</p>
+
+<p>Мы остановимся на XHProf, отличный инструмент, но с неудобным интерфейсом.
+XHGui призван улучшить интерфейс для доступа к данным, сделать его приятным для использования.</p>
+
+<!-- more -->
+
+
+<h1>Установка XHProf</h1>
+
+<p>Давайте установим XHGui и все необходимые для его работы компоненты.
+Вам нужно MongoDB, PHP, и PECL.</p>
+
+<p>Прежде всего, давайте установим MongoDB.</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install mongodb
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Нам также понадобится библиотека PHP для MongoDB &ndash; в репозиториях, как правило устаревшие версии, лучше взять из Pecl.
+Если вы еще не установили pecl, сделайте это с помощью команды:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install php-pear
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Установим библиотеку PHP для работы с MongoDB:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo pecl install mongo
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Не забудем создать файл со следующим содержанием /etc/php5/mods-available/mongo.ini:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">extension</span> <span class="o">=</span> mongo.so
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Устанавливаем сам xhprof</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo pecl install xhprof-beta
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Создаем файл /etc/php5/mods-available/xhprof.ini:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">extension</span> <span class="o">=</span> xhprof.so
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Не забудем перезапустить веб сервер.</p>
+
+<ul>
+<li>Настройка XHGui</li>
+</ul>
+
+
+<p>XHGui можно скачать с <a href="link%20https://github.com/preinheimer/xhgui">GitHub</a>.</p>
+
+<p>Устанавливаем для директории cache доступ для записи и запускаем скрипт установки:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>php install.php
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Если вы сделали все правильно то должны увидеть следующею картинку.</p>
+
+<p><img src="/images/post/xhprof/xhprof-1.png"></p>
+
+<h1>Включение XHGui для вашего хоста</h1>
+
+<p>Для того чтобы XHGui начал профайлинг вашего сайта, настроим добавим следующие настройки</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;VirtualHost *:80&gt;
+</span><span class='line'>    ServerName example.local
+</span><span class='line'>
+</span><span class='line'>    DocumentRoot /var/www/example/htdocs/
+</span><span class='line'>    php_admin_value auto_prepend_file /var/www/xhgui/external/header.php
+</span><span class='line'>
+</span><span class='line'>    &lt;Directory /var/www/example/htdocs/&gt;
+</span><span class='line'>        Options FollowSymLinks Indexes
+</span><span class='line'>        AllowOverride All
+</span><span class='line'>     &lt;/Directory&gt;
+</span><span class='line'>&lt;/VirtualHost&gt;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>С этого момента можно посылать запросы на ваш сайт, или запустить нагрузочное тестирование с помощью Apache Bench.</p>
+
+<h1>Получения ваших данных</h1>
+
+<p><img src="/images/post/xhprof/xhprof-2.png"></p>
+
+<p>XHGui отобразит список запросов, которые были обращены к сайту. Столбцы указаны:
+* URL  &ndash; адрес запроса
+* Time  &ndash; когда был сделан запрос
+* Wall Time &ndash; сколько времени занял запрос
+* CPU &ndash; нагрузка процессора
+* Memory used &ndash; память использовано
+* Peak memory usage &ndash; пиковое использование памяти</p>
+
+<p>Вы можете всегда получить боле подробную информацию о каждом запросе.</p>
+
+<p><img src="/images/post/xhprof/xhprof-3.png"></p>
+
+<p><img src="/images/post/xhprof/xhprof-4.png"></p>
+
+<p>Другим информативным (и невероятно симпатичный) XHGui особенностью является CallGraph, он показывает вам, затраты времени в виде графа:</p>
+
+<p><img src="/images/post/xhprof/xhprof-5.png"></p>
+
+<h1>Интерпретации данных</h1>
+
+<p>Имея много статистических данных легко в них запутаться, трудно понять, с чего начать.</p>
+
+<p>Попробовать следующий подход:
+* Отсортировать функции по использование CPU (по убыванию), и посмотреть на самые ресурсозатратные запросы.
+* Проанализировать затратные запросы и попытаться оптимизировать их.</p>
+
+<p>После того как вы внесли некоторые изменения, заново провести профайлинг и посмотреть на получившиеся улучшения.
+XHGui имеет встроенные способы очень элегантно сравнить работает, просто нажмите на кнопку &ldquo;Compare this run&rdquo;.</p>
+
+<p><img src="/images/post/xhprof/xhprof-6.png"></p>
+
+<p>Повторяя этот процесс раз за разом, вы сможете добиться того что отклик вашего приложения на запрос пользователя будет минимальным.  Что вызовет комфорт работы пользователя с ним.</p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-19T21:53:00+04:00" pubdate data-updated="true">19 Октября 2013</time></div>
+	<div class="tags">
+
+</div>
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+
+    <footer id="footer">
+        <div class="inner">
+            <div class="row-fluid">
+    <span class="span12"><section>
+  <h3>Категории</h3>
+    <ul id="category-list"><li><a href='/categories/linux'>linux (1)</a></li><li><a href='/categories/octopress'>octopress (1)</a></li><li><a href='/categories/yii'>yii (1)</a></li></ul>
+</section>
+</span>
+</div>
+            <div class="copyright">
+    Copyright &copy; 2013
+    
+        AjaxBlog
+    
+    Powered by Octopress.
+</div>
+        </div>
+    </footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'ajaxblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://dordenis.github.io/profiling-php-applications-using-xhgui/';
+        var disqus_url = 'http://dordenis.github.io/profiling-php-applications-using-xhgui/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+</body>
+</html>
