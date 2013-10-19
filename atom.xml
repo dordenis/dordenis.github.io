@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Ajaxblog]]></title>
+  <link href="http://dordenis.github.io/atom.xml" rel="self"/>
+  <link href="http://dordenis.github.io/"/>
+  <updated>2013-10-19T22:54:51+04:00</updated>
+  <id>http://dordenis.github.io/</id>
+  <author>
+    <name><![CDATA[AjaxBlog]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Профайлинг приложения PHP с помощью XHGui]]></title>
+    <link href="http://dordenis.github.io/profiling-php-applications-using-xhgui/"/>
+    <updated>2013-10-19T21:53:00+04:00</updated>
+    <id>http://dordenis.github.io/profiling-php-applications-using-xhgui</id>
+    <content type="html"><![CDATA[<p>Профайлинг &ndash; средство, редко используется в обычной практике разработки приложения.
+Потребность в нем возникает, когда наше приложения находиться под нагрузкой, и мы хотим понять какое место в коде тормозит работы его.</p>
+
+<p>На данный момент у нас есть два отличный инструмента для профайлинга. Одно от Derick Rethans &ndash; Xdebug, другое от  Facebook &ndash; XHProf.</p>
+
+<p>Мы остановимся на XHProf, отличный инструмент, но с неудобным интерфейсом.
+XHGui призван улучшить интерфейс для доступа к данным, сделать его приятным для использования.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Мультиязычный сайт с помощью Yii]]></title>
+    <link href="http://dordenis.github.io/yii/multilanguage-website-with-yii/"/>
+    <updated>2013-07-21T15:33:00+04:00</updated>
+    <id>http://dordenis.github.io/yii/multilanguage-website-with-yii</id>
+    <content type="html"><![CDATA[<p>Для одного из проекта, возникла необходимость в организации поддержки мультиязычности на сайте. Причем URL должны быть в определенном виде:</p>
+
+<p><a href="http://site.ru/ru/contacts">http://site.ru/ru/contacts</a> для русского языка  <br/>
+<a href="http://site.ru/en/contacts">http://site.ru/en/contacts</a> для английского языка</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress - блоггинг для гиков]]></title>
+    <link href="http://dordenis.github.io/octopress/octopress-blogging-for-geeks/"/>
+    <updated>2013-07-18T20:20:00+04:00</updated>
+    <id>http://dordenis.github.io/octopress/octopress-blogging-for-geeks</id>
+    <content type="html"><![CDATA[<p>Меня всем устраивал мой маленький блог на Rasberry Pi, пока жестокая реальность не напомнила мне в какой стране я живу. После аварийных выключений света, у меня убился раздел на флешки с установленной ОС. Переустанавливать было лень, и я прекрасно понимал, что это не последняя переустановка. Нужно искать другой вариант&hellip; на горизонте появился Octopress.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Превращаем Raspberry Pi в домашний web-server]]></title>
+    <link href="http://dordenis.github.io/linux/raspberry-pi-transform-the-home-web-server/"/>
+    <updated>2013-07-15T20:21:00+04:00</updated>
+    <id>http://dordenis.github.io/linux/raspberry-pi-transform-the-home-web-server</id>
+    <content type="html"><![CDATA[<p>Не так давно приобрел забавную игрушку Raspberry Pi. Я планирую использовать ее в качестве «мозгов» для робота на базе Arduino, но об этом в другой раз. Что бы «малина» не валялась без дела. пока я проектирую робота, решил на базе нее поднять домашний web-server.
+И так приступим…</p>
+
+]]></content>
+  </entry>
+  
+</feed>
