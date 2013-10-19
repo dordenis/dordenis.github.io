@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Мультиязычный сайт с помощью Yii
-sug: test
 date: 2013-07-21 15:33
 comments: true
 categories: yii
