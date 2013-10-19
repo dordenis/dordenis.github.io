@@ -3,7 +3,7 @@ layout: post
 title: Профайлинг приложения PHP с помощью XHGui
 date: 2013-10-19 21:53
 comments: true
-categories:php
+categories: php
 tags: [php, xhgui]
 ---
 
