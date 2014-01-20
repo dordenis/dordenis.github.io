@@ -4,7 +4,7 @@
   <title><![CDATA[Ajaxblog]]></title>
   <link href="http://dordenis.github.io/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2013-10-20T01:30:42+04:00</updated>
+  <updated>2014-01-21T01:11:46+04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[AjaxBlog]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Темы для Bootstrap 3]]></title>
+    <link href="http://dordenis.github.io/bootstrap/themes-for-bootstrap-3/"/>
+    <updated>2014-01-21T00:18:00+04:00</updated>
+    <id>http://dordenis.github.io/bootstrap/themes-for-bootstrap-3</id>
+    <content type="html"><![CDATA[<ul>
+<li><h3>First &ndash; Mobile First Web App Theme</h3>
+
+<p><img src="http://dordenis.github.io/images/post/themes/first.png">
+<a href="http://themeforest.net/item/first-mobile-first-web-app-theme/5002403?WT.ac=portfolio_item&amp;WT.seg_1=portfolio_item&amp;WT.z_author=Flatfull">Buy</a>
+<a href="http://flatfull.com/themes/first/index.html">Demo</a></p></li>
+</ul>
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Профайлинг приложения PHP с помощью XHGui]]></title>
