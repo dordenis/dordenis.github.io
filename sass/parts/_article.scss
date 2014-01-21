@@ -49,6 +49,11 @@ article {
             border-bottom: 1px solid $color-blue2;
         }
 
+	 a.fancybox:hover {
+		text-decoration: none;
+		border-bottom-width: 0px;
+	}
+
         .more-link {
             display: block;
             margin-top: 16px;
