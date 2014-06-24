@@ -4,7 +4,7 @@
   <title><![CDATA[Ajaxblog]]></title>
   <link href="http://dordenis.github.io/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-01-22T00:41:35+04:00</updated>
+  <updated>2014-06-24T23:33:18+04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[AjaxBlog]]></name>
@@ -12,6 +12,18 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Как настроить динамические виртуальные хосты для веб-разработки]]></title>
+    <link href="http://dordenis.github.io/linux/how-to-set-up-dynamic-virtual-hosts-for-web-development/"/>
+    <updated>2014-06-22T20:21:00+04:00</updated>
+    <id>http://dordenis.github.io/linux/how-to-set-up-dynamic-virtual-hosts-for-web-development</id>
+    <content type="html"><![CDATA[<p>После того как умер мой винчестер на ноутбуки и встала проблема заново поднять рабочее окружение, я задумался о том, чтобы использовать в качестве такого, образ на виртуальной машины.  Данная тема, довольно старая, все не как не доходили руки. Но коль делать все правильно, решил заодно решить проблему автоматически создания виртуальных хостов под проекты.</p>
+
+<p>Что это дает, мы создаем папку с названием проекта myproject  и сразу имеем доступ к нему по адресу <a href="http://">http://</a> myproject.dev, не плохо правда.</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Темы для Bootstrap 3]]></title>
