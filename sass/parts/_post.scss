@@ -1,5 +1,6 @@
 .post{
 	 .entry-content{
+        position: relative;
 		margin-left: 260px;
 		@media screen and (max-width: 620px){
 			margin-left: 0px;
@@ -10,7 +11,8 @@
 	}
 	.meta{
 		position: absolute;
-		top: 82px;
+		top: 0;
+        left: -260px;
 		line-height: 2;
 		font-size: 0.9em;
 		color: #333;
