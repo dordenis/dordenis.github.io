@@ -1,0 +1,173 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Category: ngnix | Ajaxblog</title>
+
+<meta name="author" content="AjaxBlog">
+
+<meta name="description" content="Category: ngnix"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Ajaxblog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+	<link href="/stylesheets/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 7]><link href="/stylesheets/font-awesome-ie7.css" rel="stylesheet" type="text/css"><![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">Ajaxblog</a></h1>
+<h4></h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Блог</a></li>
+	<li><a href="/resume">Резюме</a></li>
+	<!-- li><a href="/portfolio">Portfolio</a></li -->
+	<li><a href="/archives">Архив</a></li>
+	<li><i class="icon icon-rss"></i> <a href="/atom.xml">RSS</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Блог</a></li>
+	<li><a href="/resume">Резюме</a></li>
+	<!-- li><a href="/portfolio">Portfolio</a></li -->
+	<li><a href="/archives">Архив</a></li>
+	<li><i class="icon icon-rss"></i> <a href="/atom.xml">RSS</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:dordenis.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner">
+	
+
+
+	
+	
+	<section class="archives"><h1 class="year">2014</h1>
+
+<article>
+	<h2 class="title"><a href="/ngnix/how-to-monitor-nginx-from-the-command-line-in-real-time/">Как в реальном времени мониторить работы Ngnix</a></h2>
+    <span class="month">10 Июля</span>
+	<div class="meta">
+		<span class="tags">
+
+
+	<a class='category' href='/categories/ngnix/'>ngnix</a>
+
+
+</span>
+	    
+	</div>
+</article>
+
+</div>
+
+    <footer id="footer">
+        <div class="inner">
+            <div class="row-fluid">
+    <span class="span12"><section>
+  <h3>Категории</h3>
+    <ul id="category-list"><li><a href='/categories/bootstrap'>bootstrap (1)</a></li><li><a href='/categories/linux'>linux (2)</a></li><li><a href='/categories/mysql'>mysql (1)</a></li><li><a href='/categories/ngnix'>ngnix (1)</a></li><li><a href='/categories/octopress'>octopress (2)</a></li><li><a href='/categories/php'>php (2)</a></li><li><a href='/categories/yii'>yii (1)</a></li></ul>
+</section>
+</span>
+</div>
+            <div class="copyright">
+    Copyright &copy; 2014
+    
+        AjaxBlog
+    
+    Powered by Octopress.
+</div>
+        </div>
+    </footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'ajaxblog';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+</body>
+</html>

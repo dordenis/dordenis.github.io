@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: curl | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/curl/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-06-24T23:42:38+04:00</updated>
+  <updated>2014-09-23T05:18:48-04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[AjaxBlog]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Загрузка файлов на сервер с помощью CURL]]></title>
     <link href="http://dordenis.github.io/php/uploading-files-to-a-server-using-CURL/"/>
-    <updated>2013-08-13T00:00:00+04:00</updated>
+    <updated>2013-08-13T00:00:00-04:00</updated>
     <id>http://dordenis.github.io/php/uploading-files-to-a-server-using-CURL</id>
     <content type="html"><![CDATA[<p>Для одного из проектов нужно было загрузить файлы на сервер, с использованием CURL.</p>
 

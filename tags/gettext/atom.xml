@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: gettext | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/gettext/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-06-24T23:42:38+04:00</updated>
+  <updated>2014-09-23T05:18:48-04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[AjaxBlog]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Мультиязычный сайт с помощью Yii]]></title>
     <link href="http://dordenis.github.io/yii/multilanguage-website-with-yii/"/>
-    <updated>2013-07-21T15:33:00+04:00</updated>
+    <updated>2013-07-21T15:33:00-04:00</updated>
     <id>http://dordenis.github.io/yii/multilanguage-website-with-yii</id>
     <content type="html"><![CDATA[<p>Для одного из проекта, возникла необходимость в организации поддержки мультиязычности на сайте. Причем URL должны быть в определенном виде:</p>
 

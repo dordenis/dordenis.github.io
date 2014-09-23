@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ngnix | Ajaxblog]]></title>
+  <link href="http://dordenis.github.io/categories/ngnix/atom.xml" rel="self"/>
+  <link href="http://dordenis.github.io/"/>
+  <updated>2014-09-23T05:18:48-04:00</updated>
+  <id>http://dordenis.github.io/</id>
+  <author>
+    <name><![CDATA[AjaxBlog]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Как в реальном времени мониторить работы Ngnix]]></title>
+    <link href="http://dordenis.github.io/ngnix/how-to-monitor-nginx-from-the-command-line-in-real-time/"/>
+    <updated>2014-07-10T20:21:00-04:00</updated>
+    <id>http://dordenis.github.io/ngnix/how-to-monitor-nginx-from-the-command-line-in-real-time</id>
+    <content type="html"><![CDATA[<p>После того, как веб-сервер Nginx запущен, вы хотите мониторить его работу в режиме реального времени.
+На данный момент, средств выполняющих данную функцию довольно много. Например, Nagios, Zabbix, Munin и другие.</p>
+
+<p>Однако, если вам не нужно простое средство не требующий сложной настройки, предлагаю обратить на ngxtop.</p>
+
+<p>Вы сразу же сказать, что ngxtop (как его имя и интерфейса) основывается на команде знаменитого началу.
+Ngxtop парсит журнал логов Nginx (он также может работать с логами Apache2), и красиво выводить результаты в консоле в режиме реального времени.</p>
+
+<!-- more -->
+
+
+<h1>1. Установка</h1>
+
+<p>Ставим ngxtop</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install ngxtop
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h1>1. Использование</h1>
+
+<p>Базовое использование ngxtop выглядит следующим образом.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>ngxtop <span class="o">[</span>options<span class="o">]</span>
+</span><span class='line'>ngxtop <span class="o">[</span>options<span class="o">]</span> <span class="o">(</span>print|top|avg|sum<span class="o">)</span> &lt;var&gt;
+</span><span class='line'>ngxtop info
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Вот некоторые из распространенных вариантов.</p>
+
+<ul>
+<li><em>-l <file></em>: полный путь к файлу журнала доступа (Nginx или Apache2)</li>
+<li><em>-f <format></em>: формат журнала доступа</li>
+<li><em>&mdash;no-follow</em>: обработки текущего файла журнала снимок, вместо новых линий, как они написаны в файл журнала в режиме реального времени</li>
+<li><em>-t <seconds></em>: интервал обновления</li>
+<li><em>-n <number></em>: число строк в дисплее</li>
+<li><em>-o <var></em>: критерии заказа (по умолчанию: count)</li>
+<li><em>-a &lt;ехр> &hellip;, &mdash;a &lt;ехр> &hellip;</em>: агрегации sum, avg, min, max, и т.д.</li>
+<li><em>-v</em>: подробный вывод</li>
+<li><em>-i &lt;filter-expression></em>: обрабатывать только записи сочетается с фильтром</li>
+</ul>
+
+
+<p>Вот встроенные переменные (представленные как <var> в выше).</p>
+
+<ul>
+<li>body_bytes_send</li>
+<li>HTTP_REFERER</li>
+<li>HTTP_USER_AGENT</li>
+<li>remote_addr</li>
+<li>remote_user</li>
+<li>request</li>
+<li>status</li>
+<li>time_local</li>
+</ul>
+
+
+<h1>2. Мониторинг Nginx с помощью ngxtop</h1>
+
+<p>По умолчанию, ngxtop попытается определить местоположение журнала доступа Nginx с его конфигурационном файле (/etc/nginx/nginx.conf).
+Таким образом, для мониторинга Nginx, просто запустите:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>ngxtop
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Он будет отображать 10 запросов, обслуживаемых Nginx, отсортированные по количеству запросов.
+Для отображения топ-20 самых частых запросов:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>ngxtop -n 20
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><img src="/images/post/ngxtop/ngxtop_1.jpg"></p>
+
+<p>Чтобы получить информацию о Nginx (включая имеющиеся переменной информации):</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>ngxtop info
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><img src="/images/post/ngxtop/ngxtop_2.jpg"></p>
+
+<p>Можно настроить переменные просмотров. Для этого, просто перечислить переменные интересующие Вас. Команда &ldquo;print&rdquo; будет отображать индивидуальные запросы.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>ngxtop print request http_user_agent remote_addr
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><img src="/images/post/ngxtop/ngxtop_3.jpg"></p>
+
+<p>Для отображения топ IP-адреса клиентов:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>ngxtop top remote_addr
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><img src="/images/post/ngxtop/ngxtop_4.jpg"></p>
+
+<p>Для отображения запросов со статусом 404:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>ngxtop -i &amp;lsquo;status <span class="o">==</span> 404&amp;rsquo; print request status
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><img src="/images/post/ngxtop/ngxtop_5.jpg"></p>
+
+<p>Кроме Nginx, ngxtop способна обрабатывать другие файлы журналов, таких как журналы доступа Apache. Для мониторинга веб-сервер Apache, используйте следующую команду:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>tail -f /var/log/apache2/access.log | ngxtop -f common
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>

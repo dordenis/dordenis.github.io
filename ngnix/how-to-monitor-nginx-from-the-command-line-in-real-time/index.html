@@ -1,0 +1,301 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Как в реальном времени мониторить работы Ngnix | Ajaxblog</title>
+
+<meta name="author" content="AjaxBlog">
+
+<meta name="description" content="После того, как веб-сервер Nginx запущен, вы хотите мониторить его работу в режиме реального времени.
+На данный момент, средств выполняющих данную &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Ajaxblog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+	<link href="/stylesheets/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.css" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 7]><link href="/stylesheets/font-awesome-ie7.css" rel="stylesheet" type="text/css"><![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">Ajaxblog</a></h1>
+<h4></h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Блог</a></li>
+	<li><a href="/resume">Резюме</a></li>
+	<!-- li><a href="/portfolio">Portfolio</a></li -->
+	<li><a href="/archives">Архив</a></li>
+	<li><i class="icon icon-rss"></i> <a href="/atom.xml">RSS</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Блог</a></li>
+	<li><a href="/resume">Резюме</a></li>
+	<!-- li><a href="/portfolio">Portfolio</a></li -->
+	<li><a href="/archives">Архив</a></li>
+	<li><i class="icon icon-rss"></i> <a href="/atom.xml">RSS</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:dordenis.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Как в реальном времени мониторить работы Ngnix</h2>
+	<div class="entry-content"><p>После того, как веб-сервер Nginx запущен, вы хотите мониторить его работу в режиме реального времени.
+На данный момент, средств выполняющих данную функцию довольно много. Например, Nagios, Zabbix, Munin и другие.</p>
+
+<p>Однако, если вам не нужно простое средство не требующий сложной настройки, предлагаю обратить на ngxtop.</p>
+
+<p>Вы сразу же сказать, что ngxtop (как его имя и интерфейса) основывается на команде знаменитого началу.
+Ngxtop парсит журнал логов Nginx (он также может работать с логами Apache2), и красиво выводить результаты в консоле в режиме реального времени.</p>
+
+<!-- more -->
+
+
+<h1>1. Установка</h1>
+
+<p>Ставим ngxtop</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install ngxtop
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>1. Использование</h1>
+
+<p>Базовое использование ngxtop выглядит следующим образом.</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>ngxtop <span class="o">[</span>options<span class="o">]</span>
+</span><span class='line'>ngxtop <span class="o">[</span>options<span class="o">]</span> <span class="o">(</span>print|top|avg|sum<span class="o">)</span> &lt;var&gt;
+</span><span class='line'>ngxtop info
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Вот некоторые из распространенных вариантов.</p>
+
+<ul>
+<li><em>-l <file></em>: полный путь к файлу журнала доступа (Nginx или Apache2)</li>
+<li><em>-f <format></em>: формат журнала доступа</li>
+<li><em>&mdash;no-follow</em>: обработки текущего файла журнала снимок, вместо новых линий, как они написаны в файл журнала в режиме реального времени</li>
+<li><em>-t <seconds></em>: интервал обновления</li>
+<li><em>-n <number></em>: число строк в дисплее</li>
+<li><em>-o <var></em>: критерии заказа (по умолчанию: count)</li>
+<li><em>-a &lt;ехр> &hellip;, &mdash;a &lt;ехр> &hellip;</em>: агрегации sum, avg, min, max, и т.д.</li>
+<li><em>-v</em>: подробный вывод</li>
+<li><em>-i &lt;filter-expression></em>: обрабатывать только записи сочетается с фильтром</li>
+</ul>
+
+
+<p>Вот встроенные переменные (представленные как <var> в выше).</p>
+
+<ul>
+<li>body_bytes_send</li>
+<li>HTTP_REFERER</li>
+<li>HTTP_USER_AGENT</li>
+<li>remote_addr</li>
+<li>remote_user</li>
+<li>request</li>
+<li>status</li>
+<li>time_local</li>
+</ul>
+
+
+<h1>2. Мониторинг Nginx с помощью ngxtop</h1>
+
+<p>По умолчанию, ngxtop попытается определить местоположение журнала доступа Nginx с его конфигурационном файле (/etc/nginx/nginx.conf).
+Таким образом, для мониторинга Nginx, просто запустите:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>ngxtop
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Он будет отображать 10 запросов, обслуживаемых Nginx, отсортированные по количеству запросов.
+Для отображения топ-20 самых частых запросов:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>ngxtop -n 20
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/post/ngxtop/ngxtop_1.jpg"></p>
+
+<p>Чтобы получить информацию о Nginx (включая имеющиеся переменной информации):</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>ngxtop info
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/post/ngxtop/ngxtop_2.jpg"></p>
+
+<p>Можно настроить переменные просмотров. Для этого, просто перечислить переменные интересующие Вас. Команда &ldquo;print&rdquo; будет отображать индивидуальные запросы.</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>ngxtop print request http_user_agent remote_addr
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/post/ngxtop/ngxtop_3.jpg"></p>
+
+<p>Для отображения топ IP-адреса клиентов:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>ngxtop top remote_addr
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/post/ngxtop/ngxtop_4.jpg"></p>
+
+<p>Для отображения запросов со статусом 404:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>ngxtop -i <span class="s1">&#39;status == 404&#39;</span> print request status
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/post/ngxtop/ngxtop_5.jpg"></p>
+
+<p>Кроме Nginx, ngxtop способна обрабатывать другие файлы журналов, таких как журналы доступа Apache. Для мониторинга веб-сервер Apache, используйте следующую команду:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>tail -f /var/log/apache2/access.log | ngxtop -f common
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+
+    <footer id="footer">
+        <div class="inner">
+            <div class="row-fluid">
+    <span class="span12"><section>
+  <h3>Категории</h3>
+    <ul id="category-list"><li><a href='/categories/bootstrap'>bootstrap (1)</a></li><li><a href='/categories/linux'>linux (2)</a></li><li><a href='/categories/mysql'>mysql (1)</a></li><li><a href='/categories/ngnix'>ngnix (1)</a></li><li><a href='/categories/octopress'>octopress (2)</a></li><li><a href='/categories/php'>php (2)</a></li><li><a href='/categories/yii'>yii (1)</a></li></ul>
+</section>
+</span>
+</div>
+            <div class="copyright">
+    Copyright &copy; 2014
+    
+        AjaxBlog
+    
+    Powered by Octopress.
+</div>
+        </div>
+    </footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'ajaxblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://dordenis.github.io/ngnix/how-to-monitor-nginx-from-the-command-line-in-real-time/';
+        var disqus_url = 'http://dordenis.github.io/ngnix/how-to-monitor-nginx-from-the-command-line-in-real-time/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+</body>
+</html>
