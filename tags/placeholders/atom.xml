@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: placeholders | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/placeholders/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-10-06T07:14:17-04:00</updated>
+  <updated>2014-10-06T07:22:55-04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[AjaxBlog]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Изображения для заполнения пространства при верстке.]]></title>
     <link href="http://dordenis.github.io/fronted/image-placeholders/"/>
-    <updated>2014-07-10T20:21:00-04:00</updated>
+    <updated>2014-09-12T20:21:00-04:00</updated>
     <id>http://dordenis.github.io/fronted/image-placeholders</id>
     <content type="html"><![CDATA[<p>Каждый верстальшик использовал lorem ipsum для заполнения «рыбы» при верстки проекта.</p>
 
@@ -25,7 +25,7 @@
 <!-- more -->
 
 
-<h1><strong>placephant.com</strong> &ndash; универсальные изображения</h1>
+<h3><strong>placephant.com</strong> &ndash; изображения phpstyle</h3>
 
 <p>{% codeblock lang:html %}
 <img src="http://placephant.com/300/200">
@@ -41,27 +41,21 @@
 {% img <a href="http://placephant.com/100/200?filter=bw">http://placephant.com/100/200?filter=bw</a> %}
 {% img <a href="http://placephant.com/v/100/200">http://placephant.com/v/100/200</a> %}</p>
 
-<h1><strong>fakeimg.pl</strong> &ndash; изображения с текстом</h1>
+<h3><strong>fakeimg.pl</strong> &ndash; изображения с текстом</h3>
 
 <p>{% codeblock lang:html %}
 <img src="http://fakeimg.pl/300/">
 <img src="http://fakeimg.pl/250x100/">
 <img src="http://fakeimg.pl/250x100/ff0000/">
-<img src="http://fakeimg.pl/350x200/ff0000/000">
-<img src="http://fakeimg.pl/350x200/ff0000,128/000,255">
 <img src="http://fakeimg.pl/350x200/?text=Hello">
-<img src="http://fakeimg.pl/350x200/?text=World&font=lobster">
 {% endcodeblock %}</p>
 
 <p>{% img <a href="http://fakeimg.pl/300/">http://fakeimg.pl/300/</a> %}
 {% img <a href="http://fakeimg.pl/250x100/">http://fakeimg.pl/250x100/</a> %}
 {% img <a href="http://fakeimg.pl/250x100/ff0000/">http://fakeimg.pl/250x100/ff0000/</a> %}
-{% img <a href="http://fakeimg.pl/350x200/ff0000/000">http://fakeimg.pl/350x200/ff0000/000</a> %}
-{% img <a href="http://fakeimg.pl/350x200/ff0000,128/000,255">http://fakeimg.pl/350x200/ff0000,128/000,255</a> %}
-{% img <a href="http://fakeimg.pl/350x200/?text=Hello">http://fakeimg.pl/350x200/?text=Hello</a> %}
-{% img <a href="http://fakeimg.pl/350x200/?text=World&amp;font=lobster">http://fakeimg.pl/350x200/?text=World&amp;font=lobster</a> %}</p>
+{% img <a href="http://fakeimg.pl/350x200/?text=Hello">http://fakeimg.pl/350x200/?text=Hello</a> %}</p>
 
-<h1><strong>lorempixel.com</strong> &ndash; изображения по тематикам</h1>
+<h3><strong>lorempixel.com</strong> &ndash; изображения по тематикам</h3>
 
 <p>{% codeblock lang:html %}
 <img src="http://lorempixel.com/250/200">
@@ -77,7 +71,7 @@
 {% img <a href="http://lorempixel.com/180/200/technics">http://lorempixel.com/180/200/technics</a> %}
 {% img <a href="http://lorempixel.com/280/220/people/some-text">http://lorempixel.com/280/220/people/some-text</a> %}</p>
 
-<h1><strong>placehold.it</strong> &ndash; разноцветные прямоугольники</h1>
+<h3><strong>placehold.it</strong> &ndash; разноцветные прямоугольники</h3>
 
 <p>{% codeblock lang:html %}
 <img src="http://placehold.it/150x100">
@@ -89,7 +83,7 @@
 {% img <a href="http://placehold.it/180x135/2ecc71/ecf0f1">http://placehold.it/180x135/2ecc71/ecf0f1</a> %}
 {% img <a href="http://placehold.it/280x100/2c3e50/3498db&amp;text=html5.by+Rocks!">http://placehold.it/280x100/2c3e50/3498db&amp;text=html5.by+Rocks!</a> %}</p>
 
-<h1><strong>placepuppy.it</strong> &ndash; для любителей собак</h1>
+<h3><strong>placepuppy.it</strong> &ndash; для любителей собак</h3>
 
 <p>{% codeblock lang:html %}
 <img src="http://placepuppy.it/150/100">
@@ -101,7 +95,7 @@
 {% img <a href="http://placepuppy.it/120/135">http://placepuppy.it/120/135</a> %}
 {% img <a href="http://placepuppy.it/80/100">http://placepuppy.it/80/100</a> %}</p>
 
-<h1><strong>placekitten.com</strong> &ndash; для любителей котят</h1>
+<h3><strong>placekitten.com</strong> &ndash; для любителей котят</h3>
 
 <p>{% codeblock lang:html %}
 <img src="http://placekitten.com/g/160/120">
@@ -113,7 +107,7 @@
 {% img <a href="http://placekitten.com/g/120/135">http://placekitten.com/g/120/135</a> %}
 {% img <a href="http://placekitten.com/g/180/100">http://placekitten.com/g/180/100</a> %}</p>
 
-<h1><strong>placekitten.com</strong> &ndash; для больших любителей</h1>
+<h3><strong>placekitten.com</strong> &ndash; для больших любителей</h3>
 
 <p>{% codeblock lang:html %}
 <img src="http://beerhold.it/225/280">
@@ -131,7 +125,7 @@
 {% img <a href="http://beerhold.it/270/260">http://beerhold.it/270/260</a> %}
 {% img <a href="http://beerhold.it/280/200/s">http://beerhold.it/280/200/s</a> %}<!-- sepia --></p>
 
-<h1>image placeholder offline?</h1>
+<h3>если пропал интернет</h3>
 
 <p>Тогда обратите вниманиие на [holder.js|<a href="http://imsky.github.io/holder/">http://imsky.github.io/holder/</a>].</p>
 ]]></content>

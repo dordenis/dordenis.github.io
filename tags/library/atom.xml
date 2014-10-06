@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: library | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/library/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-10-06T07:14:17-04:00</updated>
+  <updated>2014-10-06T07:22:55-04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[AjaxBlog]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Intervention Image - простая библиотека для работы с изображениями]]></title>
     <link href="http://dordenis.github.io/php/easy-library-for-working-with-images/"/>
-    <updated>2014-07-10T20:21:00-04:00</updated>
+    <updated>2014-08-21T20:21:00-04:00</updated>
     <id>http://dordenis.github.io/php/easy-library-for-working-with-images</id>
     <content type="html"><![CDATA[<p>У каждого программиста есть свой набор библиотек, для рутинных операций. Например, работа с изображениями. На ваш суд представлю еще одну  &ndash; Intervention Image.</p>
 
@@ -27,38 +27,38 @@
 <!-- more -->
 
 
-<h1>Чтение</h1>
+<h3>Чтение</h3>
 
 <p>{% codeblock lang:php %}
 $img = Image::make(&lsquo;foo/bar/baz.jpg&rsquo;);
 {% endcodeblock %}</p>
 
-<h1>Создание</h1>
+<h3>Создание</h3>
 
 <p>{% codeblock lang:php %}
 $img = Image::canvas(800, 600, &lsquo;#ccc&rsquo;);
 {% endcodeblock %}</p>
 
-<h1>Наложение изображения</h1>
+<h3>Наложение изображения</h3>
 
 <p>{% codeblock lang:php %}
 $img = Image::make(&lsquo;foo.jpg&rsquo;)&ndash;>resize(320, 240)&ndash;>insert(&lsquo;watermark.png&rsquo;);
 {% endcodeblock %}</p>
 
-<h1>Сохранение</h1>
+<h3>Сохранение</h3>
 
 <p>{% codeblock lang:php %}
 Image::make(&lsquo;foo.jpg&rsquo;)&ndash;>resize(300, 200)&ndash;>save(&lsquo;bar.jpg&rsquo;);
 {% endcodeblock %}</p>
 
-<h1>HTTP Responses</h1>
+<h3>HTTP Responses</h3>
 
 <p>{% codeblock lang:php %}
 $img = Image::canvas(800, 600, &lsquo;#ff0000&rsquo;);
 echo $img->response(&lsquo;jpg&rsquo;, 70);
 {% endcodeblock %}</p>
 
-<h1>Загрузка</h1>
+<h3>Загрузка</h3>
 
 <p>{% codeblock lang:php %}
 $img = Image::make($_FILES[&lsquo;image&rsquo;][&lsquo;tmp_name&rsquo;]);
@@ -66,7 +66,7 @@ $img->fit(300, 200);
 $img->save(&lsquo;foo/bar.jpg&rsquo;);
 {% endcodeblock %}</p>
 
-<h1>Применение фильтров</h1>
+<h3>Применение фильтров</h3>
 
 <p>{% codeblock lang:php %}
 $img->filter(new DemoFilter(45));
@@ -117,7 +117,7 @@ public function applyFilter(\Intervention\Image\Image $image)
 
 <p>{% endcodeblock %}</p>
 
-<h1>Кеширование</h1>
+<h3>Кеширование</h3>
 
 <p>{% codeblock lang:php %}
 $img = Image::cache(function($image) {</p>

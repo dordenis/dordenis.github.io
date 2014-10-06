@@ -4,7 +4,7 @@
   <title><![CDATA[Ajaxblog]]></title>
   <link href="http://dordenis.github.io/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-09-23T05:31:38-04:00</updated>
+  <updated>2014-10-06T07:22:36-04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[AjaxBlog]]></name>
@@ -12,6 +12,32 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Изображения для заполнения пространства при верстке.]]></title>
+    <link href="http://dordenis.github.io/fronted/image-placeholders/"/>
+    <updated>2014-09-12T20:21:00-04:00</updated>
+    <id>http://dordenis.github.io/fronted/image-placeholders</id>
+    <content type="html"><![CDATA[<p>Каждый верстальшик использовал lorem ipsum для заполнения «рыбы» при верстки проекта.</p>
+
+<p>А что делать, когда нужно использовать картинки, которых у нас еще нет. На помощь приходят сервисы,  которые создают  фейковые картинки для нас.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Intervention Image - простая библиотека для работы с изображениями]]></title>
+    <link href="http://dordenis.github.io/php/easy-library-for-working-with-images/"/>
+    <updated>2014-08-21T20:21:00-04:00</updated>
+    <id>http://dordenis.github.io/php/easy-library-for-working-with-images</id>
+    <content type="html"><![CDATA[<p>У каждого программиста есть свой набор библиотек, для рутинных операций. Например, работа с изображениями. На ваш суд представлю еще одну  &ndash; Intervention Image.</p>
+
+<p>Из плюсов следует отметить тесную интеграцию с модным ныне Фреймворком  Laravel.</p>
+
+<p>Как пишут автору  этой библиотеке. Intervention Image  является PHP  библиотекой с открытым исходным кодом  для обработки изображений и манипуляции с ним. Обеспечивает более простой и выразительный способ создания, редактирования и комбинирования изображений и поддерживает в настоящее время два наиболее распространенных библиотек обработки изображений GD  и Imagick.</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Как в реальном времени мониторить работы Ngnix]]></title>
@@ -43,9 +69,9 @@ Ngxtop парсит журнал логов Nginx (он также может р
   
   <entry>
     <title type="html"><![CDATA[Темы для Bootstrap 3]]></title>
-    <link href="http://dordenis.github.io/bootstrap/themes-for-bootstrap-3/"/>
+    <link href="http://dordenis.github.io/fronted/themes-for-bootstrap-3/"/>
     <updated>2014-01-21T00:18:00-05:00</updated>
-    <id>http://dordenis.github.io/bootstrap/themes-for-bootstrap-3</id>
+    <id>http://dordenis.github.io/fronted/themes-for-bootstrap-3</id>
     <content type="html"><![CDATA[<ul>
 <li><h3>First &ndash; Mobile First Web App Theme</h3>
 
