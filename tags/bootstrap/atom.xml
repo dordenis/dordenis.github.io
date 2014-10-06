@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: bootstrap | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/bootstrap/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-09-23T05:31:38-04:00</updated>
+  <updated>2014-10-06T07:11:31-04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[AjaxBlog]]></name>
@@ -15,13 +15,13 @@
   
   <entry>
     <title type="html"><![CDATA[Темы для Bootstrap 3]]></title>
-    <link href="http://dordenis.github.io/bootstrap/themes-for-bootstrap-3/"/>
+    <link href="http://dordenis.github.io/fronted/themes-for-bootstrap-3/"/>
     <updated>2014-01-21T00:18:00-05:00</updated>
-    <id>http://dordenis.github.io/bootstrap/themes-for-bootstrap-3</id>
+    <id>http://dordenis.github.io/fronted/themes-for-bootstrap-3</id>
     <content type="html"><![CDATA[<ul>
 <li><h3>First &ndash; Mobile First Web App Theme</h3>
 
-<p><img src="/images/post/themes/first.png">
+<p>{% img /images/post/themes/first.png %}
 <a href="http://themeforest.net/item/first-mobile-first-web-app-theme/5002403?WT.ac=portfolio_item&amp;WT.seg_1=portfolio_item&amp;WT.z_author=Flatfull">Buy</a>
 <a href="http://flatfull.com/themes/first/index.html">Demo</a></p></li>
 </ul>
@@ -31,69 +31,73 @@
 
 
 <ul>
+<li><h3>Material Design</h3>
+
+<p>{% img /images/post/themes/material-design.png %}
+<a href="https://fezvrasta.github.io/bootstrap-material-design/">Demo</a></p></li>
 <li><h3>Stanley – Freelancer Theme</h3>
 
-<p><img src="/images/post/themes/stanley.png">
+<p>{% img /images/post/themes/stanley.png %}
 <a href="http://blacktie.co/demo/stanley/">Demo</a>
 <a href="http://bit.ly/1eRSs8n">Download</a></p></li>
 <li><h3>Flatty – App Landing Page</h3>
 
-<p><img src="/images/post/themes/flatty.png">
+<p>{% img /images/post/themes/flatty.png %}
 <a href="http://blacktie.co/demo/flatty/">Demo</a>
 <a href="http://bit.ly/18QS8X2">Download</a></p></li>
 <li><h3>SMPL – A Simple Contact Page</h3>
 
-<p><img src="/images/post/themes/smpl.png">
+<p>{% img /images/post/themes/smpl.png %}
 <a href="http://blacktie.co/demo/smpl/">Demo</a>
 <a href="http://bit.ly/1gBAjzO">Download</a></p></li>
 <li><h3>Bolt – Flat One Page Theme</h3>
 
-<p><img src="/images/post/themes/bolt.png">
+<p>{% img /images/post/themes/bolt.png %}
 <a href="http://blacktie.co/demo/bolt/">Demo</a>
 <a href="http://bit.ly/1eve3Er">Download</a></p></li>
 <li><h3>Small – Dribbble Portfolio Theme</h3>
 
-<p><img src="/images/post/themes/small.png">
+<p>{% img /images/post/themes/small.png %}
 <a href="http://blacktie.co/demo/small/">Demo</a>
 <a href="http://bit.ly/1fEate0">Download</a></p></li>
 <li><h3>Link – Bootstrap 3 Agency Theme</h3>
 
-<p><img src="/images/post/themes/link.png">
+<p>{% img /images/post/themes/link.png %}
 <a href="http://blacktie.co/demo/link/">Demo</a>
 <a href="http://bit.ly/1i0HRLk">Download</a></p></li>
 <li><h3>Spot – Freelance &amp; Agency Theme</h3>
 
-<p><img src="/images/post/themes/spot.png">
+<p>{% img /images/post/themes/spot.png %}
 <a href="http://blacktie.co/demo/spot/">Demo</a>
 <a href="http://bit.ly/16PuFBr">Download</a></p></li>
 <li><h3>Minimal – Dark Bootstrap 3 Theme</h3>
 
-<p><img src="/images/post/themes/minimal.png">
+<p>{% img /images/post/themes/minimal.png %}
 <a href="http://blacktie.co/demo/minimal/">Demo</a>
 <a href="http://bit.ly/1h1qJay">Download</a></p></li>
 <li><h3>Munter – One Page Theme</h3>
 
-<p><img src="/images/post/themes/munter.png">
+<p>{% img /images/post/themes/munter.png %}
 <a href="http://blacktie.co/demo/munter/">Demo</a>
 <a href="http://bit.ly/17549aE">Download</a></p></li>
 <li><h3>Victoria – Simple vCard</h3>
 
-<p><img src="/images/post/themes/victoria.png">
+<p>{% img /images/post/themes/victoria.png %}
 <a href="http://blacktie.co/demo/victoria/">Demo</a>
 <a href="http://bit.ly/1evXlo0">Download</a></p></li>
 <li><h3>Onassis – Agency One Page Theme</h3>
 
-<p><img src="/images/post/themes/onassis.png">
+<p>{% img /images/post/themes/onassis.png %}
 <a href="http://blacktie.co/demo/onassis/">Demo</a>
 <a href="http://bit.ly/17ipauW">Download</a></p></li>
 <li><h3>Kelvin – Resume Theme</h3>
 
-<p><img src="/images/post/themes/kelvin.png">
+<p>{% img /images/post/themes/kelvin.png %}
 <a href="http://blacktie.co/demo/kelvin/">Demo</a>
 <a href="http://bit.ly/19mILw1">Download</a></p></li>
 <li><h3>Pratt – App Landing Page</h3>
 
-<p><img src="/images/post/themes/pratt.png">
+<p>{% img /images/post/themes/pratt.png %}
 <a href="http://blacktie.co/demo/pratt/">Demo</a>
 <a href="http://bit.ly/1g3Bskf">Download</a></p></li>
 </ul>
