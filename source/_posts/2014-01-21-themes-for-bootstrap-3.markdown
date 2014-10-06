@@ -3,8 +3,8 @@ layout: post
 title: Темы для Bootstrap 3
 date: 2014-01-21 00:18
 comments: true
-categories: bootstrap
-tags: [bootstrap, thems]
+categories: fronted
+tags: [fronted, bootstrap, thems]
 ---
 
 + ### First - Mobile First Web App Theme
@@ -12,6 +12,11 @@ tags: [bootstrap, thems]
 [Buy](http://themeforest.net/item/first-mobile-first-web-app-theme/5002403?WT.ac=portfolio_item&WT.seg_1=portfolio_item&WT.z_author=Flatfull)
 [Demo](http://flatfull.com/themes/first/index.html)
 <!-- more -->
+
++ ### Material Design
+{% img /images/post/themes/material-design.png %}
+[Demo](https://fezvrasta.github.io/bootstrap-material-design/)
+
 
 + ### Stanley – Freelancer Theme
 {% img /images/post/themes/stanley.png %}
