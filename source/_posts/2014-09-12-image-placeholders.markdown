@@ -114,4 +114,4 @@ tags: [fronted, placeholders]
 
 ### если пропал интернет
 
-Тогда обратите вниманиие на [holder.js|http://imsky.github.io/holder/].
+Тогда обратите вниманиие на [holder.js](http://imsky.github.io/holder/).
