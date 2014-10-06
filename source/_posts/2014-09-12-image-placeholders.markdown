@@ -14,7 +14,7 @@ tags: [fronted, placeholders]
 
 # **placephant.com** - универсальные изображения
 
-{% codeblock lang:htmlphp %}
+{% codeblock lang:html %}
 <img src="http://placephant.com/300/200">
 <img src="http://placephant.com/100">
 <img src="http://placephant.com/g/100/200">
@@ -30,7 +30,7 @@ tags: [fronted, placeholders]
 
 # **fakeimg.pl** - изображения с текстом
 
-{% codeblock lang:htmlphp %}
+{% codeblock lang:html %}
 <img src="http://fakeimg.pl/300/">
 <img src="http://fakeimg.pl/250x100/">
 <img src="http://fakeimg.pl/250x100/ff0000/">
@@ -50,7 +50,7 @@ tags: [fronted, placeholders]
 
 # **lorempixel.com** - изображения по тематикам 
 
-{% codeblock lang:htmlphp %}
+{% codeblock lang:html %}
 <img src="http://lorempixel.com/250/200"> 
 <img src="http://lorempixel.com/g/220/235"> 
 <img src="http://lorempixel.com/180/200/sports"> 
