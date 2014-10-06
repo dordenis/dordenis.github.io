@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Intervention Image - простая библиотека для работы с изображениями
-date: 2014-07-10 20:21
+date: 2014-08-21 20:21
 comments: true
 categories: php
 tags: [php, images, library]
@@ -14,38 +14,38 @@ tags: [php, images, library]
 Как пишут автору  этой библиотеке. Intervention Image  является PHP  библиотекой с открытым исходным кодом  для обработки изображений и манипуляции с ним. Обеспечивает более простой и выразительный способ создания, редактирования и комбинирования изображений и поддерживает в настоящее время два наиболее распространенных библиотек обработки изображений GD  и Imagick. 
 <!-- more -->
 
-# Чтение
+### Чтение
 
 {% codeblock lang:php %}
 $img = Image::make('foo/bar/baz.jpg');
 {% endcodeblock %}
 
-# Создание
+### Создание
 
 {% codeblock lang:php %}
 $img = Image::canvas(800, 600, '#ccc');
 {% endcodeblock %}
 
-# Наложение изображения
+### Наложение изображения
 
 {% codeblock lang:php %}
 $img = Image::make('foo.jpg')->resize(320, 240)->insert('watermark.png');
 {% endcodeblock %}
 
-# Сохранение
+### Сохранение
 
 {% codeblock lang:php %}
 Image::make('foo.jpg')->resize(300, 200)->save('bar.jpg');
 {% endcodeblock %}
 
-# HTTP Responses
+### HTTP Responses
 
 {% codeblock lang:php %}
 $img = Image::canvas(800, 600, '#ff0000');
 echo $img->response('jpg', 70);
 {% endcodeblock %}
 
-# Загрузка
+### Загрузка
 
 {% codeblock lang:php %}
 $img = Image::make($_FILES['image']['tmp_name']);
@@ -53,7 +53,7 @@ $img->fit(300, 200);
 $img->save('foo/bar.jpg');
 {% endcodeblock %}
 
-# Применение фильтров
+### Применение фильтров
 
 {% codeblock lang:php %}
 $img->filter(new DemoFilter(45));
@@ -101,7 +101,7 @@ class DemoFilter implements FilterInterface
 
 {% endcodeblock %}
 
-# Кеширование
+### Кеширование
 
 {% codeblock lang:php %}
 $img = Image::cache(function($image) {
