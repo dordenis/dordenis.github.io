@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: placeholders | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/placeholders/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-10-06T07:25:02-04:00</updated>
+  <updated>2014-10-07T06:00:45-04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[AjaxBlog]]></name>
@@ -22,9 +22,6 @@
 
 <p>А что делать, когда нужно использовать картинки, которых у нас еще нет. На помощь приходят сервисы,  которые создают  фейковые картинки для нас.</p>
 
-<!-- more -->
-
-
 <h3><strong>placephant.com</strong> &ndash; изображения phpstyle</h3>
 
 <p>{% codeblock lang:html %}
@@ -40,6 +37,9 @@
 {% img <a href="http://placephant.com/g/100/200">http://placephant.com/g/100/200</a> %}
 {% img <a href="http://placephant.com/100/200?filter=bw">http://placephant.com/100/200?filter=bw</a> %}
 {% img <a href="http://placephant.com/v/100/200">http://placephant.com/v/100/200</a> %}</p>
+
+<!-- more -->
+
 
 <h3><strong>fakeimg.pl</strong> &ndash; изображения с текстом</h3>
 
