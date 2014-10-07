@@ -10,7 +10,6 @@ tags: [fronted, placeholders]
 Каждый верстальшик использовал lorem ipsum для заполнения «рыбы» при верстки проекта.
 
 А что делать, когда нужно использовать картинки, которых у нас еще нет. На помощь приходят сервисы,  которые создают  фейковые картинки для нас.
-<!-- more -->
 
 ### **placephant.com** - изображения phpstyle
 
@@ -27,6 +26,7 @@ tags: [fronted, placeholders]
 {% img http://placephant.com/g/100/200 %}
 {% img http://placephant.com/100/200?filter=bw %}
 {% img http://placephant.com/v/100/200 %}
+<!-- more -->
 
 ### **fakeimg.pl** - изображения с текстом
 
