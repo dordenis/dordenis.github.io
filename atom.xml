@@ -4,7 +4,7 @@
   <title><![CDATA[Ajaxblog]]></title>
   <link href="http://dordenis.github.io/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-10-06T07:22:36-04:00</updated>
+  <updated>2014-10-07T06:01:26-04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[AjaxBlog]]></name>
@@ -21,6 +21,27 @@
     <content type="html"><![CDATA[<p>Каждый верстальшик использовал lorem ipsum для заполнения «рыбы» при верстки проекта.</p>
 
 <p>А что делать, когда нужно использовать картинки, которых у нас еще нет. На помощь приходят сервисы,  которые создают  фейковые картинки для нас.</p>
+
+<h3><strong>placephant.com</strong> &ndash; изображения phpstyle</h3>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placephant.com/300/200&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placephant.com/100&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placephant.com/g/100/200&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placephant.com/100/200?filter=bw&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placephant.com/v/100/200&quot;</span><span class="nt">&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="http://placephant.com/300/200">
+<img src="http://placephant.com/100">
+<img src="http://placephant.com/g/100/200">
+<img src="http://placephant.com/100/200?filter=bw">
+<img src="http://placephant.com/v/100/200"></p>
 
 ]]></content>
   </entry>
