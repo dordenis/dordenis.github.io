@@ -1,8 +1,17 @@
-{% capture tag %}{% if post %}{{ post.tags | tag_links | size }}{% else %}{{ page.tags | tag_links | size }}{% endif %}{% endcapture %}
+{% capture tag %}
+	{% if post %}
+		{{ post.tags }}</br>
+	{% else %}
+		{{ page.tags }}</br>
+	{% endif %}
+{% endcapture %}
+
 {% unless tag == '0' %}
   {% if post %}
-    {{ post.tags | tag_links }}
+	{% for tag in post.tags %}
+	    {{ tag }}</br>
+	{% endfor %}
   {% else %}
-    {{ page.tags | tag_links }}
+    {{ page.tags }}</br>
   {% endif %}
 {% endunless %}

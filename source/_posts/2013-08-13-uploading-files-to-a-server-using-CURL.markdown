@@ -3,7 +3,7 @@ layout: post
 title: Загрузка файлов на сервер с помощью CURL
 comments: true
 categories: php
-tags: [php, curl]
+tags: [curl, загрузка файлов]
 ---
 
 Для одного из проектов нужно было загрузить файлы на сервер, с использованием CURL.

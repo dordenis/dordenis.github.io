@@ -4,7 +4,7 @@ title: Мультиязычный сайт с помощью Yii
 date: 2013-07-21 15:33
 comments: true
 categories: yii
-tags: [yii, gettext]
+tags: [gettext, мультиязычность]
 footer: false
 ---
 

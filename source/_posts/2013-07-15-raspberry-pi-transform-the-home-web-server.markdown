@@ -4,7 +4,7 @@ title: Превращаем Raspberry Pi в домашний web-server
 date: 2013-07-15 20:21
 comments: true
 categories: linux
-tags: [linux, Raspberry Pi, test]
+tags: [Raspberry Pi, web-server]
 ---
 
 Не так давно приобрел забавную игрушку Raspberry Pi. Я планирую использовать ее в качестве «мозгов» для робота на базе Arduino, но об этом в другой раз. Что бы «малина» не валялась без дела. пока я проектирую робота, решил на базе нее поднять домашний web-server.

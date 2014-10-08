@@ -4,7 +4,7 @@ title: Изображения для заполнения пространств
 date: 2014-09-12 20:21
 comments: true
 categories: fronted
-tags: [fronted, placeholders]
+tags: [placeholders, верстка]
 ---
 
 Каждый верстальшик использовал lorem ipsum для заполнения «рыбы» при верстки проекта.

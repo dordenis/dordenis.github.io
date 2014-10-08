@@ -4,7 +4,7 @@ title: Темы для Bootstrap 3
 date: 2014-01-21 00:18
 comments: true
 categories: fronted
-tags: [fronted, bootstrap, thems]
+tags: [bootstrap, бесплатные темы]
 ---
 
 + ### First - Mobile First Web App Theme

@@ -39,7 +39,7 @@
 		a:hover {
 			border-bottom:1px solid $color-blue2;
 		}
-		.date, .tags, .comments{
+		.date, .categories, .tags, .comments{
 			padding-left: 30px;
 			position: relative;
 			&:before{
@@ -56,7 +56,8 @@
 			}
 		}
 		.date:before{content: "\f073";}
-		.tags:before{content: "\f02c";}
+		.categories:before{content: "\f02c";}
+		.tags:before{content: "\f0c2";}
 		.comments:before{content: "\f075";}
 	}
 }
