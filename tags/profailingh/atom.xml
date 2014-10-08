@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: профайлинг | Ajaxblog]]></title>
+  <link href="http://dordenis.github.io/tags/profailingh/atom.xml" rel="self"/>
+  <link href="http://dordenis.github.io/"/>
+  <updated>2014-10-08T06:37:12-04:00</updated>
+  <id>http://dordenis.github.io/</id>
+  <author>
+    <name><![CDATA[AjaxBlog]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Профайлинг приложения PHP с помощью XHGui]]></title>
+    <link href="http://dordenis.github.io/php/profiling-php-applications-using-xhgui/"/>
+    <updated>2013-10-19T21:53:00-04:00</updated>
+    <id>http://dordenis.github.io/php/profiling-php-applications-using-xhgui</id>
+    <content type="html"><![CDATA[<p>Профайлинг &ndash; средство, редко используется в обычной практике разработки приложения.
+Потребность в нем возникает, когда наше приложения находиться под нагрузкой, и мы хотим понять какое место в коде тормозит работы его.</p>
+
+<p>На данный момент у нас есть два отличный инструмента для профайлинга. Одно от Derick Rethans &ndash; Xdebug, другое от  Facebook &ndash; XHProf.</p>
+
+<p>Мы остановимся на XHProf, отличный инструмент, но с неудобным интерфейсом.
+XHGui призван улучшить интерфейс для доступа к данным, сделать его приятным для использования.</p>
+
+<!-- more -->
+
+
+<h1>Установка XHProf</h1>
+
+<p>Давайте установим XHGui и все необходимые для его работы компоненты.
+Вам нужно MongoDB, PHP, и PECL.</p>
+
+<p>Прежде всего, давайте установим MongoDB.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install mongodb
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Нам также понадобится библиотека PHP для MongoDB &ndash; в репозиториях, как правило устаревшие версии, лучше взять из Pecl.
+Если вы еще не установили pecl, сделайте это с помощью команды:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install php-pear
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Установим библиотеку PHP для работы с MongoDB:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo pecl install mongo
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Не забудем создать файл со следующим содержанием /etc/php5/mods-available/mongo.ini:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">extension</span> <span class="o">=</span> mongo.so
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Устанавливаем сам xhprof</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo pecl install xhprof-beta
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Создаем файл /etc/php5/mods-available/xhprof.ini:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">extension</span> <span class="o">=</span> xhprof.so
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Не забудем перезапустить веб сервер.</p>
+
+<ul>
+<li>Настройка XHGui</li>
+</ul>
+
+
+<p>XHGui можно скачать с <a href="link%20https://github.com/preinheimer/xhgui">GitHub</a>.</p>
+
+<p>Устанавливаем для директории cache доступ для записи и запускаем скрипт установки:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>php install.php
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Если вы сделали все правильно то должны увидеть следующею картинку.</p>
+
+<p><img src="/images/post/xhprof/xhprof-1.png"></p>
+
+<h1>Включение XHGui для вашего хоста</h1>
+
+<p>Для того чтобы XHGui начал профайлинг вашего сайта, настроим добавим следующие настройки</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;VirtualHost *:80&gt;&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;ServerName example.local
+</span><span class='line'>
+</span><span class='line'>DocumentRoot /var/www/example/htdocs/
+</span><span class='line'>php_admin_value auto_prepend_file /var/www/xhgui/external/header.php
+</span><span class='line'>
+</span><span class='line'>&amp;lt;Directory /var/www/example/htdocs/&amp;gt;
+</span><span class='line'>    Options FollowSymLinks Indexes
+</span><span class='line'>    AllowOverride All
+</span><span class='line'> &amp;lt;/Directory&amp;gt;
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;&lt;/VirtualHost&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>С этого момента можно посылать запросы на ваш сайт, или запустить нагрузочное тестирование с помощью Apache Bench.</p>
+
+<h1>Получения ваших данных</h1>
+
+<p><img src="/images/post/xhprof/xhprof-2.png"></p>
+
+<p>XHGui отобразит список запросов, которые были обращены к сайту. Столбцы указаны:
+* URL  &ndash; адрес запроса
+* Time  &ndash; когда был сделан запрос
+* Wall Time &ndash; сколько времени занял запрос
+* CPU &ndash; нагрузка процессора
+* Memory used &ndash; память использовано
+* Peak memory usage &ndash; пиковое использование памяти</p>
+
+<p>Вы можете всегда получить боле подробную информацию о каждом запросе.</p>
+
+<p><img src="/images/post/xhprof/xhprof-3.png"></p>
+
+<p><img src="/images/post/xhprof/xhprof-4.png"></p>
+
+<p>Другим информативным (и невероятно симпатичный) XHGui особенностью является CallGraph, он показывает вам, затраты времени в виде графа:</p>
+
+<p><img src="/images/post/xhprof/xhprof-5.png"></p>
+
+<h1>Интерпретации данных</h1>
+
+<p>Имея много статистических данных легко в них запутаться, трудно понять, с чего начать.</p>
+
+<p>Попробовать следующий подход:
+* Отсортировать функции по использование CPU (по убыванию), и посмотреть на самые ресурсозатратные запросы.
+* Проанализировать затратные запросы и попытаться оптимизировать их.</p>
+
+<p>После того как вы внесли некоторые изменения, заново провести профайлинг и посмотреть на получившиеся улучшения.
+XHGui имеет встроенные способы очень элегантно сравнить работает, просто нажмите на кнопку &ldquo;Compare this run&rdquo;.</p>
+
+<p><img src="/images/post/xhprof/xhprof-6.png"></p>
+
+<p>Повторяя этот процесс раз за разом, вы сможете добиться того что отклик вашего приложения на запрос пользователя будет минимальным.  Что вызовет комфорт работы пользователя с ним.</p>
+]]></content>
+  </entry>
+  
+</feed>
