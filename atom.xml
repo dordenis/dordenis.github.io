@@ -4,7 +4,7 @@
   <title><![CDATA[Ajaxblog]]></title>
   <link href="http://dordenis.github.io/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-10-08T07:02:53-04:00</updated>
+  <updated>2014-10-10T10:07:15-04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[AjaxBlog]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Просмотр pdf файлов ы консоле]]></title>
+    <link href="http://dordenis.github.io/linux/console-pdf-viewer/"/>
+    <updated>2014-09-23T14:21:00-04:00</updated>
+    <id>http://dordenis.github.io/linux/console-pdf-viewer</id>
+    <content type="html"><![CDATA[<p>Как то нужно было быстро посмотреть pdf файл в консоле. Быстрое гугление показало, что нет готовых читалок под консоль. Но можно использовать хитрый трюк.</p>
+
+<p><img src="http://dordenis.github.io/images/post/console-pdf-viewer/1.png"></p>
+
+<p><strong>pdftohtml</strong> &ndash; инструмент командной строки для преобразования PDF-файлов в HTML и другие форматы.</p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Изображения для заполнения пространства при верстке.]]></title>

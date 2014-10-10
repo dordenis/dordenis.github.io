@@ -3,11 +3,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Tag: mysqldump | Ajaxblog</title>
+	<title>Просмотр pdf файлов ы консоле | Ajaxblog</title>
 
 <meta name="author" content="AjaxBlog">
 
-<meta name="description" content="Tag: mysqldump"> <meta name="keywords" content="">
+<meta name="description" content="Как то нужно было быстро посмотреть pdf файл в консоле. Быстрое гугление показало, что нет готовых читалок под консоль. Но можно использовать хитрый &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -100,39 +100,69 @@ $(document).ready(
 
 </header>
 
-	<div id="content" class="inner"><article class="page">
-    <div class="entry-content"><div id="blog-archives" class="tag">
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Просмотр Pdf файлов ы консоле</h2>
+	<div class="entry-content"><p>Как то нужно было быстро посмотреть pdf файл в консоле. Быстрое гугление показало, что нет готовых читалок под консоль. Но можно использовать хитрый трюк.</p>
+
+<p><img src="/images/post/console-pdf-viewer/1.png"></p>
+
+<p><strong>pdftohtml</strong> &ndash; инструмент командной строки для преобразования PDF-файлов в HTML и другие форматы.</p>
+
+<!-- more -->
+
+
+<h3><strong>Устанавливаем</strong></h3>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install pdftohtml
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3><strong>Используем</strong></h3>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>pdftohtml some_file.pdf
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>а дальше уже смотрим в каким-то текстовом браузере</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>lynx some_file.pdf
+</span><span class='line'>// or
+</span><span class='line'>elinks some_file.pdf
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>если не установлен не один из них, не беда, конвертируем в простой текст</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>pdftotext some_file.pdf
+</span></code></pre></td></tr></table></div></figure>
 
 
 
-  
-  <h2>2013</h2>
+</div>
+</article>
 
-<article>
-  
-
-
-<article>
-	<h2 class="title"><a href="/mysql/cheatsheet-on-mysqldump/">Шпарагалка по Mysqldump</a></h2>
-    <span class="month"> 5 Августа</span>
-	<div class="meta">
-		<span class="tags">
-
-
-	<a class='category' href='/categories/mysql/'>mysql</a>
-
-
-</span>
-	    
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
 	</div>
-</article>
-</article>
-
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
+
+
+
+<section id="comment">
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-</article>
-
-
+</section>
 </div>
 
     <footer id="footer">
@@ -166,7 +196,10 @@ $(document).ready(
       var disqus_shortname = 'ajaxblog';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://dordenis.github.io/linux/console-pdf-viewer/';
+        var disqus_url = 'http://dordenis.github.io/linux/console-pdf-viewer/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

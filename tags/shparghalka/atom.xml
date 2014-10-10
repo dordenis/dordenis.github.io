@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: шпаргалка | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/shparghalka/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-10-10T09:18:14-04:00</updated>
+  <updated>2014-10-10T10:07:15-04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[AjaxBlog]]></name>
@@ -29,9 +29,9 @@
 
 <p>Разберем пример простейшее использования, задампим базу данных “database” при помощи перенаправления потока в файл “database.sql”:</p>
 
-<p>{% codeblock lang:sh %}
-mysqldump -u root -h 82.82.82.82 -p database > database.sql
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>mysqldump -u root -h 82.82.82.82 -p database &gt; database.sql
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <ul>
 <li><strong>-u</strong> или <strong>&mdash;user</strong>=… – имя пользователя</li>
@@ -46,36 +46,37 @@ mysqldump -u root -h 82.82.82.82 -p database > database.sql
 
 <p>Перенаправляем поток в обратную сторону и развертываем базу данных:</p>
 
-<p>{% codeblock lang:sh %}
-mysql -uroot -h 82.82.82.82 -p database &lt; database.sql
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>mysql -uroot -h 82.82.82.82 -p database &amp;lt; database.sql
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Или через mysql console:</p>
 
-<p>{% codeblock lang:sh %}
-mysql> use database;
-mysql> source database.sql
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>mysql&gt; use database;
+</span><span class='line'>mysql&gt; <span class="nb">source </span>database.sql
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h1>Пример использование некоторых параметров</h1>
 
 <p>Например, нам нужны данные с “продакшен версии базы” для “версии разработчика”, то есть нам нужна “песочница”. Выбираем не более 100 записей:</p>
 
-<p>{% codeblock lang:sh %}
-mysqldump &ndash; uroot -h 82.82.82.82 -p &mdash;where=&ldquo;true limit 100&rdquo; database > database.sql
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>mysqldump &amp;ndash; uroot -h 82.82.82.82 -p &amp;mdash;where<span class="o">=</span>&amp;ldquo;true limit 100&amp;rdquo; database &gt; database.sql
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Или нам нужна только структура, без данных:</p>
 
-<p>{% codeblock lang:sh %}
-mysqldump -u root -h 82.82.82.82 -p &mdash;no-data database > database.sql
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>mysqldump -u root -h 82.82.82.82 -p &amp;mdash;no-data database &gt; database.sql
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Делаем дамп в архив:</p>
 
-<p>{% codeblock lang:sh %}
-mysqldump -u root -p database | gzip > ~/database.sql.gz
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>mysqldump -u root -p database | gzip &gt; ~/database.sql.gz
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h1>Шпаргалка по параметрам</h1>
 
