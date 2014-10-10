@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Просмотр pdf файлов ы консоле
+title: Как прочитать pdf файл в консоле
 date: 2014-09-23 14:21
 comments: true
 categories: linux
