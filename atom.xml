@@ -4,7 +4,7 @@
   <title><![CDATA[Ajaxblog]]></title>
   <link href="http://dordenis.github.io/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-10-10T10:17:09-04:00</updated>
+  <updated>2014-10-15T09:51:49-04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[AjaxBlog]]></name>
@@ -108,11 +108,11 @@ Ngxtop парсит журнал логов Nginx (он также может р
     <updated>2014-01-21T00:18:00-05:00</updated>
     <id>http://dordenis.github.io/fronted/themes-for-bootstrap-3</id>
     <content type="html"><![CDATA[<ul>
-<li><h3>First &ndash; Mobile First Web App Theme</h3>
+<li><h3>AdminLTE Control Panel &amp; Dashboard</h3>
 
-<p><img src="http://dordenis.github.io/images/post/themes/first.png">
-<a href="http://themeforest.net/item/first-mobile-first-web-app-theme/5002403?WT.ac=portfolio_item&amp;WT.seg_1=portfolio_item&amp;WT.z_author=Flatfull">Buy</a>
-<a href="http://flatfull.com/themes/first/index.html">Demo</a></p></li>
+<p><img src="http://dordenis.github.io/images/post/themes/AdminLTE.png">
+<a href="http://almsaeedstudio.com/preview/">Demo</a>
+<a href="https://github.com/almasaeed2010/AdminLTE">Download</a></p></li>
 </ul>
 
 
