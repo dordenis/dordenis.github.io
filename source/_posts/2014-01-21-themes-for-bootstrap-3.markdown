@@ -7,11 +7,16 @@ categories: fronted
 tags: [bootstrap, бесплатные темы]
 ---
 
++ ### AdminLTE Control Panel & Dashboard
+{% img /images/post/themes/AdminLTE.png %}
+[Demo](http://almsaeedstudio.com/preview/)
+[Download](https://github.com/almasaeed2010/AdminLTE)
+<!-- more -->
+
 + ### First - Mobile First Web App Theme
 {% img /images/post/themes/first.png %}
 [Buy](http://themeforest.net/item/first-mobile-first-web-app-theme/5002403?WT.ac=portfolio_item&WT.seg_1=portfolio_item&WT.z_author=Flatfull)
 [Demo](http://flatfull.com/themes/first/index.html)
-<!-- more -->
 
 + ### Material Design
 {% img /images/post/themes/material-design.png %}
