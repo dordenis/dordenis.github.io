@@ -4,7 +4,7 @@
   <title><![CDATA[Category: fronted | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/categories/fronted/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-10-15T09:54:41-04:00</updated>
+  <updated>2014-10-30T07:01:08-04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[AjaxBlog]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Изображения для заполнения пространства при верстке.]]></title>
+    <title type="html"><![CDATA[Изображения для заполнения пространства при верстке]]></title>
     <link href="http://dordenis.github.io/fronted/image-placeholders/"/>
     <updated>2014-09-12T20:21:00-04:00</updated>
     <id>http://dordenis.github.io/fronted/image-placeholders</id>
@@ -24,128 +24,106 @@
 
 <h3><strong>placephant.com</strong> &ndash; изображения phpstyle</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placephant.com/300/200&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placephant.com/100&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placephant.com/g/100/200&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placephant.com/100/200?filter=bw&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placephant.com/v/100/200&quot;</span><span class="nt">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:html %}
+<img src="http://placephant.com/300/200">
+<img src="http://placephant.com/100">
+<img src="http://placephant.com/g/100/200">
+<img src="http://placephant.com/100/200?filter=bw">
+<img src="http://placephant.com/v/100/200">
+{% endcodeblock %}</p>
 
-<p><img class="<a" src="href="http://placephant.com/300/200">http://placephant.com/300/200</a>">
-<img class="<a" src="href="http://placephant.com/100">http://placephant.com/100</a>">
-<img class="<a" src="href="http://placephant.com/g/100/200">http://placephant.com/g/100/200</a>">
-<img class="<a" src="href="http://placephant.com/100/200?filter=bw">http://placephant.com/100/200?filter=bw</a>">
-<img class="<a" src="href="http://placephant.com/v/100/200">http://placephant.com/v/100/200</a>"></p>
+<p>{% img <a href="http://placephant.com/300/200">http://placephant.com/300/200</a> %}
+{% img <a href="http://placephant.com/100">http://placephant.com/100</a> %}
+{% img <a href="http://placephant.com/g/100/200">http://placephant.com/g/100/200</a> %}
+{% img <a href="http://placephant.com/100/200?filter=bw">http://placephant.com/100/200?filter=bw</a> %}
+{% img <a href="http://placephant.com/v/100/200">http://placephant.com/v/100/200</a> %}</p>
 
 <!-- more -->
 
 
 <h3><strong>fakeimg.pl</strong> &ndash; изображения с текстом</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://fakeimg.pl/300/&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://fakeimg.pl/250x100/&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://fakeimg.pl/250x100/ff0000/&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://fakeimg.pl/350x200/?text=Hello&quot;</span><span class="nt">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:html %}
+<img src="http://fakeimg.pl/300/">
+<img src="http://fakeimg.pl/250x100/">
+<img src="http://fakeimg.pl/250x100/ff0000/">
+<img src="http://fakeimg.pl/350x200/?text=Hello">
+{% endcodeblock %}</p>
 
-<p><img class="<a" src="href="http://fakeimg.pl/300/">http://fakeimg.pl/300/</a>">
-<img class="<a" src="href="http://fakeimg.pl/250x100/">http://fakeimg.pl/250x100/</a>">
-<img class="<a" src="href="http://fakeimg.pl/250x100/ff0000/">http://fakeimg.pl/250x100/ff0000/</a>">
-<img class="<a" src="href="http://fakeimg.pl/350x200/?text=Hello">http://fakeimg.pl/350x200/?text=Hello</a>"></p>
+<p>{% img <a href="http://fakeimg.pl/300/">http://fakeimg.pl/300/</a> %}
+{% img <a href="http://fakeimg.pl/250x100/">http://fakeimg.pl/250x100/</a> %}
+{% img <a href="http://fakeimg.pl/250x100/ff0000/">http://fakeimg.pl/250x100/ff0000/</a> %}
+{% img <a href="http://fakeimg.pl/350x200/?text=Hello">http://fakeimg.pl/350x200/?text=Hello</a> %}</p>
 
 <h3><strong>lorempixel.com</strong> &ndash; изображения по тематикам</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://lorempixel.com/250/200&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://lorempixel.com/g/220/235&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://lorempixel.com/180/200/sports&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://lorempixel.com/180/200/technics&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://lorempixel.com/280/220/people/some-text&quot;</span><span class="nt">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:html %}
+<img src="http://lorempixel.com/250/200">
+<img src="http://lorempixel.com/g/220/235">
+<img src="http://lorempixel.com/180/200/sports">
+<img src="http://lorempixel.com/180/200/technics">
+<img src="http://lorempixel.com/280/220/people/some-text">
+{% endcodeblock %}</p>
 
-<p><img class="<a" src="href="http://lorempixel.com/250/200">http://lorempixel.com/250/200</a>">
-<img class="<a" src="href="http://lorempixel.com/g/220/235">http://lorempixel.com/g/220/235</a>">
-<img class="<a" src="href="http://lorempixel.com/180/200/sports">http://lorempixel.com/180/200/sports</a>">
-<img class="<a" src="href="http://lorempixel.com/180/200/technics">http://lorempixel.com/180/200/technics</a>">
-<img class="<a" src="href="http://lorempixel.com/280/220/people/some-text">http://lorempixel.com/280/220/people/some-text</a>"></p>
+<p>{% img <a href="http://lorempixel.com/250/200">http://lorempixel.com/250/200</a> %}
+{% img <a href="http://lorempixel.com/g/220/235">http://lorempixel.com/g/220/235</a> %}
+{% img <a href="http://lorempixel.com/180/200/sports">http://lorempixel.com/180/200/sports</a> %}
+{% img <a href="http://lorempixel.com/180/200/technics">http://lorempixel.com/180/200/technics</a> %}
+{% img <a href="http://lorempixel.com/280/220/people/some-text">http://lorempixel.com/280/220/people/some-text</a> %}</p>
 
 <h3><strong>placehold.it</strong> &ndash; разноцветные прямоугольники</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placehold.it/150x100&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placehold.it/180x135/2ecc71/ecf0f1&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placehold.it/280x100/2c3e50/3498db&amp;text=html5.by+Rocks!&quot;</span><span class="nt">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:html %}
+<img src="http://placehold.it/150x100">
+<img src="http://placehold.it/180x135/2ecc71/ecf0f1">
+<img src="http://placehold.it/280x100/2c3e50/3498db&text=html5.by+Rocks!">
+{% endcodeblock %}</p>
 
-<p><img class="<a" src="href="http://placehold.it/150x100">http://placehold.it/150x100</a>">
-<img class="<a" src="href="http://placehold.it/180x135/2ecc71/ecf0f1">http://placehold.it/180x135/2ecc71/ecf0f1</a>">
-<img class="<a" src="href="http://placehold.it/280x100/2c3e50/3498db&amp;text=html5.by+Rocks!">http://placehold.it/280x100/2c3e50/3498db&amp;text=html5.by+Rocks!</a>"></p>
+<p>{% img <a href="http://placehold.it/150x100">http://placehold.it/150x100</a> %}
+{% img <a href="http://placehold.it/180x135/2ecc71/ecf0f1">http://placehold.it/180x135/2ecc71/ecf0f1</a> %}
+{% img <a href="http://placehold.it/280x100/2c3e50/3498db&amp;text=html5.by+Rocks!">http://placehold.it/280x100/2c3e50/3498db&amp;text=html5.by+Rocks!</a> %}</p>
 
 <h3><strong>placepuppy.it</strong> &ndash; для любителей собак</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placepuppy.it/150/100&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placepuppy.it/120/135&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placepuppy.it/80/100&quot;</span><span class="nt">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:html %}
+<img src="http://placepuppy.it/150/100">
+<img src="http://placepuppy.it/120/135">
+<img src="http://placepuppy.it/80/100">
+{% endcodeblock %}</p>
 
-<p><img class="<a" src="href="http://placepuppy.it/150/100">http://placepuppy.it/150/100</a>">
-<img class="<a" src="href="http://placepuppy.it/120/135">http://placepuppy.it/120/135</a>">
-<img class="<a" src="href="http://placepuppy.it/80/100">http://placepuppy.it/80/100</a>"></p>
+<p>{% img <a href="http://placepuppy.it/150/100">http://placepuppy.it/150/100</a> %}
+{% img <a href="http://placepuppy.it/120/135">http://placepuppy.it/120/135</a> %}
+{% img <a href="http://placepuppy.it/80/100">http://placepuppy.it/80/100</a> %}</p>
 
 <h3><strong>placekitten.com</strong> &ndash; для любителей котят</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placekitten.com/g/160/120&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placekitten.com/g/120/135&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placekitten.com/g/180/100&quot;</span><span class="nt">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:html %}
+<img src="http://placekitten.com/g/160/120">
+<img src="http://placekitten.com/g/120/135">
+<img src="http://placekitten.com/g/180/100">
+{% endcodeblock %}</p>
 
-<p><img class="<a" src="href="http://placekitten.com/g/160/120">http://placekitten.com/g/160/120</a>">
-<img class="<a" src="href="http://placekitten.com/g/120/135">http://placekitten.com/g/120/135</a>">
-<img class="<a" src="href="http://placekitten.com/g/180/100">http://placekitten.com/g/180/100</a>"></p>
+<p>{% img <a href="http://placekitten.com/g/160/120">http://placekitten.com/g/160/120</a> %}
+{% img <a href="http://placekitten.com/g/120/135">http://placekitten.com/g/120/135</a> %}
+{% img <a href="http://placekitten.com/g/180/100">http://placekitten.com/g/180/100</a> %}</p>
 
 <h3><strong>placekitten.com</strong> &ndash; для больших любителей</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://beerhold.it/225/280&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://beerhold.it/280/235&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://beerhold.it/280/300&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://beerhold.it/400/300&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://beerhold.it/270/260&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://beerhold.it/280/200/s&quot;</span><span class="nt">&gt;</span><span class="c">&lt;!-- sepia --&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:html %}
+<img src="http://beerhold.it/225/280">
+<img src="http://beerhold.it/280/235">
+<img src="http://beerhold.it/280/300">
+<img src="http://beerhold.it/400/300">
+<img src="http://beerhold.it/270/260">
+<img src="http://beerhold.it/280/200/s"><!-- sepia -->
+{% endcodeblock %}</p>
 
-<p><img class="<a" src="href="http://beerhold.it/225/280">http://beerhold.it/225/280</a>">
-<img class="<a" src="href="http://beerhold.it/280/235">http://beerhold.it/280/235</a>">
-<img class="<a" src="href="http://beerhold.it/280/300">http://beerhold.it/280/300</a>">
-<img class="<a" src="href="http://beerhold.it/400/300">http://beerhold.it/400/300</a>">
-<img class="<a" src="href="http://beerhold.it/270/260">http://beerhold.it/270/260</a>">
-<img class="<a" src="href="http://beerhold.it/280/200/s">http://beerhold.it/280/200/s</a>"><!-- sepia --></p>
+<p>{% img <a href="http://beerhold.it/225/280">http://beerhold.it/225/280</a> %}
+{% img <a href="http://beerhold.it/280/235">http://beerhold.it/280/235</a> %}
+{% img <a href="http://beerhold.it/280/300">http://beerhold.it/280/300</a> %}
+{% img <a href="http://beerhold.it/400/300">http://beerhold.it/400/300</a> %}
+{% img <a href="http://beerhold.it/270/260">http://beerhold.it/270/260</a> %}
+{% img <a href="http://beerhold.it/280/200/s">http://beerhold.it/280/200/s</a> %}<!-- sepia --></p>
 
 <h3>если пропал интернет</h3>
 
@@ -161,7 +139,7 @@
     <content type="html"><![CDATA[<ul>
 <li><h3>AdminLTE Control Panel &amp; Dashboard</h3>
 
-<p><img src="/images/post/themes/AdminLTE.png">
+<p>{% img /images/post/themes/AdminLTE.png %}
 <a href="http://almsaeedstudio.com/preview/">Demo</a>
 <a href="https://github.com/almasaeed2010/AdminLTE">Download</a></p></li>
 </ul>
@@ -173,76 +151,76 @@
 <ul>
 <li><h3>First &ndash; Mobile First Web App Theme</h3>
 
-<p><img src="/images/post/themes/first.png">
+<p>{% img /images/post/themes/first.png %}
 <a href="http://themeforest.net/item/first-mobile-first-web-app-theme/5002403?WT.ac=portfolio_item&amp;WT.seg_1=portfolio_item&amp;WT.z_author=Flatfull">Buy</a>
 <a href="http://flatfull.com/themes/first/index.html">Demo</a></p></li>
 <li><h3>Material Design</h3>
 
-<p><img src="/images/post/themes/material-design.png">
+<p>{% img /images/post/themes/material-design.png %}
 <a href="https://fezvrasta.github.io/bootstrap-material-design/">Demo</a></p></li>
 <li><h3>Stanley – Freelancer Theme</h3>
 
-<p><img src="/images/post/themes/stanley.png">
+<p>{% img /images/post/themes/stanley.png %}
 <a href="http://blacktie.co/demo/stanley/">Demo</a>
 <a href="http://bit.ly/1eRSs8n">Download</a></p></li>
 <li><h3>Flatty – App Landing Page</h3>
 
-<p><img src="/images/post/themes/flatty.png">
+<p>{% img /images/post/themes/flatty.png %}
 <a href="http://blacktie.co/demo/flatty/">Demo</a>
 <a href="http://bit.ly/18QS8X2">Download</a></p></li>
 <li><h3>SMPL – A Simple Contact Page</h3>
 
-<p><img src="/images/post/themes/smpl.png">
+<p>{% img /images/post/themes/smpl.png %}
 <a href="http://blacktie.co/demo/smpl/">Demo</a>
 <a href="http://bit.ly/1gBAjzO">Download</a></p></li>
 <li><h3>Bolt – Flat One Page Theme</h3>
 
-<p><img src="/images/post/themes/bolt.png">
+<p>{% img /images/post/themes/bolt.png %}
 <a href="http://blacktie.co/demo/bolt/">Demo</a>
 <a href="http://bit.ly/1eve3Er">Download</a></p></li>
 <li><h3>Small – Dribbble Portfolio Theme</h3>
 
-<p><img src="/images/post/themes/small.png">
+<p>{% img /images/post/themes/small.png %}
 <a href="http://blacktie.co/demo/small/">Demo</a>
 <a href="http://bit.ly/1fEate0">Download</a></p></li>
 <li><h3>Link – Bootstrap 3 Agency Theme</h3>
 
-<p><img src="/images/post/themes/link.png">
+<p>{% img /images/post/themes/link.png %}
 <a href="http://blacktie.co/demo/link/">Demo</a>
 <a href="http://bit.ly/1i0HRLk">Download</a></p></li>
 <li><h3>Spot – Freelance &amp; Agency Theme</h3>
 
-<p><img src="/images/post/themes/spot.png">
+<p>{% img /images/post/themes/spot.png %}
 <a href="http://blacktie.co/demo/spot/">Demo</a>
 <a href="http://bit.ly/16PuFBr">Download</a></p></li>
 <li><h3>Minimal – Dark Bootstrap 3 Theme</h3>
 
-<p><img src="/images/post/themes/minimal.png">
+<p>{% img /images/post/themes/minimal.png %}
 <a href="http://blacktie.co/demo/minimal/">Demo</a>
 <a href="http://bit.ly/1h1qJay">Download</a></p></li>
 <li><h3>Munter – One Page Theme</h3>
 
-<p><img src="/images/post/themes/munter.png">
+<p>{% img /images/post/themes/munter.png %}
 <a href="http://blacktie.co/demo/munter/">Demo</a>
 <a href="http://bit.ly/17549aE">Download</a></p></li>
 <li><h3>Victoria – Simple vCard</h3>
 
-<p><img src="/images/post/themes/victoria.png">
+<p>{% img /images/post/themes/victoria.png %}
 <a href="http://blacktie.co/demo/victoria/">Demo</a>
 <a href="http://bit.ly/1evXlo0">Download</a></p></li>
 <li><h3>Onassis – Agency One Page Theme</h3>
 
-<p><img src="/images/post/themes/onassis.png">
+<p>{% img /images/post/themes/onassis.png %}
 <a href="http://blacktie.co/demo/onassis/">Demo</a>
 <a href="http://bit.ly/17ipauW">Download</a></p></li>
 <li><h3>Kelvin – Resume Theme</h3>
 
-<p><img src="/images/post/themes/kelvin.png">
+<p>{% img /images/post/themes/kelvin.png %}
 <a href="http://blacktie.co/demo/kelvin/">Demo</a>
 <a href="http://bit.ly/19mILw1">Download</a></p></li>
 <li><h3>Pratt – App Landing Page</h3>
 
-<p><img src="/images/post/themes/pratt.png">
+<p>{% img /images/post/themes/pratt.png %}
 <a href="http://blacktie.co/demo/pratt/">Demo</a>
 <a href="http://bit.ly/1g3Bskf">Download</a></p></li>
 </ul>

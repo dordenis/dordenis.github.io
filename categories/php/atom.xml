@@ -4,7 +4,7 @@
   <title><![CDATA[Category: php | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/categories/php/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-10-15T09:54:41-04:00</updated>
+  <updated>2014-10-30T07:01:08-04:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[AjaxBlog]]></name>
@@ -29,155 +29,104 @@
 
 <h3>Чтение</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$img</span> <span class="o">=</span> <span class="nx">Image</span><span class="o">::</span><span class="na">make</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">foo</span><span class="o">/</span><span class="nx">bar</span><span class="o">/</span><span class="nx">baz</span><span class="o">.</span><span class="nx">jpg</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+$img = Image::make(&lsquo;foo/bar/baz.jpg&rsquo;);
+{% endcodeblock %}</p>
 
 <h3>Создание</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$img</span> <span class="o">=</span> <span class="nx">Image</span><span class="o">::</span><span class="na">canvas</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="c1">#ccc&amp;rsquo;);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+$img = Image::canvas(800, 600, &lsquo;#ccc&rsquo;);
+{% endcodeblock %}</p>
 
 <h3>Наложение изображения</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$img</span> <span class="o">=</span> <span class="nx">Image</span><span class="o">::</span><span class="na">make</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">foo</span><span class="o">.</span><span class="nx">jpg</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;)</span><span class="o">&amp;</span><span class="nx">ndash</span><span class="p">;</span><span class="o">&gt;</span><span class="nx">resize</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">)</span><span class="o">&amp;</span><span class="nx">ndash</span><span class="p">;</span><span class="o">&gt;</span><span class="nx">insert</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">watermark</span><span class="o">.</span><span class="nx">png</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+$img = Image::make(&lsquo;foo.jpg&rsquo;)&ndash;>resize(320, 240)&ndash;>insert(&lsquo;watermark.png&rsquo;);
+{% endcodeblock %}</p>
 
 <h3>Сохранение</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nx">Image</span><span class="o">::</span><span class="na">make</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">foo</span><span class="o">.</span><span class="nx">jpg</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;)</span><span class="o">&amp;</span><span class="nx">ndash</span><span class="p">;</span><span class="o">&gt;</span><span class="nx">resize</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span><span class="o">&amp;</span><span class="nx">ndash</span><span class="p">;</span><span class="o">&gt;</span><span class="nx">save</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">bar</span><span class="o">.</span><span class="nx">jpg</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+Image::make(&lsquo;foo.jpg&rsquo;)&ndash;>resize(300, 200)&ndash;>save(&lsquo;bar.jpg&rsquo;);
+{% endcodeblock %}</p>
 
 <h3>HTTP Responses</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$img</span> <span class="o">=</span> <span class="nx">Image</span><span class="o">::</span><span class="na">canvas</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="c1">#ff0000&amp;rsquo;);</span>
-</span><span class='line'><span class="k">echo</span> <span class="nv">$img</span><span class="o">-&gt;</span><span class="na">response</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">jpg</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="mi">70</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+$img = Image::canvas(800, 600, &lsquo;#ff0000&rsquo;);
+echo $img->response(&lsquo;jpg&rsquo;, 70);
+{% endcodeblock %}</p>
 
 <h3>Загрузка</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$img</span> <span class="o">=</span> <span class="nx">Image</span><span class="o">::</span><span class="na">make</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">image</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;][</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">tmp_name</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;]);</span>
-</span><span class='line'><span class="nv">$img</span><span class="o">-&gt;</span><span class="na">fit</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
-</span><span class='line'><span class="nv">$img</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">foo</span><span class="o">/</span><span class="nx">bar</span><span class="o">.</span><span class="nx">jpg</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+$img = Image::make($_FILES[&lsquo;image&rsquo;][&lsquo;tmp_name&rsquo;]);
+$img->fit(300, 200);
+$img->save(&lsquo;foo/bar.jpg&rsquo;);
+{% endcodeblock %}</p>
 
 <h3>Применение фильтров</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$img</span><span class="o">-&gt;</span><span class="na">filter</span><span class="p">(</span><span class="k">new</span> <span class="nx">DemoFilter</span><span class="p">(</span><span class="mi">45</span><span class="p">));</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+$img->filter(new DemoFilter(45));
+{% endcodeblock %}</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="k">class</span> <span class="nc">DemoFilter</span> <span class="k">implements</span> <span class="nx">FilterInterface</span>
-</span><span class='line'><span class="p">{</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;/**</span>
-</span><span class='line'> <span class="o">*</span> <span class="k">Default</span> <span class="nx">size</span> <span class="nx">of</span> <span class="nx">filter</span> <span class="nx">effects</span>
-</span><span class='line'> <span class="o">*/</span>
-</span><span class='line'><span class="k">const</span> <span class="no">DEFAULT_SIZE</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sd">/**</span>
-</span><span class='line'><span class="sd"> * Size of filter effects</span>
-</span><span class='line'><span class="sd"> *</span>
-</span><span class='line'><span class="sd"> * @var integer</span>
-</span><span class='line'><span class="sd"> */</span>
-</span><span class='line'><span class="k">private</span> <span class="nv">$size</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sd">/**</span>
-</span><span class='line'><span class="sd"> * Creates new instance of filter</span>
-</span><span class='line'><span class="sd"> *</span>
-</span><span class='line'><span class="sd"> * @param integer $size</span>
-</span><span class='line'><span class="sd"> */</span>
-</span><span class='line'><span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$size</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="nv">$this</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">size</span> <span class="o">=</span> <span class="nb">is_numeric</span><span class="p">(</span><span class="nv">$size</span><span class="p">)</span> <span class="o">?</span> <span class="nb">intval</span><span class="p">(</span><span class="nv">$size</span><span class="p">)</span> <span class="o">:</span> <span class="nx">self</span><span class="o">::</span><span class="na">DEFAULT_SIZE</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="sd">/**</span>
-</span><span class='line'><span class="sd"> * Applies filter effects to given image</span>
-</span><span class='line'><span class="sd"> *</span>
-</span><span class='line'><span class="sd"> * @param  Intervention\Image\Image $image</span>
-</span><span class='line'><span class="sd"> * @return Intervention\Image\Image</span>
-</span><span class='line'><span class="sd"> */</span>
-</span><span class='line'><span class="k">public</span> <span class="k">function</span> <span class="nf">applyFilter</span><span class="p">(</span><span class="nx">\Intervention\Image\Image</span> <span class="nv">$image</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="nv">$image</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">pixelate</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">size</span><span class="p">);</span>
-</span><span class='line'>    <span class="nv">$image</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">greyscale</span><span class="p">();</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">return</span> <span class="nv">$image</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="nx">code</span><span class="o">&gt;&lt;/</span><span class="nx">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+class DemoFilter implements FilterInterface
+{</p>
+
+<pre><code>/**
+ * Default size of filter effects
+ */
+const DEFAULT_SIZE = 10;
+
+/**
+ * Size of filter effects
+ *
+ * @var integer
+ */
+private $size;
+
+/**
+ * Creates new instance of filter
+ *
+ * @param integer $size
+ */
+public function __construct($size = null)
+{
+    $this-&gt;size = is_numeric($size) ? intval($size) : self::DEFAULT_SIZE;
+}
+
+/**
+ * Applies filter effects to given image
+ *
+ * @param  Intervention\Image\Image $image
+ * @return Intervention\Image\Image
+ */
+public function applyFilter(\Intervention\Image\Image $image)
+{
+    $image-&gt;pixelate($this-&gt;size);
+    $image-&gt;greyscale();
+
+    return $image;
+}
+</code></pre>
+
+<p>}</p>
+
+<p>{% endcodeblock %}</p>
 
 <h3>Кеширование</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$img</span> <span class="o">=</span> <span class="nx">Image</span><span class="o">::</span><span class="na">cache</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="nv">$image</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nv">$image</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">make</span><span class="p">(</span><span class="s1">&#39;public/foo.jpg&#39;</span><span class="p">)</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">resize</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">greyscale</span><span class="p">();</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="nx">code</span><span class="o">&gt;&lt;/</span><span class="nx">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+$img = Image::cache(function($image) {</p>
+
+<pre><code>$image-&gt;make('public/foo.jpg')-&gt;resize(300, 200)-&gt;greyscale();
+</code></pre>
+
+<p>});
+{% endcodeblock %}</p>
 ]]></content>
   </entry>
   
@@ -204,40 +153,40 @@ XHGui призван улучшить интерфейс для доступа �
 
 <p>Прежде всего, давайте установим MongoDB.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install mongodb
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sh %}
+sudo apt-get install mongodb
+{% endcodeblock %}</p>
 
 <p>Нам также понадобится библиотека PHP для MongoDB &ndash; в репозиториях, как правило устаревшие версии, лучше взять из Pecl.
 Если вы еще не установили pecl, сделайте это с помощью команды:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install php-pear
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sh %}
+sudo apt-get install php-pear
+{% endcodeblock %}</p>
 
 <p>Установим библиотеку PHP для работы с MongoDB:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo pecl install mongo
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sh %}
+sudo pecl install mongo
+{% endcodeblock %}</p>
 
 <p>Не забудем создать файл со следующим содержанием /etc/php5/mods-available/mongo.ini:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">extension</span> <span class="o">=</span> mongo.so
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sh %}
+extension = mongo.so
+{% endcodeblock %}</p>
 
 <p>Устанавливаем сам xhprof</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo pecl install xhprof-beta
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sh %}
+sudo pecl install xhprof-beta
+{% endcodeblock %}</p>
 
 <p>Создаем файл /etc/php5/mods-available/xhprof.ini:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">extension</span> <span class="o">=</span> xhprof.so
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sh %}
+extension = xhprof.so
+{% endcodeblock %}</p>
 
 <p>Не забудем перезапустить веб сервер.</p>
 
@@ -250,53 +199,40 @@ XHGui призван улучшить интерфейс для доступа �
 
 <p>Устанавливаем для директории cache доступ для записи и запускаем скрипт установки:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>php install.php
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sh %}
+php install.php
+{% endcodeblock %}</p>
 
 <p>Если вы сделали все правильно то должны увидеть следующею картинку.</p>
 
-<p><img src="/images/post/xhprof/xhprof-1.png"></p>
+<p>{% img /images/post/xhprof/xhprof-1.png %}</p>
 
 <h1>Включение XHGui для вашего хоста</h1>
 
 <p>Для того чтобы XHGui начал профайлинг вашего сайта, настроим добавим следующие настройки</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;VirtualHost *:80&gt;&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;pre&gt;&lt;code&gt;ServerName example.local
-</span><span class='line'>
-</span><span class='line'>DocumentRoot /var/www/example/htdocs/
-</span><span class='line'>php_admin_value auto_prepend_file /var/www/xhgui/external/header.php
-</span><span class='line'>
-</span><span class='line'>&amp;lt;Directory /var/www/example/htdocs/&amp;gt;
-</span><span class='line'>    Options FollowSymLinks Indexes
-</span><span class='line'>    AllowOverride All
-</span><span class='line'> &amp;lt;/Directory&amp;gt;
-</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;&lt;/VirtualHost&gt;
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sh %}
+<VirtualHost *:80></p>
+
+<pre><code>ServerName example.local
+
+DocumentRoot /var/www/example/htdocs/
+php_admin_value auto_prepend_file /var/www/xhgui/external/header.php
+
+&lt;Directory /var/www/example/htdocs/&gt;
+    Options FollowSymLinks Indexes
+    AllowOverride All
+ &lt;/Directory&gt; 
+</code></pre>
+
+<p></VirtualHost>
+{% endcodeblock %}</p>
 
 <p>С этого момента можно посылать запросы на ваш сайт, или запустить нагрузочное тестирование с помощью Apache Bench.</p>
 
 <h1>Получения ваших данных</h1>
 
-<p><img src="/images/post/xhprof/xhprof-2.png"></p>
+<p>{% img /images/post/xhprof/xhprof-2.png %}</p>
 
 <p>XHGui отобразит список запросов, которые были обращены к сайту. Столбцы указаны:
 * URL  &ndash; адрес запроса
@@ -308,13 +244,13 @@ XHGui призван улучшить интерфейс для доступа �
 
 <p>Вы можете всегда получить боле подробную информацию о каждом запросе.</p>
 
-<p><img src="/images/post/xhprof/xhprof-3.png"></p>
+<p>{% img /images/post/xhprof/xhprof-3.png %}</p>
 
-<p><img src="/images/post/xhprof/xhprof-4.png"></p>
+<p>{% img /images/post/xhprof/xhprof-4.png %}</p>
 
 <p>Другим информативным (и невероятно симпатичный) XHGui особенностью является CallGraph, он показывает вам, затраты времени в виде графа:</p>
 
-<p><img src="/images/post/xhprof/xhprof-5.png"></p>
+<p>{% img /images/post/xhprof/xhprof-5.png %}</p>
 
 <h1>Интерпретации данных</h1>
 
@@ -327,7 +263,7 @@ XHGui призван улучшить интерфейс для доступа �
 <p>После того как вы внесли некоторые изменения, заново провести профайлинг и посмотреть на получившиеся улучшения.
 XHGui имеет встроенные способы очень элегантно сравнить работает, просто нажмите на кнопку &ldquo;Compare this run&rdquo;.</p>
 
-<p><img src="/images/post/xhprof/xhprof-6.png"></p>
+<p>{% img /images/post/xhprof/xhprof-6.png %}</p>
 
 <p>Повторяя этот процесс раз за разом, вы сможете добиться того что отклик вашего приложения на запрос пользователя будет минимальным.  Что вызовет комфорт работы пользователя с ним.</p>
 ]]></content>
@@ -342,25 +278,17 @@ XHGui имеет встроенные способы очень элегантн
 
 <p>Делается это так:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">image</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;</span> <span class="o">=&gt;</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="o">@</span><span class="p">{</span><span class="nv">$full_path_file</span><span class="p">}</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span> <span class="c1">//полный путь до файла&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;http://localhost/upload.php&quot;</span><span class="o">&gt;</span><span class="nx">http</span><span class="o">://</span><span class="nx">localhost</span><span class="o">/</span><span class="nx">upload</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">a</span><span class="o">&gt;&amp;</span><span class="nx">rsquo</span><span class="p">;);</span>
-</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+$ch = curl_init();</p>
+
+<p>$data = array(&lsquo;image&rsquo; => &lsquo;@{$full_path_file}&rsquo;); //полный путь до файла</p>
+
+<p>curl_setopt($ch, CURLOPT_URL, &lsquo;<a href="http://localhost/upload.php">http://localhost/upload.php</a>&rsquo;);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);</p>
+
+<p>curl_exec($ch);
+{% endcodeblock %}</p>
 
 <p>На локальном сервере работало на ура, но когда я залил на сервер клиента, все перестала работать.</p>
 
@@ -369,59 +297,38 @@ XHGui имеет встроенные способы очень элегантн
 
 <p>Проблемы была в том, что переменная $_FILES отдавала</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="k">Array</span>
-</span><span class='line'><span class="p">(</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="p">[</span><span class="nx">image</span><span class="p">]</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="k">Array</span>
-</span><span class='line'>    <span class="p">(</span>
-</span><span class='line'>        <span class="p">[</span><span class="nx">name</span><span class="p">]</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="mf">1308074391.</span><span class="nx">jpg</span>
-</span><span class='line'>        <span class="p">[</span><span class="nx">type</span><span class="p">]</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="nx">image</span><span class="o">/</span><span class="nx">jpeg</span>
-</span><span class='line'>        <span class="p">[</span><span class="nx">tmp_name</span><span class="p">]</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">phpslor8l</span>
-</span><span class='line'>        <span class="p">[</span><span class="nx">error</span><span class="p">]</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="mi">0</span>
-</span><span class='line'>        <span class="p">[</span><span class="nx">size</span><span class="p">]</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="mi">33173</span>
-</span><span class='line'>    <span class="p">)</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="nx">code</span><span class="o">&gt;&lt;/</span><span class="nx">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+Array
+(</p>
+
+<pre><code>[image] =&gt; Array
+    (
+        [name] =&gt; 1308074391.jpg
+        [type] =&gt; image/jpeg
+        [tmp_name] =&gt; /tmp/phpslor8l
+        [error] =&gt; 0
+        [size] =&gt; 33173
+    )
+</code></pre>
+
+<p>)
+{% endcodeblock %}</p>
 
 <p>Причина такого странного поведения заключалось в том что у клиента на хостинге перед Apache стоял Nginx, вот он и портил все.</p>
 
 <p>Долгое гугление привело меня к единственно верному решению</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">image</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;</span> <span class="o">=&gt;</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="o">@</span><span class="p">{</span><span class="nv">$full_path_file</span><span class="p">};</span><span class="nx">type</span><span class="o">=</span><span class="nx">image</span><span class="o">/</span><span class="nx">jpeg</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span> <span class="c1">//полный путь до файла&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="o">&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&quot;http://localhost/upload.php&quot;</span><span class="o">&gt;</span><span class="nx">http</span><span class="o">://</span><span class="nx">localhost</span><span class="o">/</span><span class="nx">upload</span><span class="o">.</span><span class="nx">php</span><span class="o">&lt;/</span><span class="nx">a</span><span class="o">&gt;&amp;</span><span class="nx">rsquo</span><span class="p">;);</span>
-</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+$ch = curl_init();</p>
+
+<p>$data = array(&lsquo;image&rsquo; => &lsquo;@{$full_path_file};type=image/jpeg&rsquo;); //полный путь до файла</p>
+
+<p>curl_setopt($ch, CURLOPT_URL, &lsquo;<a href="http://localhost/upload.php">http://localhost/upload.php</a>&rsquo;);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);</p>
+
+<p>curl_exec($ch);
+{% endcodeblock %}</p>
 ]]></content>
   </entry>
   
