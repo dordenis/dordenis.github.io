@@ -130,6 +130,10 @@ module OctopressLiquidFilters
     input.titlecase
   end
 
+	def join(input)
+		input.join(', ')
+	end
+
 end
 Liquid::Template.register_filter OctopressLiquidFilters
 

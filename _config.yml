@@ -5,9 +5,10 @@
 url: http://dordenis.github.io
 title: Ajaxblog
 subtitle: #A blogging framework for hackers.
-author: AjaxBlog
+author: Denis Doroshenko
 simple_search: http://google.com/search
-description:
+description: Заметки о web новинках, технологиях, решениях
+keywords: php developed
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
