@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: виртуальные хосты | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/virtual'nyie-khosty/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-12-26T05:08:27-05:00</updated>
+  <updated>2014-12-26T05:14:31-05:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -29,195 +29,118 @@
 
 <p>Ставим dnsmasq</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install dnsmasq
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sh %}
+sudo apt-get install dnsmasq
+{% endcodeblock %}</p>
 
 <p>в /etc/dnsmasq.d/devtld.conf</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>listen-address<span class="o">=</span>127.0.0.1
-</span><span class='line'><span class="nv">address</span><span class="o">=</span>/.dev/192.168.0.10 ;192.168.0.10 – ip вашей виртуальной машины
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sh %}
+listen-address=127.0.0.1
+address=/.dev/192.168.0.10 ;192.168.0.10 – ip вашей виртуальной машины
+{% endcodeblock %}</p>
 
 <p>Перезапускаем сервис</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>service dnsmasq restart
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sh %}
+service dnsmasq restart
+{% endcodeblock %}</p>
 
 <p>Проверяем работу</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>ping test.dev&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;PING test.dev <span class="o">(</span>192.168.0.10<span class="o">)</span> 56<span class="o">(</span>84<span class="o">)</span> bytes of data.
-</span><span class='line'>64 bytes from localhost.localdomain <span class="o">(</span>192.168.0.10<span class="o">)</span>: <span class="nv">icmp_req</span><span class="o">=</span>1 <span class="nv">ttl</span><span class="o">=</span>64 <span class="nb">time</span><span class="o">=</span>0.019 ms
-</span><span class='line'>64 bytes from localhost.localdomain <span class="o">(</span>192.168.0.10<span class="o">)</span>: <span class="nv">icmp_req</span><span class="o">=</span>2 <span class="nv">ttl</span><span class="o">=</span>64 <span class="nb">time</span><span class="o">=</span>0.034 ms
-</span><span class='line'>64 bytes from localhost.localdomain <span class="o">(</span>192.168.0.10<span class="o">)</span>: <span class="nv">icmp_req</span><span class="o">=</span>3 <span class="nv">ttl</span><span class="o">=</span>64 <span class="nb">time</span><span class="o">=</span>0.035 ms
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sh %}
+ping test.dev</p>
+
+<p>PING test.dev (192.168.0.10) 56(84) bytes of data.
+64 bytes from localhost.localdomain (192.168.0.10): icmp_req=1 ttl=64 time=0.019 ms
+64 bytes from localhost.localdomain (192.168.0.10): icmp_req=2 ttl=64 time=0.034 ms
+64 bytes from localhost.localdomain (192.168.0.10): icmp_req=3 ttl=64 time=0.035 ms
+{% endcodeblock %}</p>
 
 <h3>Настройка веб-сервера</h3>
 
 <p>Настроим наш веб сервер, в качестве такого у меня выступает ngnix. Данный конфиг является отправной точкой создания вашего собственного.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>server <span class="o">{</span>&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;pre&gt;&lt;code&gt;listen 80;
-</span><span class='line'>server_name .dev;
-</span><span class='line'>
-</span><span class='line'><span class="c"># dynamic vhosts for development</span>
-</span><span class='line'><span class="nb">set</span> <span class="nv">$basepath</span> <span class="s2">&quot;/path/to/your/workspace&quot;</span>;
-</span><span class='line'>
-</span><span class='line'><span class="nb">set</span> <span class="nv">$domain</span> <span class="nv">$host</span>;
-</span><span class='line'><span class="k">if</span> <span class="o">(</span><span class="nv">$domain</span> ~ <span class="s2">&quot;^(.*)\.dev$&quot;</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>    <span class="nb">set</span> <span class="nv">$domain</span> <span class="nv">$1</span>;
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'><span class="nb">set</span> <span class="nv">$rootpath</span> <span class="s2">&quot;${domain}&quot;</span>;
-</span><span class='line'><span class="k">if</span> <span class="o">(</span>-d <span class="nv">$basepath</span>/<span class="nv">$domain</span>/public<span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>    <span class="nb">set</span> <span class="nv">$rootpath</span> <span class="s2">&quot;${domain}/public&quot;</span>;
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'><span class="k">if</span> <span class="o">(</span>-d <span class="nv">$basepath</span>/<span class="nv">$domain</span>/httpdocs<span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>    <span class="nb">set</span> <span class="nv">$rootpath</span> <span class="s2">&quot;${domain}/httpdocs&quot;</span>;
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'><span class="k">if</span> <span class="o">(</span>-d <span class="nv">$basepath</span>/<span class="nv">$domain</span>/web<span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>    <span class="nb">set</span> <span class="nv">$rootpath</span> <span class="s2">&quot;${domain}/web&quot;</span>;
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'><span class="k">if</span> <span class="o">(</span>-f <span class="nv">$basepath</span>/<span class="nv">$domain</span>/index.php<span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>    <span class="nb">set</span> <span class="nv">$rootpath</span> <span class="nv">$domain</span>;
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'><span class="k">if</span> <span class="o">(</span>-f <span class="nv">$basepath</span>/<span class="nv">$domain</span>/index.html<span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>    <span class="nb">set</span> <span class="nv">$rootpath</span> <span class="nv">$domain</span>;
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>root <span class="nv">$basepath</span>/<span class="nv">$rootpath</span>;
-</span><span class='line'>
-</span><span class='line'><span class="c"># enable PHP</span>
-</span><span class='line'>index index.php app.php index.html;
-</span><span class='line'>location / <span class="o">{</span>
-</span><span class='line'>    index index.php;
-</span><span class='line'>    error_page <span class="nv">404</span> <span class="o">=</span> @indexphp;
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>location @indexphp <span class="o">{</span>
-</span><span class='line'>    rewrite ^<span class="o">(</span>.*<span class="o">)</span><span class="nv">$ </span>/index.php<span class="nv">$1</span>;
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>location ~ ^<span class="o">(</span>.+<span class="se">\.</span>php<span class="o">)(</span>?:/.+<span class="o">)</span>?<span class="nv">$ </span><span class="o">{</span>
-</span><span class='line'>    expires off;
-</span><span class='line'>    fastcgi_pass 127.0.0.1:9000;
-</span><span class='line'>    fastcgi_index index.php;
-</span><span class='line'>    fastcgi_param SCRIPT_FILENAME <span class="nv">$document_root$fastcgi_script_name</span>;
-</span><span class='line'>    fastcgi_split_path_info ^<span class="o">(</span>.+<span class="se">\.</span>php<span class="o">)(</span>/.*<span class="o">)</span><span class="nv">$;</span>
-</span><span class='line'>    include fastcgi_params;
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'><span class="c"># rewrite to index.php for pretty URL&#39;s</span>
-</span><span class='line'>try_files <span class="nv">$uri</span> <span class="nv">$uri</span>/ /index.php?<span class="nv">$args</span>;
-</span><span class='line'>
-</span><span class='line'><span class="c"># block .ht* access</span>
-</span><span class='line'>location ~ /<span class="se">\.</span>ht <span class="o">{</span>
-</span><span class='line'>    deny all;
-</span><span class='line'><span class="o">}</span>
-</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;<span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sh %}
+server {</p>
+
+<pre><code>listen 80;
+server_name .dev;
+
+# dynamic vhosts for development
+set $basepath "/path/to/your/workspace";
+
+set $domain $host;
+if ($domain ~ "^(.*)\.dev$") {
+    set $domain $1;
+}
+set $rootpath "${domain}";
+if (-d $basepath/$domain/public) {
+    set $rootpath "${domain}/public";
+}
+if (-d $basepath/$domain/httpdocs) {
+    set $rootpath "${domain}/httpdocs";
+}
+if (-d $basepath/$domain/web) {
+    set $rootpath "${domain}/web";
+}
+if (-f $basepath/$domain/index.php) {
+    set $rootpath $domain;
+}
+if (-f $basepath/$domain/index.html) {
+    set $rootpath $domain;
+}
+
+root $basepath/$rootpath;
+
+# enable PHP
+index index.php app.php index.html;
+location / {
+    index index.php;
+    error_page 404 = @indexphp;
+}
+location @indexphp {
+    rewrite ^(.*)$ /index.php$1;
+}
+location ~ ^(.+\.php)(?:/.+)?$ {
+    expires off;
+    fastcgi_pass 127.0.0.1:9000;
+    fastcgi_index index.php;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_split_path_info ^(.+\.php)(/.*)$;
+    include fastcgi_params;
+}
+# rewrite to index.php for pretty URL's
+try_files $uri $uri/ /index.php?$args;
+
+# block .ht* access
+location ~ /\.ht {
+    deny all;
+}
+</code></pre>
+
+<p>}
+{% endcodeblock %}</p>
 
 <p>Для Apache</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='sh'><span class='line'>&lt;Virtualhost *:80&gt;&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;pre&gt;&lt;code&gt;VirtualDocumentRoot <span class="s2">&quot;/path/to/your/workspace/%1/public&quot;</span>
-</span><span class='line'>ServerName vhosts.dev
-</span><span class='line'>ServerAlias *.dev
-</span><span class='line'>UseCanonicalName Off
-</span><span class='line'>&amp;lt;Directory <span class="s2">&quot;/path/to/your/workspace/*&quot;</span>&amp;gt;
-</span><span class='line'>    Options Indexes FollowSymLinks MultiViews
-</span><span class='line'>    AllowOverride All
-</span><span class='line'>    Order allow,deny
-</span><span class='line'>    Allow from all
-</span><span class='line'>&amp;lt;/Directory&amp;gt;
-</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
-</span><span class='line'>
-</span><span class='line'>&lt;p&gt;&lt;/Virtualhost&gt;
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:sh %}
+<Virtualhost *:80></p>
+
+<pre><code>VirtualDocumentRoot "/path/to/your/workspace/%1/public"
+ServerName vhosts.dev
+ServerAlias *.dev
+UseCanonicalName Off
+&lt;Directory "/path/to/your/workspace/*"&gt;
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride All
+    Order allow,deny
+    Allow from all
+&lt;/Directory&gt;
+</code></pre>
+
+<p></Virtualhost>
+{% endcodeblock %}</p>
 ]]></content>
   </entry>
   
