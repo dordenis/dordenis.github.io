@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: шпаргалка | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/shparghalka/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-12-25T06:26:14-05:00</updated>
+  <updated>2014-12-26T05:08:27-05:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -25,7 +25,7 @@
 <!-- more -->
 
 
-<h1>Создание дампа</h1>
+<h3>Создание дампа</h3>
 
 <p>Разберем пример простейшее использования, задампим базу данных “database” при помощи перенаправления потока в файл “database.sql”:</p>
 
@@ -42,7 +42,7 @@
 </ul>
 
 
-<h1>Развертывание дампа</h1>
+<h3>Развертывание дампа</h3>
 
 <p>Перенаправляем поток в обратную сторону и развертываем базу данных:</p>
 
@@ -58,7 +58,7 @@
 </span><span class='line'>mysql&gt; <span class="nb">source </span>database.sql
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<h1>Пример использование некоторых параметров</h1>
+<h3>Пример использование некоторых параметров</h3>
 
 <p>Например, нам нужны данные с “продакшен версии базы” для “версии разработчика”, то есть нам нужна “песочница”. Выбираем не более 100 записей:</p>
 
@@ -78,7 +78,7 @@
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>mysqldump -u root -p database | gzip &gt; ~/database.sql.gz
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<h1>Шпаргалка по параметрам</h1>
+<h3>Шпаргалка по параметрам</h3>
 
 <p>Приведу некоторые параметры, которые могут понадобится при работе с утилитой mysqldump.</p>
 

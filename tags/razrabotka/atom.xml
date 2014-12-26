@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: разработка | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/razrabotka/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-12-25T06:26:14-05:00</updated>
+  <updated>2014-12-26T05:08:27-05:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -193,7 +193,7 @@
 <!-- more -->
 
 
-<h1>1. Настройка домена *.dev</h1>
+<h3>Настройка домена *.dev</h3>
 
 <p>Ставим dnsmasq</p>
 
@@ -231,7 +231,7 @@
 </span><span class='line'>64 bytes from localhost.localdomain <span class="o">(</span>192.168.0.10<span class="o">)</span>: <span class="nv">icmp_req</span><span class="o">=</span>3 <span class="nv">ttl</span><span class="o">=</span>64 <span class="nb">time</span><span class="o">=</span>0.035 ms
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<h1>2. Настройка веб-сервера</h1>
+<h3>Настройка веб-сервера</h3>
 
 <p>Настроим наш веб сервер, в качестве такого у меня выступает ngnix. Данный конфиг является отправной точкой создания вашего собственного.</p>
 

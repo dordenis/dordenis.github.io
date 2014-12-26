@@ -116,7 +116,7 @@ $(document).ready(
 <!-- more -->
 
 
-<h1>1. Расширяем CUrlManager.</h1>
+<h3>Расширяем CUrlManager.</h3>
 
 <p>Создаем файл <strong>protected/components/UrlManager.php</strong></p>
 
@@ -159,7 +159,7 @@ $(document).ready(
 
 <p>Согласно нашему условию, выбранный язык должен быть частью URL. Это значит, что $_GET[&lsquo;language&rsquo;] должен быть определен. Для реализации этого мы переопределяем функцию createUrl() класса CUrlManager. Если язык в строке не указан, тогда мы его ищем в переменной сессии, затем в куках, и если до этого пользователь не менял язык то устанавливаем язык приложения по умолчанию. И затем формируем правильную строку URL уже с языком как параметр.</p>
 
-<h1>2. Редактируем наш Controller</h1>
+<h3>Редактируем наш Controller</h3>
 
 <p>Добавляем следующий код в <strong>protected/components/Controller.php</strong></p>
 
@@ -219,7 +219,7 @@ $(document).ready(
 <p>Мы расширяем конструктор класса и добавляем язык для приложения. Так как все контроллеры будут наследоваться с этого контроллера, язык приложения будет установлен явно на каждый запрос.
 Если не установленYii::app()&ndash;>language явно для каждого запроса в URL, он будет браться из конфигурационного файла приложения. Если же он не указан в конфигурационном фале, он будет идентичен Yii::app()&ndash;>sourceLanguage, который по умолчанию &lsquo;en_us&rsquo;.</p>
 
-<h1>3. Редактируем конфиг файл</h1>
+<h3>Редактируем конфиг файл</h3>
 
 <p>Вносим изменения в <strong>protected/config/main.php</strong></p>
 
@@ -274,7 +274,7 @@ $(document).ready(
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h1>4. Добавляем расширение</h1>
+<h3>Добавляем расширение</h3>
 
 <p>Создаем файл <strong>protected/extensions/gettext/components/GetText.php</strong></p>
 
@@ -435,7 +435,7 @@ $(document).ready(
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h1>5. Размешаем переводы</h1>
+<h3>Размешаем переводы</h3>
 
 <p>Создаем в папке <strong>protected/messages</strong>, следующию структуру каталогов. Где и размещаем наши переводы.</p>
 
@@ -494,7 +494,7 @@ $(document).ready(
             <div class="row-fluid">
     <span class="span12"><section>
   <h3>Категории</h3>
-    <ul id="category-list"><li><a href='/categories/fronted'>fronted (3)</a></li><li><a href='/categories/linux'>linux (3)</a></li><li><a href='/categories/mysql'>mysql (1)</a></li><li><a href='/categories/ngnix'>ngnix (1)</a></li><li><a href='/categories/octopress'>octopress (2)</a></li><li><a href='/categories/php'>php (3)</a></li><li><a href='/categories/yii'>yii (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/categories/fronted'>fronted (3)</a></li><li><a href='/categories/linux'>linux (3)</a></li><li><a href='/categories/mysql'>mysql (1)</a></li><li><a href='/categories/ngnix'>ngnix (1)</a></li><li><a href='/categories/octopress'>octopress (2)</a></li><li><a href='/categories/php'>php (4)</a></li><li><a href='/categories/yii'>yii (1)</a></li></ul>
 </section>
 </span>
 </div>

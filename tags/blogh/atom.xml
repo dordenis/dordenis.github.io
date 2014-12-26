@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: блог | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/blogh/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-12-25T06:26:14-05:00</updated>
+  <updated>2014-12-26T05:08:27-05:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -41,7 +41,7 @@
 </ul>
 
 
-<h1>1. Устанавливаем Octopress</h1>
+<h3>Устанавливаем Octopress</h3>
 
 <p>1. Устанавливаем <a href="https://rvm.beginrescueend.com/rvm/install/">rvm</a></p>
 
@@ -135,7 +135,7 @@
 </ul>
 
 
-<h1>2. Размещение на Github Pages</h1>
+<h3>Размещение на Github Pages</h3>
 
 <p>Создаем на Github репозиторий с именем <a href="http://octopress.org/docs/deploying/github/">ваш_логин.github.io</a>
 <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -157,7 +157,7 @@
 </span><span class='line'>git push origin <span class="nb">source</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<h1>3. Персональный домен</h1>
+<h3>Персональный домен</h3>
 
 <p>Создаем файл с именем CNAME содержащий ваше доменное имя.
 <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -169,7 +169,7 @@
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>example.com.  3259    IN      A       204.232.175.78
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<h1>4. Автоматизация</h1>
+<h3>Автоматизация</h3>
 
 <p>Octopress поддерживает автоматизацию типовых задач пользователя.</p>
 

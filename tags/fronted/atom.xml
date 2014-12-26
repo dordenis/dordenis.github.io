@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: fronted | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/fronted/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-12-25T06:26:14-05:00</updated>
+  <updated>2014-12-26T05:08:27-05:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[5 самые популярных CSS фреймворках в 2014]]></title>
     <link href="http://dordenis.github.io/fronted/5-most-popular-css-framework-in-2014/"/>
-    <updated>2014-11-25T12:23:00-05:00</updated>
+    <updated>2014-11-10T12:23:00-05:00</updated>
     <id>http://dordenis.github.io/fronted/5-most-popular-css-framework-in-2014</id>
     <content type="html"><![CDATA[<p>В настоящее время существует множество CSS фреймворков. Но количество действительно хороших, не очень много.
 Я попробую сделать сравнить  пяти лучших фреймвороки, доступных сегодня. Каждый фреймворк имеет свои сильные и слабые стороны, а также специфические области применения. Что  позволяет  вам выбирать, исходя из ваших потребностей под конкретный проект. Например, если ваш проект прост, нет необходимости использовать сложную структуру. Кроме того, многие из вариантов являются модульными, что позволяет использовать только необходимые компоненты или даже смешивать компоненты из разных структур.</p>

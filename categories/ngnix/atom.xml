@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ngnix | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/categories/ngnix/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-12-25T06:26:14-05:00</updated>
+  <updated>2014-12-26T05:08:27-05:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -29,7 +29,7 @@ Ngxtop парсит журнал логов Nginx (он также может р
 <!-- more -->
 
 
-<h1>1. Установка</h1>
+<h3>Установка</h3>
 
 <p>Ставим ngxtop</p>
 
@@ -37,7 +37,7 @@ Ngxtop парсит журнал логов Nginx (он также может р
 </pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install ngxtop
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<h1>2. Использование</h1>
+<h3>Использование</h3>
 
 <p>Базовое использование ngxtop выглядит следующим образом.</p>
 
@@ -78,7 +78,7 @@ Ngxtop парсит журнал логов Nginx (он также может р
 </ul>
 
 
-<h1>3. Мониторинг Nginx с помощью ngxtop</h1>
+<h3>Мониторинг Nginx с помощью ngxtop</h3>
 
 <p>По умолчанию, ngxtop попытается определить местоположение журнала доступа Nginx с его конфигурационном файле (/etc/nginx/nginx.conf).
 Таким образом, для мониторинга Nginx, просто запустите:</p>
