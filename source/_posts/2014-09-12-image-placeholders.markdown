@@ -11,7 +11,7 @@ tags: [placeholders, верстка]
 
 А что делать, когда нужно использовать картинки, которых у нас еще нет. На помощь приходят сервисы,  которые создают  фейковые картинки для нас.
 
-### **placephant.com** - изображения phpstyle
+#### **placephant.com** - изображения phpstyle
 
 {% codeblock lang:html %}
 <img src="http://placephant.com/300/200">
@@ -28,7 +28,7 @@ tags: [placeholders, верстка]
 {% img http://placephant.com/v/100/200 %}
 <!-- more -->
 
-### **fakeimg.pl** - изображения с текстом
+#### **fakeimg.pl** - изображения с текстом
 
 {% codeblock lang:html %}
 <img src="http://fakeimg.pl/300/">
@@ -42,7 +42,7 @@ tags: [placeholders, верстка]
 {% img http://fakeimg.pl/250x100/ff0000/ %}
 {% img http://fakeimg.pl/350x200/?text=Hello %}
 
-### **lorempixel.com** - изображения по тематикам 
+#### **lorempixel.com** - изображения по тематикам 
 
 {% codeblock lang:html %}
 <img src="http://lorempixel.com/250/200"> 
@@ -58,7 +58,7 @@ tags: [placeholders, верстка]
 {% img http://lorempixel.com/180/200/technics %} 
 {% img http://lorempixel.com/280/220/people/some-text %}
 
-### **placehold.it** - разноцветные прямоугольники 
+#### **placehold.it** - разноцветные прямоугольники 
 
 {% codeblock lang:html %}
 <img src="http://placehold.it/150x100">
@@ -70,7 +70,7 @@ tags: [placeholders, верстка]
 {% img http://placehold.it/180x135/2ecc71/ecf0f1 %}
 {% img http://placehold.it/280x100/2c3e50/3498db&text=html5.by+Rocks! %}
 
-### **placepuppy.it** - для любителей собак 
+#### **placepuppy.it** - для любителей собак 
 
 {% codeblock lang:html %}
 <img src="http://placepuppy.it/150/100">
@@ -82,7 +82,7 @@ tags: [placeholders, верстка]
 {% img http://placepuppy.it/120/135 %}
 {% img http://placepuppy.it/80/100 %}
 
-### **placekitten.com** - для любителей котят
+#### **placekitten.com** - для любителей котят
 
 {% codeblock lang:html %}
 <img src="http://placekitten.com/g/160/120">
@@ -94,7 +94,7 @@ tags: [placeholders, верстка]
 {% img http://placekitten.com/g/120/135 %}
 {% img http://placekitten.com/g/180/100 %}
 
-### **placekitten.com** - для больших любителей 
+#### **placekitten.com** - для больших любителей 
 
 {% codeblock lang:html %}
 <img src="http://beerhold.it/225/280">
@@ -112,6 +112,6 @@ tags: [placeholders, верстка]
 {% img http://beerhold.it/270/260 %}
 {% img http://beerhold.it/280/200/s %}<!-- sepia -->
 
-### если пропал интернет
+#### если пропал интернет
 
 Тогда обратите вниманиие на [holder.js](http://imsky.github.io/holder/).

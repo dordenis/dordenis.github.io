@@ -11,7 +11,7 @@ tags: [Raspberry Pi, web-server]
 И так приступим…
 <!-- more -->
 
-#  1. Устанавливаем образ “wheezy”
+### Устанавливаем образ “wheezy”
 
 Скачиваем образ с [официального сайта](http://www.raspberrypi.org/downloads)
 Распаковываем, на данный момент это 2013-05-29-wheezy-armel.img
@@ -31,7 +31,7 @@ netmask 255.255.255.0
 gateway 192.168.1.1
 {% endcodeblock %}
 
-#  2. Настройка операционной системы
+### Настройка операционной системы
 
 В консоле набираем
 {% codeblock lang:sh %}
@@ -54,7 +54,7 @@ sudo raspi-config
 sudo apt-get update sudo apt-get upgrade
 {% endcodeblock %}
 
-# 3. Установка web-server
+### Установка web-server
 
 Устанавливаем все необходимое
 {% codeblock lang:sh %}
@@ -70,7 +70,7 @@ sudo apt-get install mysql-server php5-mysql
 
 Проверяем, набираем в браузере http://192.168.1.10, если все сделали правильно, то должны увидеть надпись **Welcome to nginx!**
 
-# 4. Настройка web-server
+### Настройка web-server
 
 Создаем файл /etc/nginx/sites-enabled/ajaxblog
 {% codeblock lang:sh %}
@@ -103,7 +103,7 @@ server {
 
 Создаем папку **/var/www/html/ajaxblog** куда заливаем wordpress
 
-5. Настройка DNS
+### Настройка DNS
 
 Наш сайт пока мы можем видеть только по локальному адресу http://192.168.1.10.
 Для того чтобы мы могли видеть сайт по доменому имени http://ajaxblog.ru, нам нужно:
