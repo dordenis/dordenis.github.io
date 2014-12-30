@@ -12,6 +12,8 @@
 	    {{ tag }}</br>
 	{% endfor %}
   {% else %}
-    {{ page.tags }}</br>
+	{% for tag in page.tags %}
+	    {{ tag }}</br>
+	{% endfor %}
   {% endif %}
 {% endunless %}
