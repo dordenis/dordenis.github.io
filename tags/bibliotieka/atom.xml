@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: библиотека | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/bibliotieka/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2015-01-13T06:31:45-05:00</updated>
+  <updated>2015-01-13T07:13:00-05:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -29,155 +29,104 @@
 
 <h3>Чтение</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$img</span> <span class="o">=</span> <span class="nx">Image</span><span class="o">::</span><span class="na">make</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">foo</span><span class="o">/</span><span class="nx">bar</span><span class="o">/</span><span class="nx">baz</span><span class="o">.</span><span class="nx">jpg</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+$img = Image::make(&lsquo;foo/bar/baz.jpg&rsquo;);
+{% endcodeblock %}</p>
 
 <h3>Создание</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$img</span> <span class="o">=</span> <span class="nx">Image</span><span class="o">::</span><span class="na">canvas</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="c1">#ccc&amp;rsquo;);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+$img = Image::canvas(800, 600, &lsquo;#ccc&rsquo;);
+{% endcodeblock %}</p>
 
 <h3>Наложение изображения</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$img</span> <span class="o">=</span> <span class="nx">Image</span><span class="o">::</span><span class="na">make</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">foo</span><span class="o">.</span><span class="nx">jpg</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;)</span><span class="o">&amp;</span><span class="nx">ndash</span><span class="p">;</span><span class="o">&gt;</span><span class="nx">resize</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span> <span class="mi">240</span><span class="p">)</span><span class="o">&amp;</span><span class="nx">ndash</span><span class="p">;</span><span class="o">&gt;</span><span class="nx">insert</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">watermark</span><span class="o">.</span><span class="nx">png</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+$img = Image::make(&lsquo;foo.jpg&rsquo;)&ndash;>resize(320, 240)&ndash;>insert(&lsquo;watermark.png&rsquo;);
+{% endcodeblock %}</p>
 
 <h3>Сохранение</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nx">Image</span><span class="o">::</span><span class="na">make</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">foo</span><span class="o">.</span><span class="nx">jpg</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;)</span><span class="o">&amp;</span><span class="nx">ndash</span><span class="p">;</span><span class="o">&gt;</span><span class="nx">resize</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span><span class="o">&amp;</span><span class="nx">ndash</span><span class="p">;</span><span class="o">&gt;</span><span class="nx">save</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">bar</span><span class="o">.</span><span class="nx">jpg</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+Image::make(&lsquo;foo.jpg&rsquo;)&ndash;>resize(300, 200)&ndash;>save(&lsquo;bar.jpg&rsquo;);
+{% endcodeblock %}</p>
 
 <h3>HTTP Responses</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$img</span> <span class="o">=</span> <span class="nx">Image</span><span class="o">::</span><span class="na">canvas</span><span class="p">(</span><span class="mi">800</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="c1">#ff0000&amp;rsquo;);</span>
-</span><span class='line'><span class="k">echo</span> <span class="nv">$img</span><span class="o">-&gt;</span><span class="na">response</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">jpg</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;,</span> <span class="mi">70</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+$img = Image::canvas(800, 600, &lsquo;#ff0000&rsquo;);
+echo $img->response(&lsquo;jpg&rsquo;, 70);
+{% endcodeblock %}</p>
 
 <h3>Загрузка</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$img</span> <span class="o">=</span> <span class="nx">Image</span><span class="o">::</span><span class="na">make</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">image</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;][</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">tmp_name</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;]);</span>
-</span><span class='line'><span class="nv">$img</span><span class="o">-&gt;</span><span class="na">fit</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
-</span><span class='line'><span class="nv">$img</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">lsquo</span><span class="p">;</span><span class="nx">foo</span><span class="o">/</span><span class="nx">bar</span><span class="o">.</span><span class="nx">jpg</span><span class="o">&amp;</span><span class="nx">rsquo</span><span class="p">;);</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+$img = Image::make($_FILES[&lsquo;image&rsquo;][&lsquo;tmp_name&rsquo;]);
+$img->fit(300, 200);
+$img->save(&lsquo;foo/bar.jpg&rsquo;);
+{% endcodeblock %}</p>
 
 <h3>Применение фильтров</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$img</span><span class="o">-&gt;</span><span class="na">filter</span><span class="p">(</span><span class="k">new</span> <span class="nx">DemoFilter</span><span class="p">(</span><span class="mi">45</span><span class="p">));</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+$img->filter(new DemoFilter(45));
+{% endcodeblock %}</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="k">class</span> <span class="nc">DemoFilter</span> <span class="k">implements</span> <span class="nx">FilterInterface</span>
-</span><span class='line'><span class="p">{</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;/**</span>
-</span><span class='line'> <span class="o">*</span> <span class="k">Default</span> <span class="nx">size</span> <span class="nx">of</span> <span class="nx">filter</span> <span class="nx">effects</span>
-</span><span class='line'> <span class="o">*/</span>
-</span><span class='line'><span class="k">const</span> <span class="no">DEFAULT_SIZE</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sd">/**</span>
-</span><span class='line'><span class="sd"> * Size of filter effects</span>
-</span><span class='line'><span class="sd"> *</span>
-</span><span class='line'><span class="sd"> * @var integer</span>
-</span><span class='line'><span class="sd"> */</span>
-</span><span class='line'><span class="k">private</span> <span class="nv">$size</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sd">/**</span>
-</span><span class='line'><span class="sd"> * Creates new instance of filter</span>
-</span><span class='line'><span class="sd"> *</span>
-</span><span class='line'><span class="sd"> * @param integer $size</span>
-</span><span class='line'><span class="sd"> */</span>
-</span><span class='line'><span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$size</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="nv">$this</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">size</span> <span class="o">=</span> <span class="nb">is_numeric</span><span class="p">(</span><span class="nv">$size</span><span class="p">)</span> <span class="o">?</span> <span class="nb">intval</span><span class="p">(</span><span class="nv">$size</span><span class="p">)</span> <span class="o">:</span> <span class="nx">self</span><span class="o">::</span><span class="na">DEFAULT_SIZE</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="sd">/**</span>
-</span><span class='line'><span class="sd"> * Applies filter effects to given image</span>
-</span><span class='line'><span class="sd"> *</span>
-</span><span class='line'><span class="sd"> * @param  Intervention\Image\Image $image</span>
-</span><span class='line'><span class="sd"> * @return Intervention\Image\Image</span>
-</span><span class='line'><span class="sd"> */</span>
-</span><span class='line'><span class="k">public</span> <span class="k">function</span> <span class="nf">applyFilter</span><span class="p">(</span><span class="nx">\Intervention\Image\Image</span> <span class="nv">$image</span><span class="p">)</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="nv">$image</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">pixelate</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">size</span><span class="p">);</span>
-</span><span class='line'>    <span class="nv">$image</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">greyscale</span><span class="p">();</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">return</span> <span class="nv">$image</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="nx">code</span><span class="o">&gt;&lt;/</span><span class="nx">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">}</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+class DemoFilter implements FilterInterface
+{</p>
+
+<pre><code>/**
+ * Default size of filter effects
+ */
+const DEFAULT_SIZE = 10;
+
+/**
+ * Size of filter effects
+ *
+ * @var integer
+ */
+private $size;
+
+/**
+ * Creates new instance of filter
+ *
+ * @param integer $size
+ */
+public function __construct($size = null)
+{
+    $this-&gt;size = is_numeric($size) ? intval($size) : self::DEFAULT_SIZE;
+}
+
+/**
+ * Applies filter effects to given image
+ *
+ * @param  Intervention\Image\Image $image
+ * @return Intervention\Image\Image
+ */
+public function applyFilter(\Intervention\Image\Image $image)
+{
+    $image-&gt;pixelate($this-&gt;size);
+    $image-&gt;greyscale();
+
+    return $image;
+}
+</code></pre>
+
+<p>}</p>
+
+<p>{% endcodeblock %}</p>
 
 <h3>Кеширование</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$img</span> <span class="o">=</span> <span class="nx">Image</span><span class="o">::</span><span class="na">cache</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="nv">$image</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">pre</span><span class="o">&gt;&lt;</span><span class="nx">code</span><span class="o">&gt;</span><span class="nv">$image</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">make</span><span class="p">(</span><span class="s1">&#39;public/foo.jpg&#39;</span><span class="p">)</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">resize</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">greyscale</span><span class="p">();</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="nx">code</span><span class="o">&gt;&lt;/</span><span class="nx">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:php %}
+$img = Image::cache(function($image) {</p>
+
+<pre><code>$image-&gt;make('public/foo.jpg')-&gt;resize(300, 200)-&gt;greyscale();
+</code></pre>
+
+<p>});
+{% endcodeblock %}</p>
 ]]></content>
   </entry>
   
