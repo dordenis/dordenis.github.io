@@ -8,7 +8,7 @@
 	<meta name="author" content="Denis Doroshenko">
 
 
-	<meta name="description" content=" RabbitMQ для начинающих "> 
+	<meta name="description" content=" 18 новых jquery плагинов для вашего сайта "> 
 
 
 	<meta name="keywords" content="php developed">
@@ -107,6 +107,62 @@ $(document).ready(
 </header>
 
 	<div id="content" class="inner">
+
+	
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/jquery/18-jquery-plugins/">
+		
+			18 новых Jquery плагинов для вашего сайта</a>
+	</h2>
+	<div class="entry-content">
+        <div class="meta">
+            <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-13T14:00:00-05:00" pubdate data-updated="true">13 Января 2015</time></div>
+            <div class="categories">
+
+
+	<a class='category' href='/categories/jquery/'>jquery</a>
+
+
+</div>
+			<div class="tags">
+
+
+  
+	
+	    plugin</br>
+	
+	    js</br>
+	
+  
+
+</div>
+            
+        </div>
+		<h4><a href="http://osvaldas.info/audio-player-responsive-and-touch-friendly">Адаптивный Audio Player</a></h4>
+
+<p>Это адаптивный аудио-плеер является идеальным примером работе JQuery. Вы просто подключаете плагин и получаете красивый аудио-плеер с удобным интерфейсом.</p>
+
+<p><img class="center" src="/images/post/18-jquery-plugins/01.png"></p>
+
+
+		
+		<a href="/jquery/18-jquery-plugins/" class="more-link">Дальше интереснее &rarr;</a>
+	</div>
+</article>
 
 	
     <article class="post">
@@ -644,83 +700,6 @@ XHGui призван улучшить интерфейс для доступа �
 	</div>
 </article>
 
-	
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/php/uploading-files-to-a-server-using-CURL/">
-		
-			Загрузка файлов на сервер с помощью CURL</a>
-	</h2>
-	<div class="entry-content">
-        <div class="meta">
-            <div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-08-13T00:00:00-04:00" pubdate data-updated="true">13 Августа 2013</time></div>
-            <div class="categories">
-
-
-	<a class='category' href='/categories/php/'>php</a>
-
-
-</div>
-			<div class="tags">
-
-
-  
-	
-	    curl</br>
-	
-	    загрузка файлов</br>
-	
-  
-
-</div>
-            
-        </div>
-		<p>Для одного из проектов нужно было загрузить файлы на сервер, с использованием CURL.</p>
-
-<p>Делается это так:</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;image&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;@{$full_path_file}&#39;</span><span class="p">);</span> <span class="c1">//полный путь до файла</span>
-</span><span class='line'>
-</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="s1">&#39;http://localhost/upload.php&#39;</span><span class="p">);</span>
-</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POST</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-</span><span class='line'><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>На локальном сервере работало на ура, но когда я залил на сервер клиента, все перестала работать.</p>
-
-
-		
-		<a href="/php/uploading-files-to-a-server-using-CURL/" class="more-link">Дальше интереснее &rarr;</a>
-	</div>
-</article>
-
 <nav id="pagenavi">
     
     
@@ -734,12 +713,12 @@ XHGui призван улучшить интерфейс для доступа �
             <div class="row-fluid">
     <span class="span12"><section>
   <h3>Категории</h3>
-    <ul id="category-list"><li><a href='/categories/fronted'>fronted (3)</a></li><li><a href='/categories/linux'>linux (3)</a></li><li><a href='/categories/mysql'>mysql (1)</a></li><li><a href='/categories/ngnix'>ngnix (1)</a></li><li><a href='/categories/octopress'>octopress (2)</a></li><li><a href='/categories/php'>php (4)</a></li><li><a href='/categories/yii'>yii (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/categories/fronted'>fronted (3)</a></li><li><a href='/categories/jquery'>jquery (1)</a></li><li><a href='/categories/linux'>linux (3)</a></li><li><a href='/categories/mysql'>mysql (1)</a></li><li><a href='/categories/ngnix'>ngnix (1)</a></li><li><a href='/categories/octopress'>octopress (2)</a></li><li><a href='/categories/php'>php (4)</a></li><li><a href='/categories/yii'>yii (1)</a></li></ul>
 </section>
 </span>
 </div>
             <div class="copyright">
-    Copyright &copy; 2014
+    Copyright &copy; 2015
     
         Denis Doroshenko
     

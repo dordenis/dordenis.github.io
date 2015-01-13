@@ -4,7 +4,7 @@
   <title><![CDATA[Ajaxblog]]></title>
   <link href="http://dordenis.github.io/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2014-12-30T06:48:48-05:00</updated>
+  <updated>2015-01-13T06:31:45-05:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[18 новых jquery плагинов для вашего сайта]]></title>
+    <link href="http://dordenis.github.io/jquery/18-jquery-plugins/"/>
+    <updated>2015-01-13T14:00:00-05:00</updated>
+    <id>http://dordenis.github.io/jquery/18-jquery-plugins</id>
+    <content type="html"><![CDATA[<h4><a href="http://osvaldas.info/audio-player-responsive-and-touch-friendly">Адаптивный Audio Player</a></h4>
+
+<p>Это адаптивный аудио-плеер является идеальным примером работе JQuery. Вы просто подключаете плагин и получаете красивый аудио-плеер с удобным интерфейсом.</p>
+
+<p><img class="center" src="http://dordenis.github.io/images/post/18-jquery-plugins/01.png"></p>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[RabbitMQ для начинающих]]></title>
