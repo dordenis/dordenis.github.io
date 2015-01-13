@@ -3,8 +3,8 @@ layout: post
 title: 18 новых jquery плагинов для вашего сайта
 date: 2015-01-13 14:00
 comments: true
-categories: jquery
-tags: [plugin, js]
+categories: fronted
+tags: [jquery, js]
 ---
 
 #### [Адаптивный Audio Player](http://osvaldas.info/audio-player-responsive-and-touch-friendly)
