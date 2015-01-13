@@ -4,7 +4,7 @@
   <title><![CDATA[Ajaxblog]]></title>
   <link href="http://dordenis.github.io/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2015-01-13T06:31:45-05:00</updated>
+  <updated>2015-01-13T07:13:37-05:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[18 новых jquery плагинов для вашего сайта]]></title>
-    <link href="http://dordenis.github.io/jquery/18-jquery-plugins/"/>
+    <link href="http://dordenis.github.io/fronted/18-jquery-plugins/"/>
     <updated>2015-01-13T14:00:00-05:00</updated>
-    <id>http://dordenis.github.io/jquery/18-jquery-plugins</id>
+    <id>http://dordenis.github.io/fronted/18-jquery-plugins</id>
     <content type="html"><![CDATA[<h4><a href="http://osvaldas.info/audio-player-responsive-and-touch-friendly">Адаптивный Audio Player</a></h4>
 
 <p>Это адаптивный аудио-плеер является идеальным примером работе JQuery. Вы просто подключаете плагин и получаете красивый аудио-плеер с удобным интерфейсом.</p>

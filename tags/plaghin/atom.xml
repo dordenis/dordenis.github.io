@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: плагин | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/plaghin/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2015-01-13T07:13:00-05:00</updated>
+  <updated>2015-01-13T07:13:37-05:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -32,16 +32,23 @@
 </ul>
 
 
-<p>{% codeblock lang:ruby %}
-module Jekyll
-  class S3ImageTag &lt; Liquid::Tag</p>
-
-<pre><code># здесь будет наш код
-</code></pre>
-
-<p>  end
-end
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">module</span> <span class="nn">Jekyll</span>
+</span><span class='line'>  <span class="k">class</span> <span class="nc">S3ImageTag</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="ss">Liquid</span><span class="p">:</span><span class="ss">:Tag</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;# здесь будет наш код</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  end</span>
+</span><span class='line'><span class="sr">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Все теги шаблонизатора Liquid наследуютьса от класса Liquid::Tag. Liquid ожидает что класс имеет метод render который и реализует отрисовку тега.</p>
 
@@ -50,15 +57,21 @@ end
 </ul>
 
 
-<p>{% codeblock lang:ruby %}
-def initialize(tag_name, text, token)
-  super
-  @text = text.strip
-  @text =~ /(\w+.\w+)(\sbucket:)?(\w*)/i
-  @file_name = $1
-  @bucket_name = $3.empty? ? Jekyll.configuration({})[&lsquo;aws_bucket&rsquo;] : $3
-end
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">tag_name</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">token</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">super</span>
+</span><span class='line'>  <span class="vi">@text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">strip</span>
+</span><span class='line'>  <span class="vi">@text</span> <span class="o">=~</span> <span class="sr">/(\w+.\w+)(\sbucket:)?(\w*)/i</span>
+</span><span class='line'>  <span class="vi">@file_name</span> <span class="o">=</span> <span class="vg">$1</span>
+</span><span class='line'>  <span class="vi">@bucket_name</span> <span class="o">=</span> <span class="vg">$3</span><span class="o">.</span><span class="n">empty?</span> <span class="p">?</span> <span class="no">Jekyll</span><span class="o">.</span><span class="n">configuration</span><span class="p">({})</span><span class="o">[&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">aws_bucket</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="o">]</span> <span class="p">:</span> <span class="vg">$3</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Обратите внимание, что Liquid вызовет наш метод инициализации с тремя параметрами: имя тега, текст в самом теге, и маркер.</p>
 
@@ -69,21 +82,33 @@ end
 </ul>
 
 
-<p>{% codeblock lang:ruby %}
-def render(context)
-  if @file_name &amp;&amp; @bucket_name</p>
-
-<pre><code>"&lt;img src='https://s3.amazonaws.com/#{@bucket_name}/#{@file_name}'&gt;"
-</code></pre>
-
-<p>  else</p>
-
-<pre><code>"Error processing input."
-</code></pre>
-
-<p>  end
-end
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="vi">@file_name</span> <span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="vi">@bucket_name</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;&quot;&amp;lt;img src=&#39;https:/</span><span class="o">/</span><span class="n">s3</span><span class="o">.</span><span class="n">amazonaws</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="c1">#{@bucket_name}/#{@file_name}&#39;&amp;gt;&quot;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">else</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;&quot;Error processing input.&quot;</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  end</span>
+</span><span class='line'><span class="sr">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Отдаем HTML тег для нужного изображения. Если один из параметров отсутствует, возвращаемся сообщением об ошибке.</p>
 
@@ -92,9 +117,9 @@ end
 </ul>
 
 
-<p>{% codeblock lang:ruby %}
-Liquid::Template.register_tag(&lsquo;s3_image&rsquo;, Jekyll::S3ImageTag)
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="ss">Liquid</span><span class="p">:</span><span class="ss">:Template</span><span class="o">.</span><span class="n">register_tag</span><span class="p">(</span><span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">s3_image</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;,</span> <span class="ss">Jekyll</span><span class="p">:</span><span class="ss">:S3ImageTag</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Liquid::Template привязывает тег s3_image к нашему классу Jekyll::S3ImageTag, который и будет его обрабатывать.</p>
 
@@ -104,27 +129,38 @@ Liquid::Template.register_tag(&lsquo;s3_image&rsquo;, Jekyll::S3ImageTag)
 </ul>
 
 
-<p>{% codeblock lang:ruby %}</p>
-
-<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</h1>
-
-<h1>3rd Party Settings</h1>
-
-<h1>&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</h1>
-
-<h1>Amazon S3 Images</h1>
-
-<p>aws_bucket: thoughts_on_rails
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="mi">3</span><span class="n">rd</span> <span class="no">Party</span> <span class="no">Settings</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;h1&gt;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="no">Amazon</span> <span class="no">S3</span> <span class="no">Images</span><span class="o">&lt;</span><span class="sr">/h1&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;aws_bucket: thoughts_on_rails</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <ul>
 <li>Пример использование нового тега в наших постах</li>
 </ul>
 
 
-<p>{% codeblock lang:ruby %}
-Here is an image:   {% raw %}{% s3_image foo.jpeg bucket:bar %}{% endraw %}
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Here</span> <span class="n">is</span> <span class="n">an</span> <span class="ss">image</span><span class="p">:</span>   <span class="p">{</span><span class="o">%</span> <span class="n">s3_image</span> <span class="n">foo</span><span class="o">.</span><span class="n">jpeg</span> <span class="ss">bucket</span><span class="p">:</span><span class="n">bar</span> <span class="o">%</span><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>P.S. Оригинальный источник <a href="http://www.thoughtsonrails.com/creating-plugins-for-octopress/">http://www.thoughtsonrails.com/creating-plugins-for-octopress/</a></p>
 ]]></content>

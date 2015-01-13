@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: блог | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/blogh/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2015-01-13T07:13:00-05:00</updated>
+  <updated>2015-01-13T07:13:37-05:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -46,53 +46,79 @@
 <p>1. Устанавливаем <a href="https://rvm.beginrescueend.com/rvm/install/">rvm</a></p>
 
 <p>2. Устанавливаем Ruby
-{% codeblock lang:sh %}
-rvm install x.x.x
-rvm use x.x.x
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>rvm install x.x.x
+</span><span class='line'>rvm use x.x.x
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>3. <a href="http://octopress.org/docs/setup/">Устанавливаем Octopress</a>
-{% codeblock lang:sh %}
-apt-get install python-dev # для плагина подсветки синтаксиса
-git clone git://github.com/imathis/octopress.git octopress
-cd octopress
-ruby &mdash;version # report Ruby 1.9.3
-gem install bundler
-bundle install
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>apt-get install python-dev <span class="c"># для плагина подсветки синтаксиса</span>
+</span><span class='line'>git clone git://github.com/imathis/octopress.git octopress
+</span><span class='line'><span class="nb">cd </span>octopress
+</span><span class='line'>ruby &amp;mdash;version <span class="c"># report Ruby 1.9.3</span>
+</span><span class='line'>gem install bundler
+</span><span class='line'>bundle install
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>4. <a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes">Выбираем тему</a> по душе
-{% codeblock lang:sh %}
-git clone GIT_URL .themes/THEME_NAME
-rake install[&lsquo;THEME_NAME&rsquo;]
-rake generate
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>git clone GIT_URL .themes/THEME_NAME
+</span><span class='line'>rake install<span class="o">[</span>&amp;lsquo;THEME_NAME&amp;rsquo;<span class="o">]</span>
+</span><span class='line'>rake generate
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>5. Редактируем <a href="http://octopress.org/docs/configuring/">конфигурационный файл</a> <strong>_config.yml</strong>
-{% codeblock lang:sh %}
-root: /
-permalink: /:categories/:title/
-source: source
-destination: public
-plugins: plugins
-code_dir: downloads/code
-category_dir: categories
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>root: /
+</span><span class='line'>permalink: /:categories/:title/
+</span><span class='line'><span class="nb">source</span>: <span class="nb">source</span>
+</span><span class='line'>destination: public
+</span><span class='line'>plugins: plugins
+</span><span class='line'>code_dir: downloads/code
+</span><span class='line'>category_dir: categories
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>6. <a href="http://octopress.org/docs/theme/template/">Правим файлы</a> под свои предпочтения в директориях
-{% codeblock lang:sh %}
-sass                        # цветовая гамма и стили
-source/                     # папка с исходными файлами.</p>
-
-<pre><code>    _includes/          # шаблоны частей сайта
-    _layouts/           # основные шаблоны для страниц, постов и архивов
-            asides/     # шаблоны боковой панели
-            custom/     # пользовательские шаблоны
-            post/       # шаблоны страницы post (metadata, sharing &amp; comment)
-    _posts/             # все посты в markdown
-</code></pre>
-
-<p>{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sass                        <span class="c"># цветовая гамма и стили</span>
+</span><span class='line'><span class="nb">source</span>/                     <span class="c"># папка с исходными файлами.&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'>&lt;pre&gt;&lt;code&gt;    _includes/          <span class="c"># шаблоны частей сайта</span>
+</span><span class='line'>    _layouts/           <span class="c"># основные шаблоны для страниц, постов и архивов</span>
+</span><span class='line'>            asides/     <span class="c"># шаблоны боковой панели</span>
+</span><span class='line'>            custom/     <span class="c"># пользовательские шаблоны</span>
+</span><span class='line'>            post/       <span class="c"># шаблоны страницы post (metadata, sharing &amp;amp; comment)</span>
+</span><span class='line'>    _posts/             <span class="c"># все посты в markdown</span>
+</span><span class='line'>&lt;/code&gt;&lt;/pre&gt;
+</span><span class='line'>
+</span><span class='line'>&lt;p&gt;
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>7. <a href="http://maxmikheev.ru/blog/2012/07/13/russian-dates-in-octopress/">Русифицируем даты</a> в Octopress</p>
 
@@ -112,61 +138,83 @@ source/                     # папка с исходными файлами.</
 <h3>Размещение на Github Pages</h3>
 
 <p>Создаем на Github репозиторий с именем <a href="http://octopress.org/docs/deploying/github/">ваш_логин.github.io</a>
-{% codeblock lang:sh %}
-rake setup_github_pages
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>rake setup_github_pages
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Вводим свой урл до репозитория.
-{% codeblock lang:sh %}
-rake generate
-rake deploy
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>rake generate
+</span><span class='line'>rake deploy
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-<p>{% codeblock lang:sh %}
-git add .
-git commit -m &lsquo;your message&rsquo;
-git push origin source
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>git add .
+</span><span class='line'>git commit -m &amp;lsquo;your message&amp;rsquo;
+</span><span class='line'>git push origin <span class="nb">source</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h3>Персональный домен</h3>
 
 <p>Создаем файл с именем CNAME содержащий ваше доменное имя.
-{% codeblock lang:sh %}
-echo &lsquo;your-domain.com&rsquo; >> source/CNAME
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nb">echo</span> &amp;lsquo;your-domain.com&amp;rsquo; &gt;&gt; <span class="nb">source</span>/CNAME
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>На вашем DNS сервере <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-pages">прописываем А запись</a>
-{% codeblock lang:sh %}
-example.com.  3259    IN      A       204.232.175.78
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>example.com.  3259    IN      A       204.232.175.78
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h3>Автоматизация</h3>
 
 <p>Octopress поддерживает автоматизацию типовых задач пользователя.</p>
 
 <p>Список все задач можно посмотреть командой
-{% codeblock lang:sh %}
-$ rake &mdash;task
-rake clean                     # Clean out caches: .pygments-cache, .gist-cache, .sass-cache
-rake copydot[source,dest]      # copy dot files for deployment
-rake deploy                    # Default deploy task
-rake gen_deploy                # Generate website and deploy
-rake generate                  # Generate jekyll site
-rake install[theme]            # Initial setup for Octopress: copies the default theme into the path of J&hellip;
-rake integrate                 # Move all stashed posts back into the posts directory, ready for site gen&hellip;
-rake isolate[filename]         # Move all other posts than the one currently being worked on to a tempora&hellip;
-rake list                      # list tasks
-rake new_page[filename]        # Create a new page in source/(filename)/index.markdown
-rake new_post[title]           # Begin a new post in source/<em>posts
-rake preview                   # preview the site in a web browser
-rake push                      # deploy public directory to github pages
-rake rsync                     # Deploy website via rsync
-rake set_root_dir[dir]         # Update configurations to support publishing to root or sub directory
-rake setup_github_pages[repo]  # Set up </em>deploy folder and deploy branch for Github Pages deployment
-rake update_source[theme]      # Move source to source.old, install source theme updates, replace source/&hellip;
-rake update_style[theme]       # Move sass to sass.old, install sass theme updates, replace sass/custom w&hellip;
-rake watch                     # Watch the site and regenerate when it changes
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="nv">$ </span>rake &amp;mdash;task
+</span><span class='line'>rake clean                     <span class="c"># Clean out caches: .pygments-cache, .gist-cache, .sass-cache</span>
+</span><span class='line'>rake copydot<span class="o">[</span><span class="nb">source</span>,dest<span class="o">]</span>      <span class="c"># copy dot files for deployment</span>
+</span><span class='line'>rake deploy                    <span class="c"># Default deploy task</span>
+</span><span class='line'>rake gen_deploy                <span class="c"># Generate website and deploy</span>
+</span><span class='line'>rake generate                  <span class="c"># Generate jekyll site</span>
+</span><span class='line'>rake install<span class="o">[</span>theme<span class="o">]</span>            <span class="c"># Initial setup for Octopress: copies the default theme into the path of J&amp;hellip;</span>
+</span><span class='line'>rake integrate                 <span class="c"># Move all stashed posts back into the posts directory, ready for site gen&amp;hellip;</span>
+</span><span class='line'>rake isolate<span class="o">[</span>filename<span class="o">]</span>         <span class="c"># Move all other posts than the one currently being worked on to a tempora&amp;hellip;</span>
+</span><span class='line'>rake list                      <span class="c"># list tasks</span>
+</span><span class='line'>rake new_page<span class="o">[</span>filename<span class="o">]</span>        <span class="c"># Create a new page in source/(filename)/index.markdown</span>
+</span><span class='line'>rake new_post<span class="o">[</span>title<span class="o">]</span>           <span class="c"># Begin a new post in source/&lt;em&gt;posts</span>
+</span><span class='line'>rake preview                   <span class="c"># preview the site in a web browser</span>
+</span><span class='line'>rake push                      <span class="c"># deploy public directory to github pages</span>
+</span><span class='line'>rake rsync                     <span class="c"># Deploy website via rsync</span>
+</span><span class='line'>rake set_root_dir<span class="o">[</span>dir<span class="o">]</span>         <span class="c"># Update configurations to support publishing to root or sub directory</span>
+</span><span class='line'>rake setup_github_pages<span class="o">[</span>repo<span class="o">]</span>  <span class="c"># Set up &lt;/em&gt;deploy folder and deploy branch for Github Pages deployment</span>
+</span><span class='line'>rake update_source<span class="o">[</span>theme<span class="o">]</span>      <span class="c"># Move source to source.old, install source theme updates, replace source/&amp;hellip;</span>
+</span><span class='line'>rake update_style<span class="o">[</span>theme<span class="o">]</span>       <span class="c"># Move sass to sass.old, install sass theme updates, replace sass/custom w&amp;hellip;</span>
+</span><span class='line'>rake watch                     <span class="c"># Watch the site and regenerate when it changes</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   
