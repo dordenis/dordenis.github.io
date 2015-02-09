@@ -98,8 +98,8 @@ $channel = new AMQPChannel($connection);
 {% codeblock lang:php %}
 $exchange = new AMQPExchange($channel);
 $exchange->setName('ex_hello');
-$exchange->setType(AMQP_EX_TYPE_FANOUT);
-$exchange->setFlags(AMQP_IFUNUSED | AMQP_AUTODELETE);
+$exchange->setType(AMQP_EX_TYPE_DIRECT);
+$exchange->setFlags(AMQP_DURABLE);
 $exchange->declare();
 {% endcodeblock %}
 
@@ -159,8 +159,8 @@ $connection->connect();
 $channel = new AMQPChannel($connection);
 $exchange = new AMQPExchange($channel);
 $exchange->setName('ex_hello');
-$exchange->setType(AMQP_EX_TYPE_FANOUT);
-$exchange->setFlags(AMQP_IFUNUSED | AMQP_AUTODELETE);
+$exchange->setType(AMQP_EX_TYPE_DIRECT);
+$exchange->setFlags(AMQP_DURABLE);
 $exchange->declare(); $queue = new AMQPQueue($channel);
 $queue->setName('hello');
 $queue->setFlags(AMQP_IFUNUSED | AMQP_AUTODELETE);
@@ -228,7 +228,7 @@ hello 0 0
 ...done.
 {% endcodeblock %}
 
-#### Жизнеспособность сообщений(durability)
+#### Жизнеспособность сообщений (durability)
 
 В предыдущем параграфе мы рассмотрели как не потерять сообщение в очереди путем повторной отправки его в очередь. Тем не менее сообщение может быть потеряно в случае если сервер сообщений был неожиданно остановлен. Чтобы этого избежать, очередь должна быть создана с флагом AMQP_DURABLE. 
 
@@ -281,9 +281,9 @@ $queue = new AMQPQueue($channel);
 $queue->setName('hello');
 $queue->setFlags(AMQP_IFUNUSED | AMQP_AUTODELETE | AMQP_DURABLE);
 $queue->declare();
-$queue->bind($exchange->getName(), 'foo_key');
+$queue->bind($exchange->getName(), '');
 
-$result = $exchange->publish(json_encode("Hello world!"), "foo_key");
+$result = $exchange->publish(json_encode("Hello world!"), '');
 
 if ($result)
     echo 'sent'.PHP_EOL;
@@ -291,9 +291,11 @@ else
     echo 'error'.PHP_EOL;
 
 $connection->disconnect();
+{% endcodeblock %}
 
 Консьюмер (receive.php)
 
+{% codeblock lang:php %}
 $params = array(
     'host' => 'localhost',
     'port' => 5672,
@@ -310,14 +312,13 @@ $channel = new AMQPChannel($connection);
 $exchange = new AMQPExchange($channel);
 $exchange->setName('ex_hello');
 $exchange->setType(AMQP_EX_TYPE_FANOUT);
-$exchange->setFlags(AMQP_IFUNUSED | AMQP_AUTODELETE);
 $exchange->declare();
 
 $queue = new AMQPQueue($channel);
 $queue->setName('hello');
 $queue->setFlags(AMQP_IFUNUSED | AMQP_AUTODELETE | AMQP_DURABLE);
 $queue->declare();
-$queue->bind($exchange->getName(), 'foo_key');
+$queue->bind($exchange->getName(), '');
 
 while (true) {
     if ($envelope = $queue->get()) {
@@ -531,7 +532,6 @@ $queue->bind($exchange->getName(), 'failure_messages');
 $exchange = new AMQPExchange($channel);
 $exchange->setName('logs');
 $exchange->setType(AMQP_EX_TYPE_DIRECT);
-$exchange->setFlags(AMQP_IFUNUSED | AMQP_AUTODELETE);
 $exchange->declare();
 {% endcodeblock %}
 
@@ -649,7 +649,7 @@ $connection->disconnect();
 Например, имеем следующие связи   
 \*.orange.\*   
 \*.\*.rabbit   
-lazy.\*.\*  
+lazy.\#  
 
 {% img no-boreder center /images/post/rabbitmq-tutorial/tut_06.png %}
 
@@ -675,7 +675,6 @@ lazy.\*.\*
 $exchange = new AMQPExchange($channel);
 $exchange->setName('logs');
 $exchange->setType(AMQP_EX_TYPE_TOPIC);
-$exchange->setFlags(AMQP_IFUNUSED | AMQP_AUTODELETE);
 $exchange->declare();
 {% endcodeblock %}
 
