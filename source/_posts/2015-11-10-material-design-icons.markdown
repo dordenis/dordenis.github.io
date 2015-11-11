@@ -11,7 +11,7 @@ tags: [icon, font]
 
 Всем хорошо известный бесплатный набор иконок [Font Awesome](https://fortawesome.github.io/Font-Awesome/icons/).
 Он практически стал промышленным стандартом в вебе. 
-Material Design Icons может стать достойным дополнением к нему. 
+[Material Design Icons](https://materialdesignicons.com/) может стать достойным дополнением к нему. 
 
 Из плюсов: 
 
