@@ -3,7 +3,7 @@ layout: post
 title: "Material Design Icons – приятный набор иконок для вашего веб приложения"
 date: 2015-11-10 03:13
 comments: true
-categories: frontend
+categories: fronted
 tags: [icon, font]
 ---
 
