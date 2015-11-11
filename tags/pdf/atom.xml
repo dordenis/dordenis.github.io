@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: pdf | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/pdf/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2015-02-09T03:45:31-05:00</updated>
+  <updated>2015-11-11T00:51:13-08:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Как прочитать pdf файл в консоле]]></title>
     <link href="http://dordenis.github.io/linux/console-pdf-viewer/"/>
-    <updated>2014-09-23T14:21:00-04:00</updated>
+    <updated>2014-09-23T14:21:00-07:00</updated>
     <id>http://dordenis.github.io/linux/console-pdf-viewer</id>
     <content type="html"><![CDATA[<p>Как то нужно было быстро посмотреть pdf файл в консоле. Быстрое гугление показало, что нет готовых читалок под консоль. Но можно использовать хитрый трюк.</p>
 

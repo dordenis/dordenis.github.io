@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: xhgui | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/xhgui/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2015-02-09T03:45:31-05:00</updated>
+  <updated>2015-11-11T00:51:13-08:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Профайлинг приложения PHP с помощью XHGui]]></title>
     <link href="http://dordenis.github.io/php/profiling-php-applications-using-xhgui/"/>
-    <updated>2013-10-19T21:53:00-04:00</updated>
+    <updated>2013-10-19T21:53:00-07:00</updated>
     <id>http://dordenis.github.io/php/profiling-php-applications-using-xhgui</id>
     <content type="html"><![CDATA[<p>Профайлинг &ndash; средство, редко используется в обычной практике разработки приложения.
 Потребность в нем возникает, когда наше приложения находиться под нагрузкой, и мы хотим понять какое место в коде тормозит работы его.</p>

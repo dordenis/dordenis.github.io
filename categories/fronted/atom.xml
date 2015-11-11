@@ -4,7 +4,7 @@
   <title><![CDATA[Category: fronted | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/categories/fronted/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2015-02-09T03:45:31-05:00</updated>
+  <updated>2015-11-11T00:51:13-08:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -14,9 +14,31 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Material Design Icons – приятный набор иконок для вашего веб приложения]]></title>
+    <link href="http://dordenis.github.io/fronted/material-design-icons/"/>
+    <updated>2015-11-10T03:13:00-08:00</updated>
+    <id>http://dordenis.github.io/fronted/material-design-icons</id>
+    <content type="html"><![CDATA[<p><img class="no-boreder center" src="/images/post/material-design-icons/icons-set.png"></p>
+
+<p>Всем хорошо известный бесплатный набор иконок <a href="https://fortawesome.github.io/Font-Awesome/icons/">Font Awesome</a>.
+Он практически стал промышленным стандартом в вебе.
+Material Design Icons может стать достойным дополнением к нему.</p>
+
+<p>Из плюсов:</p>
+
+<ul>
+<li>легкая интеграция в Bootstrap</li>
+<li>постоянно расширяется за счет сообщество</li>
+<li>возможность получить в формате SVG</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[18 новых jquery плагинов для вашего сайта]]></title>
     <link href="http://dordenis.github.io/fronted/18-jquery-plugins/"/>
-    <updated>2015-01-13T14:00:00-05:00</updated>
+    <updated>2015-01-13T14:00:00-08:00</updated>
     <id>http://dordenis.github.io/fronted/18-jquery-plugins</id>
     <content type="html"><![CDATA[<h4><a href="http://osvaldas.info/audio-player-responsive-and-touch-friendly">Адаптивный Audio Player</a></h4>
 
@@ -134,7 +156,7 @@
   <entry>
     <title type="html"><![CDATA[5 самых популярных CSS фреймворках в 2014]]></title>
     <link href="http://dordenis.github.io/fronted/5-most-popular-css-framework-in-2014/"/>
-    <updated>2014-11-10T12:23:00-05:00</updated>
+    <updated>2014-11-10T12:23:00-08:00</updated>
     <id>http://dordenis.github.io/fronted/5-most-popular-css-framework-in-2014</id>
     <content type="html"><![CDATA[<p>В настоящее время существует множество CSS фреймворков. Но количество действительно хороших, не очень много.
 Я попробую  сравнить пяти лучших фреймвороков, доступных сегодня. Каждый фреймворк имеет свои сильные и слабые стороны, а также специфические области применения. Что  позволяет  вам выбирать, исходя из ваших потребностей под конкретный проект. Например, если ваш проект прост, нет необходимости использовать сложную структуру. Кроме того, многие из вариантов являются модульными, что позволяет использовать только необходимые компоненты или даже смешивать компоненты из разных структур.</p>
@@ -281,7 +303,7 @@ Bootstrap имеет активное сообщество, в качестве 
   <entry>
     <title type="html"><![CDATA[Изображения для заполнения пространства при верстке]]></title>
     <link href="http://dordenis.github.io/fronted/image-placeholders/"/>
-    <updated>2014-09-12T20:21:00-04:00</updated>
+    <updated>2014-09-12T20:21:00-07:00</updated>
     <id>http://dordenis.github.io/fronted/image-placeholders</id>
     <content type="html"><![CDATA[<p>Каждый верстальшик использовал lorem ipsum для заполнения «рыбы» при верстки проекта.</p>
 
@@ -421,7 +443,7 @@ Bootstrap имеет активное сообщество, в качестве 
   <entry>
     <title type="html"><![CDATA[Темы для Bootstrap 3]]></title>
     <link href="http://dordenis.github.io/fronted/themes-for-bootstrap-3/"/>
-    <updated>2014-01-21T00:18:00-05:00</updated>
+    <updated>2014-01-21T00:18:00-08:00</updated>
     <id>http://dordenis.github.io/fronted/themes-for-bootstrap-3</id>
     <content type="html"><![CDATA[<ul>
 <li><h4>AdminLTE Control Panel &amp; Dashboard</h4>

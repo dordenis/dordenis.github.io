@@ -122,7 +122,7 @@ $(document).ready(
   
 
 
-<time datetime="2014-12-20T11:23:00-05:00" pubdate data-updated="true">20 Декабря 2014</time></div>
+<time datetime="2014-12-20T11:23:00-08:00" pubdate data-updated="true">20 Декабря 2014</time></div>
             <div class="categories">
 
 
@@ -261,8 +261,8 @@ $(document).ready(
 <span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$exchange</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AMQPExchange</span><span class="p">(</span><span class="nv">$channel</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span><span class="s1">&#39;ex_hello&#39;</span><span class="p">);</span>
-</span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setType</span><span class="p">(</span><span class="nx">AMQP_EX_TYPE_DIRECT</span><span class="p">);</span>
-</span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setFlags</span><span class="p">(</span><span class="nx">AMQP_DURABLE</span><span class="p">);</span>
+</span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setType</span><span class="p">(</span><span class="nx">AMQP_EX_TYPE_FANOUT</span><span class="p">);</span>
+</span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setFlags</span><span class="p">(</span><span class="nx">AMQP_IFUNUSED</span> <span class="o">|</span> <span class="nx">AMQP_AUTODELETE</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">declare</span><span class="p">();</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -345,8 +345,8 @@ $result = $exchange->publish(json_encode(&ldquo;Hello world!&rdquo;), &ldquo;foo
 </span><span class='line'><span class="nv">$channel</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AMQPChannel</span><span class="p">(</span><span class="nv">$connection</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$exchange</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AMQPExchange</span><span class="p">(</span><span class="nv">$channel</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span><span class="s1">&#39;ex_hello&#39;</span><span class="p">);</span>
-</span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setType</span><span class="p">(</span><span class="nx">AMQP_EX_TYPE_DIRECT</span><span class="p">);</span>
-</span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setFlags</span><span class="p">(</span><span class="nx">AMQP_DURABLE</span><span class="p">);</span>
+</span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setType</span><span class="p">(</span><span class="nx">AMQP_EX_TYPE_FANOUT</span><span class="p">);</span>
+</span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setFlags</span><span class="p">(</span><span class="nx">AMQP_IFUNUSED</span> <span class="o">|</span> <span class="nx">AMQP_AUTODELETE</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">declare</span><span class="p">();</span> <span class="nv">$queue</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AMQPQueue</span><span class="p">(</span><span class="nv">$channel</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$queue</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$queue</span><span class="o">-&gt;</span><span class="na">setFlags</span><span class="p">(</span><span class="nx">AMQP_IFUNUSED</span> <span class="o">|</span> <span class="nx">AMQP_AUTODELETE</span><span class="p">);</span>
@@ -449,7 +449,7 @@ $result = $exchange->publish(json_encode(&ldquo;Hello world!&rdquo;), &ldquo;foo
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h4>Жизнеспособность сообщений (durability)</h4>
+<h4>Жизнеспособность сообщений(durability)</h4>
 
 <p>В предыдущем параграфе мы рассмотрели как не потерять сообщение в очереди путем повторной отправки его в очередь. Тем не менее сообщение может быть потеряно в случае если сервер сообщений был неожиданно остановлен. Чтобы этого избежать, очередь должна быть создана с флагом AMQP_DURABLE.</p>
 
@@ -521,6 +521,47 @@ $result = $exchange->publish(json_encode(&ldquo;Hello world!&rdquo;), &ldquo;foo
 <span class='line-number'>31</span>
 <span class='line-number'>32</span>
 <span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
 </pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$params</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
 </span><span class='line'>    <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
 </span><span class='line'>    <span class="s1">&#39;port&#39;</span> <span class="o">=&gt;</span> <span class="mi">5672</span><span class="p">,</span>
@@ -544,9 +585,9 @@ $result = $exchange->publish(json_encode(&ldquo;Hello world!&rdquo;), &ldquo;foo
 </span><span class='line'><span class="nv">$queue</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$queue</span><span class="o">-&gt;</span><span class="na">setFlags</span><span class="p">(</span><span class="nx">AMQP_IFUNUSED</span> <span class="o">|</span> <span class="nx">AMQP_AUTODELETE</span> <span class="o">|</span> <span class="nx">AMQP_DURABLE</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$queue</span><span class="o">-&gt;</span><span class="na">declare</span><span class="p">();</span>
-</span><span class='line'><span class="nv">$queue</span><span class="o">-&gt;</span><span class="na">bind</span><span class="p">(</span><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">(),</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="nv">$queue</span><span class="o">-&gt;</span><span class="na">bind</span><span class="p">(</span><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">(),</span> <span class="s1">&#39;foo_key&#39;</span><span class="p">);</span>
 </span><span class='line'>
-</span><span class='line'><span class="nv">$result</span> <span class="o">=</span> <span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">publish</span><span class="p">(</span><span class="nb">json_encode</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">),</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="nv">$result</span> <span class="o">=</span> <span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">publish</span><span class="p">(</span><span class="nb">json_encode</span><span class="p">(</span><span class="s2">&quot;Hello world!&quot;</span><span class="p">),</span> <span class="s2">&quot;foo_key&quot;</span><span class="p">);</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nv">$result</span><span class="p">)</span>
 </span><span class='line'>    <span class="k">echo</span> <span class="s1">&#39;sent&#39;</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>
@@ -554,49 +595,10 @@ $result = $exchange->publish(json_encode(&ldquo;Hello world!&rdquo;), &ldquo;foo
 </span><span class='line'>    <span class="k">echo</span> <span class="s1">&#39;error&#39;</span><span class="o">.</span><span class="nx">PHP_EOL</span><span class="p">;</span>
 </span><span class='line'>
 </span><span class='line'><span class="nv">$connection</span><span class="o">-&gt;</span><span class="na">disconnect</span><span class="p">();</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Консьюмер (receive.php)</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$params</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">Консьюмер</span> <span class="p">(</span><span class="nx">receive</span><span class="o">.</span><span class="nx">php</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">$params</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
 </span><span class='line'>    <span class="s1">&#39;host&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
 </span><span class='line'>    <span class="s1">&#39;port&#39;</span> <span class="o">=&gt;</span> <span class="mi">5672</span><span class="p">,</span>
 </span><span class='line'>    <span class="s1">&#39;vhost&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
@@ -612,13 +614,14 @@ $result = $exchange->publish(json_encode(&ldquo;Hello world!&rdquo;), &ldquo;foo
 </span><span class='line'><span class="nv">$exchange</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AMQPExchange</span><span class="p">(</span><span class="nv">$channel</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span><span class="s1">&#39;ex_hello&#39;</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setType</span><span class="p">(</span><span class="nx">AMQP_EX_TYPE_FANOUT</span><span class="p">);</span>
+</span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setFlags</span><span class="p">(</span><span class="nx">AMQP_IFUNUSED</span> <span class="o">|</span> <span class="nx">AMQP_AUTODELETE</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">declare</span><span class="p">();</span>
 </span><span class='line'>
 </span><span class='line'><span class="nv">$queue</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AMQPQueue</span><span class="p">(</span><span class="nv">$channel</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$queue</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$queue</span><span class="o">-&gt;</span><span class="na">setFlags</span><span class="p">(</span><span class="nx">AMQP_IFUNUSED</span> <span class="o">|</span> <span class="nx">AMQP_AUTODELETE</span> <span class="o">|</span> <span class="nx">AMQP_DURABLE</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$queue</span><span class="o">-&gt;</span><span class="na">declare</span><span class="p">();</span>
-</span><span class='line'><span class="nv">$queue</span><span class="o">-&gt;</span><span class="na">bind</span><span class="p">(</span><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">(),</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+</span><span class='line'><span class="nv">$queue</span><span class="o">-&gt;</span><span class="na">bind</span><span class="p">(</span><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">(),</span> <span class="s1">&#39;foo_key&#39;</span><span class="p">);</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">while</span> <span class="p">(</span><span class="k">true</span><span class="p">)</span> <span class="p">{</span>
 </span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nv">$envelope</span> <span class="o">=</span> <span class="nv">$queue</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">())</span> <span class="p">{</span>
@@ -932,9 +935,11 @@ $result = $exchange->publish(json_encode(&ldquo;Hello world!&rdquo;), &ldquo;foo
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
+<span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$exchange</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AMQPExchange</span><span class="p">(</span><span class="nv">$channel</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span><span class="s1">&#39;logs&#39;</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setType</span><span class="p">(</span><span class="nx">AMQP_EX_TYPE_DIRECT</span><span class="p">);</span>
+</span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setFlags</span><span class="p">(</span><span class="nx">AMQP_IFUNUSED</span> <span class="o">|</span> <span class="nx">AMQP_AUTODELETE</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">declare</span><span class="p">();</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -1139,7 +1144,7 @@ $result = $exchange->publish(json_encode(&ldquo;Hello world!&rdquo;), &ldquo;foo
 <p>Например, имеем следующие связи <br/>
 *.orange.* <br/>
 *.*.rabbit <br/>
-lazy.#</p>
+lazy.*.*</p>
 
 <p><img class="no-boreder center" src="/images/post/rabbitmq-tutorial/tut_06.png"></p>
 
@@ -1168,9 +1173,11 @@ lazy.#</p>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
+<span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class='php'><span class='line'><span class="nv">$exchange</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AMQPExchange</span><span class="p">(</span><span class="nv">$channel</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setName</span><span class="p">(</span><span class="s1">&#39;logs&#39;</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setType</span><span class="p">(</span><span class="nx">AMQP_EX_TYPE_TOPIC</span><span class="p">);</span>
+</span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">setFlags</span><span class="p">(</span><span class="nx">AMQP_IFUNUSED</span> <span class="o">|</span> <span class="nx">AMQP_AUTODELETE</span><span class="p">);</span>
 </span><span class='line'><span class="nv">$exchange</span><span class="o">-&gt;</span><span class="na">declare</span><span class="p">();</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -1687,7 +1694,7 @@ corralationId &ndash; уникальное значение для каждог�
             <div class="row-fluid">
     <span class="span12"><section>
   <h3>Категории</h3>
-    <ul id="category-list"><li><a href='/categories/fronted'>fronted (4)</a></li><li><a href='/categories/linux'>linux (3)</a></li><li><a href='/categories/mysql'>mysql (1)</a></li><li><a href='/categories/ngnix'>ngnix (1)</a></li><li><a href='/categories/octopress'>octopress (2)</a></li><li><a href='/categories/php'>php (4)</a></li><li><a href='/categories/yii'>yii (1)</a></li></ul>
+    <ul id="category-list"><li><a href='/categories/fronted'>fronted (5)</a></li><li><a href='/categories/linux'>linux (3)</a></li><li><a href='/categories/mysql'>mysql (1)</a></li><li><a href='/categories/ngnix'>ngnix (1)</a></li><li><a href='/categories/octopress'>octopress (2)</a></li><li><a href='/categories/php'>php (4)</a></li><li><a href='/categories/yii'>yii (1)</a></li></ul>
 </section>
 </span>
 </div>

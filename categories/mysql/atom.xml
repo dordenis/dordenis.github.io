@@ -4,7 +4,7 @@
   <title><![CDATA[Category: mysql | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/categories/mysql/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2015-02-09T03:45:31-05:00</updated>
+  <updated>2015-11-11T00:51:13-08:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Шпарагалка по Mysqldump]]></title>
     <link href="http://dordenis.github.io/mysql/cheatsheet-on-mysqldump/"/>
-    <updated>2013-08-05T00:00:00-04:00</updated>
+    <updated>2013-08-05T00:00:00-07:00</updated>
     <id>http://dordenis.github.io/mysql/cheatsheet-on-mysqldump</id>
     <content type="html"><![CDATA[<p>Утилита mysqldump позволяет получить дамп содержимого базы данных или совокупности баз для создания резервной копии или пересылки данных на другой SQL-сервер (не обязательно MySQL-сервер). Дамп будет содержать набор команд SQL для создания и/или заполнения таблиц.</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: linux | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/categories/linux/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2015-02-09T03:45:31-05:00</updated>
+  <updated>2015-11-11T00:51:13-08:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Как прочитать pdf файл в консоле]]></title>
     <link href="http://dordenis.github.io/linux/console-pdf-viewer/"/>
-    <updated>2014-09-23T14:21:00-04:00</updated>
+    <updated>2014-09-23T14:21:00-07:00</updated>
     <id>http://dordenis.github.io/linux/console-pdf-viewer</id>
     <content type="html"><![CDATA[<p>Как то нужно было быстро посмотреть pdf файл в консоле. Быстрое гугление показало, что нет готовых читалок под консоль. Но можно использовать хитрый трюк.</p>
 
@@ -60,7 +60,7 @@
   <entry>
     <title type="html"><![CDATA[Как настроить динамические виртуальные хосты для веб-разработки]]></title>
     <link href="http://dordenis.github.io/linux/how-to-set-up-dynamic-virtual-hosts-for-web-development/"/>
-    <updated>2014-06-22T20:21:00-04:00</updated>
+    <updated>2014-06-22T20:21:00-07:00</updated>
     <id>http://dordenis.github.io/linux/how-to-set-up-dynamic-virtual-hosts-for-web-development</id>
     <content type="html"><![CDATA[<p>После того как умер мой винчестер на ноутбуки и встала проблема заново поднять рабочее окружение, я задумался о том, чтобы использовать в качестве такого, образ на виртуальной машины.  Данная тема, довольно старая, все не как не доходили руки. Но коль делать все правильно, решил заодно решить проблему автоматически создания виртуальных хостов под проекты.</p>
 
@@ -268,7 +268,7 @@
   <entry>
     <title type="html"><![CDATA[Превращаем Raspberry Pi в домашний web-server]]></title>
     <link href="http://dordenis.github.io/linux/raspberry-pi-transform-the-home-web-server/"/>
-    <updated>2013-07-15T20:21:00-04:00</updated>
+    <updated>2013-07-15T20:21:00-07:00</updated>
     <id>http://dordenis.github.io/linux/raspberry-pi-transform-the-home-web-server</id>
     <content type="html"><![CDATA[<p>Не так давно приобрел забавную игрушку Raspberry Pi. Я планирую использовать ее в качестве «мозгов» для робота на базе Arduino, но об этом в другой раз. Что бы «малина» не валялась без дела. пока я проектирую робота, решил на базе нее поднять домашний web-server.
 И так приступим…</p>

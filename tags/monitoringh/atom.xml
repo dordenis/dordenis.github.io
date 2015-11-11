@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: мониторинг | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/monitoringh/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2015-02-09T03:45:31-05:00</updated>
+  <updated>2015-11-11T00:51:13-08:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Как в реальном времени мониторить работы Ngnix]]></title>
     <link href="http://dordenis.github.io/ngnix/how-to-monitor-nginx-from-the-command-line-in-real-time/"/>
-    <updated>2014-07-10T20:21:00-04:00</updated>
+    <updated>2014-07-10T20:21:00-07:00</updated>
     <id>http://dordenis.github.io/ngnix/how-to-monitor-nginx-from-the-command-line-in-real-time</id>
     <content type="html"><![CDATA[<p>После того, как веб-сервер Nginx запущен, вы хотите мониторить его работу в режиме реального времени.
 На данный момент, средств выполняющих данную функцию довольно много. Например, Nagios, Zabbix, Munin и другие.</p>

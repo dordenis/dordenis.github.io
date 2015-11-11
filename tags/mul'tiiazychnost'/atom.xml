@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: мультиязычность | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/mul'tiiazychnost'/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2015-02-09T03:45:31-05:00</updated>
+  <updated>2015-11-11T00:51:13-08:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Мультиязычный сайт с помощью Yii]]></title>
     <link href="http://dordenis.github.io/yii/multilanguage-website-with-yii/"/>
-    <updated>2013-07-21T15:33:00-04:00</updated>
+    <updated>2013-07-21T15:33:00-07:00</updated>
     <id>http://dordenis.github.io/yii/multilanguage-website-with-yii</id>
     <content type="html"><![CDATA[<p>Для одного из проекта, возникла необходимость в организации поддержки мультиязычности на сайте. Причем URL должны быть в определенном виде:</p>
 

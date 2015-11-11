@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: icon | Ajaxblog]]></title>
+  <link href="http://dordenis.github.io/tags/icon/atom.xml" rel="self"/>
+  <link href="http://dordenis.github.io/"/>
+  <updated>2015-11-11T00:51:13-08:00</updated>
+  <id>http://dordenis.github.io/</id>
+  <author>
+    <name><![CDATA[Denis Doroshenko]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Material Design Icons – приятный набор иконок для вашего веб приложения]]></title>
+    <link href="http://dordenis.github.io/fronted/material-design-icons/"/>
+    <updated>2015-11-10T03:13:00-08:00</updated>
+    <id>http://dordenis.github.io/fronted/material-design-icons</id>
+    <content type="html"><![CDATA[<p><img class="no-boreder center" src="/images/post/material-design-icons/icons-set.png"></p>
+
+<p>Всем хорошо известный бесплатный набор иконок <a href="https://fortawesome.github.io/Font-Awesome/icons/">Font Awesome</a>.
+Он практически стал промышленным стандартом в вебе.
+Material Design Icons может стать достойным дополнением к нему.</p>
+
+<p>Из плюсов:</p>
+
+<ul>
+<li>легкая интеграция в Bootstrap</li>
+<li>постоянно расширяется за счет сообщество</li>
+<li>возможность получить в формате SVG</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

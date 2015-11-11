@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/categories/octopress/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2015-02-09T03:45:31-05:00</updated>
+  <updated>2015-11-11T00:51:13-08:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Создание плагинов для Octopress]]></title>
     <link href="http://dordenis.github.io/octopress/creating-plugins-for-octopress/"/>
-    <updated>2013-07-22T10:10:00-04:00</updated>
+    <updated>2013-07-22T10:10:00-07:00</updated>
     <id>http://dordenis.github.io/octopress/creating-plugins-for-octopress</id>
     <content type="html"><![CDATA[<p>Octopress идет с несколькими предустановленными плагинами. Которые охватывают практически все аспекты блоггерства, от категории до видео. Плагины можно легко создавать, расширяя базовый функционал Octopress. Создадим плагин который добавит новый тег для шаблонизатора Liquid.</p>
 
@@ -169,7 +169,7 @@
   <entry>
     <title type="html"><![CDATA[Octopress - блоггинг для гиков]]></title>
     <link href="http://dordenis.github.io/octopress/octopress-blogging-for-geeks/"/>
-    <updated>2013-07-18T20:20:00-04:00</updated>
+    <updated>2013-07-18T20:20:00-07:00</updated>
     <id>http://dordenis.github.io/octopress/octopress-blogging-for-geeks</id>
     <content type="html"><![CDATA[<p>Меня всем устраивал мой маленький блог на Rasberry Pi, пока жестокая реальность не напомнила мне в какой стране я живу. После аварийных выключений света, у меня убился раздел на флешки с установленной ОС. Переустанавливать было лень, и я прекрасно понимал, что это не последняя переустановка. Нужно искать другой вариант&hellip; на горизонте появился Octopress.</p>
 
