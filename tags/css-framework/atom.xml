@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: css framework | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/css-framework/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2015-11-11T01:00:18-08:00</updated>
+  <updated>2015-12-21T02:59:44-05:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[5 самых популярных CSS фреймворках в 2014]]></title>
     <link href="http://dordenis.github.io/fronted/5-most-popular-css-framework-in-2014/"/>
-    <updated>2014-11-10T12:23:00-08:00</updated>
+    <updated>2014-11-10T12:23:00-05:00</updated>
     <id>http://dordenis.github.io/fronted/5-most-popular-css-framework-in-2014</id>
     <content type="html"><![CDATA[<p>В настоящее время существует множество CSS фреймворков. Но количество действительно хороших, не очень много.
 Я попробую  сравнить пяти лучших фреймвороков, доступных сегодня. Каждый фреймворк имеет свои сильные и слабые стороны, а также специфические области применения. Что  позволяет  вам выбирать, исходя из ваших потребностей под конкретный проект. Например, если ваш проект прост, нет необходимости использовать сложную структуру. Кроме того, многие из вариантов являются модульными, что позволяет использовать только необходимые компоненты или даже смешивать компоненты из разных структур.</p>
@@ -31,7 +31,7 @@
 <p><a href="http://getbootstrap.com/">Bootstrap</a> является безусловным лидером среди доступных фреймворков сегодня. Учитывая его огромную популярность, которая продолжает расти каждый день, вы можете быть уверены, что этот замечательный инструментарий будет в дальнейшем поддерживаться разработчиками.
 Bootstrap имеет активное сообщество, в качестве хорошего примера <a href="http://bootsnipp.com/">сайт набор готовых решений</a> созданых на Bootstrap.</p>
 
-<p><img src="/images/post/5-popular-css-framework/bootstrap.png"></p>
+<p>{% img /images/post/5-popular-css-framework/bootstrap.png %}</p>
 
 <p><strong>Создатели:</strong> Mark Otto и Jacob Thornton <br/>
 <strong>Год выхода:</strong> 2011 <br/>
@@ -57,13 +57,13 @@ Bootstrap имеет активное сообщество, в качестве 
 
 <p><a href="http://foundation.zurb.com/">Foundation</a> второй большой игрок в этом списке. Большая компания ZURB поддерживает его, тем самым, мы можем надеяться на хорошую поддержку и развитие этого фреймворка. В конце концов, ZURB используется на многих крупных сайтах в том числе Facebook, Mozilla, Ebay, Yahoo!, и National Geographic.</p>
 
-<p><img src="/images/post/5-popular-css-framework/foundation.png"></p>
+<p>{% img /images/post/5-popular-css-framework/foundation.png %}</p>
 
 <p><strong>Создатели:</strong> ZURB<br/>
 <strong>Год выхода:</strong> 2011<br/>
 <strong>Текущая версия:</strong> 5.4.7 <br/>
 <strong>Популярность:</strong> 18000 звезды на GitHub <br/>
-<strong>Размер рамки:</strong> 326 KB <br/>
+<strong>Размер:</strong> 326 KB <br/>
 <strong>Препроцессоры:</strong> Sass <br/>
 <strong>Адаптивность:</strong> Да <br/>
 <strong>Модульность:</strong> Да <br/>
@@ -83,13 +83,13 @@ Bootstrap имеет активное сообщество, в качестве 
 
 <p><a href="http://semantic-ui.com/">Semantic UI</a> использует принципы естественного языка, в результате чего код намного более читабельный и понятный.</p>
 
-<p><img src="/images/post/5-popular-css-framework/semantic.png"></p>
+<p>{% img /images/post/5-popular-css-framework/semantic.png %}</p>
 
 <p><strong>Автор:</strong> Jack Lukic <br/>
 <strong>Год выхода:</strong> 2013 <br/>
 <strong>Текущая версия:</strong> 1.2.0 <br/>
 <strong>Популярность:</strong> 12,900+ звезды на GitHub <br/>
-<strong>Размер рамки:</strong> 552 KB<br/>
+<strong>Размер:</strong> 552 KB<br/>
 <strong>Препроцессоры:</strong> Less<br/>
 <strong>Адаптивность:</strong> Да <br/>
 <strong>Модульность:</strong> Да <br/>
@@ -109,13 +109,13 @@ Bootstrap имеет активное сообщество, в качестве 
 
 <p><a href="http://purecss.io/">Pure</a> является легковесной, модульным фреймворком, написан на чистом CSS, что позволяет вам использовать компоненты вместе или отдельно с друг другом, а также с другими CSS фреймворками.</p>
 
-<p><img src="/images/post/5-popular-css-framework/pure.png"></p>
+<p>{% img /images/post/5-popular-css-framework/pure.png %}</p>
 
 <p><strong>Создатель:</strong> Yahoo <br/>
 <strong>Год выхода:</strong> 2013 <br/>
 <strong>Текущая версия:</strong> 0.5.0 <br/>
 <strong>Популярность:</strong> 9,900+ звезды на GitHub <br/>
-<strong>Размер рамки:</strong> 18 KB <br/>
+<strong>Размер:</strong> 18 KB <br/>
 <strong>Препроцессоры:</strong> Нет<br/>
 <strong>Адаптивность:</strong> Да <br/>
 <strong>Модульность:</strong> Да <br/>
@@ -136,12 +136,12 @@ Bootstrap имеет активное сообщество, в качестве 
 
 <p><a href="http://getuikit.com/">UIKit</a> является коллекцией простых в использовании и легко настраиваемых  компонентов.  Хотя он не так популярен, как ее конкуренты, он  имеет сходную  функциональность и отличное качество компонентов.</p>
 
-<p><img src="/images/post/5-popular-css-framework/uikit.png"></p>
+<p>{% img /images/post/5-popular-css-framework/uikit.png %}</p>
 
 <p><strong>Год выхода:</strong> 2013 <br/>
 <strong>Текущая версия:</strong> 2.13.1<br/>
 <strong>Популярность:</strong> 3,800+ звезды на GitHub <br/>
-<strong>Размер рамки:</strong> 118 KB <br/>
+<strong>Размер:</strong> 118 KB <br/>
 <strong>Препроцессоры:</strong> Less, Sass <br/>
 <strong>Адаптивность:</strong> Да <br/>
 <strong>Модульность:</strong> Да <br/>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: fronted | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/categories/fronted/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2015-11-11T01:00:18-08:00</updated>
+  <updated>2015-12-21T02:59:44-05:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -16,9 +16,9 @@
   <entry>
     <title type="html"><![CDATA[Material Design Icons – приятный набор иконок для вашего веб приложения]]></title>
     <link href="http://dordenis.github.io/fronted/material-design-icons/"/>
-    <updated>2015-11-10T03:13:00-08:00</updated>
+    <updated>2015-11-10T03:13:00-05:00</updated>
     <id>http://dordenis.github.io/fronted/material-design-icons</id>
-    <content type="html"><![CDATA[<p><img class="no-boreder center" src="/images/post/material-design-icons/icons-set.png"></p>
+    <content type="html"><![CDATA[<p>{% img no-boreder center /images/post/material-design-icons/icons-set.png %}</p>
 
 <p>Всем хорошо известный бесплатный набор иконок <a href="https://fortawesome.github.io/Font-Awesome/icons/">Font Awesome</a>.
 Он практически стал промышленным стандартом в вебе.
@@ -38,13 +38,13 @@
   <entry>
     <title type="html"><![CDATA[18 новых jquery плагинов для вашего сайта]]></title>
     <link href="http://dordenis.github.io/fronted/18-jquery-plugins/"/>
-    <updated>2015-01-13T14:00:00-08:00</updated>
+    <updated>2015-01-13T14:00:00-05:00</updated>
     <id>http://dordenis.github.io/fronted/18-jquery-plugins</id>
     <content type="html"><![CDATA[<h4><a href="http://osvaldas.info/audio-player-responsive-and-touch-friendly">Адаптивный Audio Player</a></h4>
 
 <p>Это адаптивный аудио-плеер является идеальным примером работе JQuery. Вы просто подключаете плагин и получаете красивый аудио-плеер с удобным интерфейсом.</p>
 
-<p><img class="center" src="/images/post/18-jquery-plugins/01.png"></p>
+<p>{% img center /images/post/18-jquery-plugins/01.png %}</p>
 
 <!-- more -->
 
@@ -53,110 +53,110 @@
 
 <p>Сейчас стало модным использовать выдвижное меню. мода пришла с мобильных приложений. Благодоря этому плагину мы можем использовать этот функционал и в браузере</p>
 
-<p><img class="center" src="/images/post/18-jquery-plugins/02.png"></p>
+<p>{% img center /images/post/18-jquery-plugins/02.png %}</p>
 
 <h4><a href="http://jpanelmenu.com/">jPanelMenu</a></h4>
 
 <p>Еще одна идея интерфейса пришедшая из мобильного мира в большой веб.</p>
 
-<p><img class="center" src="/images/post/18-jquery-plugins/03.png"></p>
+<p>{% img center /images/post/18-jquery-plugins/03.png %}</p>
 
 <h4><a href="http://nick-jonas.github.io/imageloader/">Imageloader</a></h4>
 
 <p>Прекрасный плагин для загрузки картинок с различными эффектами появления картинок после загрузки.</p>
 
-<p><img class="center" src="/images/post/18-jquery-plugins/04.png"></p>
+<p>{% img center /images/post/18-jquery-plugins/04.png %}</p>
 
 <h4><a href="http://paulkinzett.github.io/toolbar/">Toolbar.js</a></h4>
 
 <p>Этот плагин позволит создать небольшое меню, всплывающей подсказки над любым элементами.</p>
 
-<p><img class="center" src="/images/post/18-jquery-plugins/05.png"></p>
+<p>{% img center /images/post/18-jquery-plugins/05.png %}</p>
 
 <h4><a href="http://stevenbenner.github.io/jquery-powertip/">JQuery PowerTip</a></h4>
 
 <p>Плагин с подсказками, на все случае жизни.</p>
 
-<p><img class="center" src="/images/post/18-jquery-plugins/06.png"></p>
+<p>{% img center /images/post/18-jquery-plugins/06.png %}</p>
 
 <h4><a href="http://goto.io/jqtimeline/">jqTimeline</a></h4>
 
 <p>Плагин jqTimeline предлагает уникальную функциональность. Вы можете создать горизонтальную шкалу с датами и событиями на эту дату. Пользователь могут нажать на события для отображения дополнительной информации по данной дате.</p>
 
-<p><img class="center" src="/images/post/18-jquery-plugins/07.png"></p>
+<p>{% img center /images/post/18-jquery-plugins/07.png %}</p>
 
 <h4><a href="http://brutaldesign.github.io/swipebox/">Swipebox</a></h4>
 
 <p>Очередной плагин  для галерее изображений. Основное отличие, адаптированный для планшетов и смартфонов.</p>
 
-<p><img class="center" src="/images/post/18-jquery-plugins/08.png"></p>
+<p>{% img center /images/post/18-jquery-plugins/08.png %}</p>
 
 <h4><a href="http://www.mixitup.io/">MixItUp</a></h4>
 
 <p>Плагин сортировки картинок, выглядит красиво, но сфера применения весьма узка.</p>
 
-<p><img class="center" src="/images/post/18-jquery-plugins/09.png"></p>
+<p>{% img center /images/post/18-jquery-plugins/09.png %}</p>
 
 <h4><a href="http://markgoodyear.com/labs/scrollup/">Scrollup</a></h4>
 
 <p>Плагин который скролирует содержание страницы к своему началу.</p>
 
-<p><img class="center" src="/images/post/18-jquery-plugins/10.png"></p>
+<p>{% img center /images/post/18-jquery-plugins/10.png %}</p>
 
 <h4><a href="http://ivaynberg.github.io/select2/">Select2</a></h4>
 
 <p>Один из самых полезных и известных плагинов. Очень люблю его и использую везде где только можно.</p>
 
-<p><img class="center" src="/images/post/18-jquery-plugins/11.png"></p>
+<p>{% img center /images/post/18-jquery-plugins/11.png %}</p>
 
 <h4><a href="http://vortex.montezuma.it/">Vortex</a></h4>
 
 <p>Плагин для создания галерее. Но весьма необычной.</p>
 
-<p><img class="center" src="/images/post/18-jquery-plugins/12.png"></p>
+<p>{% img center /images/post/18-jquery-plugins/12.png %}</p>
 
 <h4><a href="http://damirfoy.com/iCheck/">iCheck</a></h4>
 
 <p>Красивейшая кастамизация стандартных элементов формы.</p>
 
-<p><img class="center" src="/images/post/18-jquery-plugins/13.png"></p>
+<p>{% img center /images/post/18-jquery-plugins/13.png %}</p>
 
 <h4><a href="http://manos.malihu.gr/tuts/custom-scrollbar-plugin/complete_examples.html">Custom Scrollbar Plugin</a></h4>
 
 <p>Продолжаем идею предыдущего проекта, кастамизируем полосу прокрутку.</p>
 
-<p><img class="center" src="/images/post/18-jquery-plugins/14.png"></p>
+<p>{% img center /images/post/18-jquery-plugins/14.png %}</p>
 
 <h4><a href="http://als.musings.it/">Any List Scroller</a></h4>
 
 <p>Плагин для создания слайд-шоу, весьма интересный.</p>
 
-<p><img class="center" src="/images/post/18-jquery-plugins/15.png"></p>
+<p>{% img center /images/post/18-jquery-plugins/15.png %}</p>
 
 <h4><a href="http://toddmotto.com/labs/superbox/">Superbox</a></h4>
 
 <p>Нравиться, как отображается найденные картинки в Google поиске, вот вам плагин повторяющий этот функционал.</p>
 
-<p><img class="center" src="/images/post/18-jquery-plugins/16.png"></p>
+<p>{% img center /images/post/18-jquery-plugins/16.png %}</p>
 
 <h4><a href="http://kopolo.ru/for-webmasters/kgallery/example_typical.html">KGallery</a></h4>
 
 <p>Тоже самое что предыдущий плагин, но более классический способ отображения.</p>
 
-<p><img class="center" src="/images/post/18-jquery-plugins/17.png"></p>
+<p>{% img center /images/post/18-jquery-plugins/17.png %}</p>
 
 <h4><a href="http://bxslider.com/examples">bxSlider</a></h4>
 
 <p>Неплохая альтернатива предыдущим плагинам.</p>
 
-<p><img class="center" src="/images/post/18-jquery-plugins/18.png"></p>
+<p>{% img center /images/post/18-jquery-plugins/18.png %}</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[5 самых популярных CSS фреймворках в 2014]]></title>
     <link href="http://dordenis.github.io/fronted/5-most-popular-css-framework-in-2014/"/>
-    <updated>2014-11-10T12:23:00-08:00</updated>
+    <updated>2014-11-10T12:23:00-05:00</updated>
     <id>http://dordenis.github.io/fronted/5-most-popular-css-framework-in-2014</id>
     <content type="html"><![CDATA[<p>В настоящее время существует множество CSS фреймворков. Но количество действительно хороших, не очень много.
 Я попробую  сравнить пяти лучших фреймвороков, доступных сегодня. Каждый фреймворк имеет свои сильные и слабые стороны, а также специфические области применения. Что  позволяет  вам выбирать, исходя из ваших потребностей под конкретный проект. Например, если ваш проект прост, нет необходимости использовать сложную структуру. Кроме того, многие из вариантов являются модульными, что позволяет использовать только необходимые компоненты или даже смешивать компоненты из разных структур.</p>
@@ -171,7 +171,7 @@
 <p><a href="http://getbootstrap.com/">Bootstrap</a> является безусловным лидером среди доступных фреймворков сегодня. Учитывая его огромную популярность, которая продолжает расти каждый день, вы можете быть уверены, что этот замечательный инструментарий будет в дальнейшем поддерживаться разработчиками.
 Bootstrap имеет активное сообщество, в качестве хорошего примера <a href="http://bootsnipp.com/">сайт набор готовых решений</a> созданых на Bootstrap.</p>
 
-<p><img src="/images/post/5-popular-css-framework/bootstrap.png"></p>
+<p>{% img /images/post/5-popular-css-framework/bootstrap.png %}</p>
 
 <p><strong>Создатели:</strong> Mark Otto и Jacob Thornton <br/>
 <strong>Год выхода:</strong> 2011 <br/>
@@ -197,13 +197,13 @@ Bootstrap имеет активное сообщество, в качестве 
 
 <p><a href="http://foundation.zurb.com/">Foundation</a> второй большой игрок в этом списке. Большая компания ZURB поддерживает его, тем самым, мы можем надеяться на хорошую поддержку и развитие этого фреймворка. В конце концов, ZURB используется на многих крупных сайтах в том числе Facebook, Mozilla, Ebay, Yahoo!, и National Geographic.</p>
 
-<p><img src="/images/post/5-popular-css-framework/foundation.png"></p>
+<p>{% img /images/post/5-popular-css-framework/foundation.png %}</p>
 
 <p><strong>Создатели:</strong> ZURB<br/>
 <strong>Год выхода:</strong> 2011<br/>
 <strong>Текущая версия:</strong> 5.4.7 <br/>
 <strong>Популярность:</strong> 18000 звезды на GitHub <br/>
-<strong>Размер рамки:</strong> 326 KB <br/>
+<strong>Размер:</strong> 326 KB <br/>
 <strong>Препроцессоры:</strong> Sass <br/>
 <strong>Адаптивность:</strong> Да <br/>
 <strong>Модульность:</strong> Да <br/>
@@ -223,13 +223,13 @@ Bootstrap имеет активное сообщество, в качестве 
 
 <p><a href="http://semantic-ui.com/">Semantic UI</a> использует принципы естественного языка, в результате чего код намного более читабельный и понятный.</p>
 
-<p><img src="/images/post/5-popular-css-framework/semantic.png"></p>
+<p>{% img /images/post/5-popular-css-framework/semantic.png %}</p>
 
 <p><strong>Автор:</strong> Jack Lukic <br/>
 <strong>Год выхода:</strong> 2013 <br/>
 <strong>Текущая версия:</strong> 1.2.0 <br/>
 <strong>Популярность:</strong> 12,900+ звезды на GitHub <br/>
-<strong>Размер рамки:</strong> 552 KB<br/>
+<strong>Размер:</strong> 552 KB<br/>
 <strong>Препроцессоры:</strong> Less<br/>
 <strong>Адаптивность:</strong> Да <br/>
 <strong>Модульность:</strong> Да <br/>
@@ -249,13 +249,13 @@ Bootstrap имеет активное сообщество, в качестве 
 
 <p><a href="http://purecss.io/">Pure</a> является легковесной, модульным фреймворком, написан на чистом CSS, что позволяет вам использовать компоненты вместе или отдельно с друг другом, а также с другими CSS фреймворками.</p>
 
-<p><img src="/images/post/5-popular-css-framework/pure.png"></p>
+<p>{% img /images/post/5-popular-css-framework/pure.png %}</p>
 
 <p><strong>Создатель:</strong> Yahoo <br/>
 <strong>Год выхода:</strong> 2013 <br/>
 <strong>Текущая версия:</strong> 0.5.0 <br/>
 <strong>Популярность:</strong> 9,900+ звезды на GitHub <br/>
-<strong>Размер рамки:</strong> 18 KB <br/>
+<strong>Размер:</strong> 18 KB <br/>
 <strong>Препроцессоры:</strong> Нет<br/>
 <strong>Адаптивность:</strong> Да <br/>
 <strong>Модульность:</strong> Да <br/>
@@ -276,12 +276,12 @@ Bootstrap имеет активное сообщество, в качестве 
 
 <p><a href="http://getuikit.com/">UIKit</a> является коллекцией простых в использовании и легко настраиваемых  компонентов.  Хотя он не так популярен, как ее конкуренты, он  имеет сходную  функциональность и отличное качество компонентов.</p>
 
-<p><img src="/images/post/5-popular-css-framework/uikit.png"></p>
+<p>{% img /images/post/5-popular-css-framework/uikit.png %}</p>
 
 <p><strong>Год выхода:</strong> 2013 <br/>
 <strong>Текущая версия:</strong> 2.13.1<br/>
 <strong>Популярность:</strong> 3,800+ звезды на GitHub <br/>
-<strong>Размер рамки:</strong> 118 KB <br/>
+<strong>Размер:</strong> 118 KB <br/>
 <strong>Препроцессоры:</strong> Less, Sass <br/>
 <strong>Адаптивность:</strong> Да <br/>
 <strong>Модульность:</strong> Да <br/>
@@ -303,7 +303,7 @@ Bootstrap имеет активное сообщество, в качестве 
   <entry>
     <title type="html"><![CDATA[Изображения для заполнения пространства при верстке]]></title>
     <link href="http://dordenis.github.io/fronted/image-placeholders/"/>
-    <updated>2014-09-12T20:21:00-07:00</updated>
+    <updated>2014-09-12T20:21:00-04:00</updated>
     <id>http://dordenis.github.io/fronted/image-placeholders</id>
     <content type="html"><![CDATA[<p>Каждый верстальшик использовал lorem ipsum для заполнения «рыбы» при верстки проекта.</p>
 
@@ -311,128 +311,106 @@ Bootstrap имеет активное сообщество, в качестве 
 
 <h4><strong>placephant.com</strong> &ndash; изображения phpstyle</h4>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placephant.com/300/200&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placephant.com/100&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placephant.com/g/100/200&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placephant.com/100/200?filter=bw&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placephant.com/v/100/200&quot;</span><span class="nt">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:html %}
+<img src="http://placephant.com/300/200">
+<img src="http://placephant.com/100">
+<img src="http://placephant.com/g/100/200">
+<img src="http://placephant.com/100/200?filter=bw">
+<img src="http://placephant.com/v/100/200">
+{% endcodeblock %}</p>
 
-<p><img class="<a" src="href="http://placephant.com/300/200">http://placephant.com/300/200</a>">
-<img class="<a" src="href="http://placephant.com/100">http://placephant.com/100</a>">
-<img class="<a" src="href="http://placephant.com/g/100/200">http://placephant.com/g/100/200</a>">
-<img class="<a" src="href="http://placephant.com/100/200?filter=bw">http://placephant.com/100/200?filter=bw</a>">
-<img class="<a" src="href="http://placephant.com/v/100/200">http://placephant.com/v/100/200</a>"></p>
+<p>{% img <a href="http://placephant.com/300/200">http://placephant.com/300/200</a> %}
+{% img <a href="http://placephant.com/100">http://placephant.com/100</a> %}
+{% img <a href="http://placephant.com/g/100/200">http://placephant.com/g/100/200</a> %}
+{% img <a href="http://placephant.com/100/200?filter=bw">http://placephant.com/100/200?filter=bw</a> %}
+{% img <a href="http://placephant.com/v/100/200">http://placephant.com/v/100/200</a> %}</p>
 
 <!-- more -->
 
 
 <h4><strong>fakeimg.pl</strong> &ndash; изображения с текстом</h4>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://fakeimg.pl/300/&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://fakeimg.pl/250x100/&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://fakeimg.pl/250x100/ff0000/&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://fakeimg.pl/350x200/?text=Hello&quot;</span><span class="nt">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:html %}
+<img src="http://fakeimg.pl/300/">
+<img src="http://fakeimg.pl/250x100/">
+<img src="http://fakeimg.pl/250x100/ff0000/">
+<img src="http://fakeimg.pl/350x200/?text=Hello">
+{% endcodeblock %}</p>
 
-<p><img class="<a" src="href="http://fakeimg.pl/300/">http://fakeimg.pl/300/</a>">
-<img class="<a" src="href="http://fakeimg.pl/250x100/">http://fakeimg.pl/250x100/</a>">
-<img class="<a" src="href="http://fakeimg.pl/250x100/ff0000/">http://fakeimg.pl/250x100/ff0000/</a>">
-<img class="<a" src="href="http://fakeimg.pl/350x200/?text=Hello">http://fakeimg.pl/350x200/?text=Hello</a>"></p>
+<p>{% img <a href="http://fakeimg.pl/300/">http://fakeimg.pl/300/</a> %}
+{% img <a href="http://fakeimg.pl/250x100/">http://fakeimg.pl/250x100/</a> %}
+{% img <a href="http://fakeimg.pl/250x100/ff0000/">http://fakeimg.pl/250x100/ff0000/</a> %}
+{% img <a href="http://fakeimg.pl/350x200/?text=Hello">http://fakeimg.pl/350x200/?text=Hello</a> %}</p>
 
 <h4><strong>lorempixel.com</strong> &ndash; изображения по тематикам</h4>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://lorempixel.com/250/200&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://lorempixel.com/g/220/235&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://lorempixel.com/180/200/sports&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://lorempixel.com/180/200/technics&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://lorempixel.com/280/220/people/some-text&quot;</span><span class="nt">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:html %}
+<img src="http://lorempixel.com/250/200">
+<img src="http://lorempixel.com/g/220/235">
+<img src="http://lorempixel.com/180/200/sports">
+<img src="http://lorempixel.com/180/200/technics">
+<img src="http://lorempixel.com/280/220/people/some-text">
+{% endcodeblock %}</p>
 
-<p><img class="<a" src="href="http://lorempixel.com/250/200">http://lorempixel.com/250/200</a>">
-<img class="<a" src="href="http://lorempixel.com/g/220/235">http://lorempixel.com/g/220/235</a>">
-<img class="<a" src="href="http://lorempixel.com/180/200/sports">http://lorempixel.com/180/200/sports</a>">
-<img class="<a" src="href="http://lorempixel.com/180/200/technics">http://lorempixel.com/180/200/technics</a>">
-<img class="<a" src="href="http://lorempixel.com/280/220/people/some-text">http://lorempixel.com/280/220/people/some-text</a>"></p>
+<p>{% img <a href="http://lorempixel.com/250/200">http://lorempixel.com/250/200</a> %}
+{% img <a href="http://lorempixel.com/g/220/235">http://lorempixel.com/g/220/235</a> %}
+{% img <a href="http://lorempixel.com/180/200/sports">http://lorempixel.com/180/200/sports</a> %}
+{% img <a href="http://lorempixel.com/180/200/technics">http://lorempixel.com/180/200/technics</a> %}
+{% img <a href="http://lorempixel.com/280/220/people/some-text">http://lorempixel.com/280/220/people/some-text</a> %}</p>
 
 <h4><strong>placehold.it</strong> &ndash; разноцветные прямоугольники</h4>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placehold.it/150x100&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placehold.it/180x135/2ecc71/ecf0f1&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placehold.it/280x100/2c3e50/3498db&amp;text=html5.by+Rocks!&quot;</span><span class="nt">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:html %}
+<img src="http://placehold.it/150x100">
+<img src="http://placehold.it/180x135/2ecc71/ecf0f1">
+<img src="http://placehold.it/280x100/2c3e50/3498db&text=html5.by+Rocks!">
+{% endcodeblock %}</p>
 
-<p><img class="<a" src="href="http://placehold.it/150x100">http://placehold.it/150x100</a>">
-<img class="<a" src="href="http://placehold.it/180x135/2ecc71/ecf0f1">http://placehold.it/180x135/2ecc71/ecf0f1</a>">
-<img class="<a" src="href="http://placehold.it/280x100/2c3e50/3498db&amp;text=html5.by+Rocks!">http://placehold.it/280x100/2c3e50/3498db&amp;text=html5.by+Rocks!</a>"></p>
+<p>{% img <a href="http://placehold.it/150x100">http://placehold.it/150x100</a> %}
+{% img <a href="http://placehold.it/180x135/2ecc71/ecf0f1">http://placehold.it/180x135/2ecc71/ecf0f1</a> %}
+{% img <a href="http://placehold.it/280x100/2c3e50/3498db&amp;text=html5.by+Rocks!">http://placehold.it/280x100/2c3e50/3498db&amp;text=html5.by+Rocks!</a> %}</p>
 
 <h4><strong>placepuppy.it</strong> &ndash; для любителей собак</h4>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placepuppy.it/150/100&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placepuppy.it/120/135&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placepuppy.it/80/100&quot;</span><span class="nt">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:html %}
+<img src="http://placepuppy.it/150/100">
+<img src="http://placepuppy.it/120/135">
+<img src="http://placepuppy.it/80/100">
+{% endcodeblock %}</p>
 
-<p><img class="<a" src="href="http://placepuppy.it/150/100">http://placepuppy.it/150/100</a>">
-<img class="<a" src="href="http://placepuppy.it/120/135">http://placepuppy.it/120/135</a>">
-<img class="<a" src="href="http://placepuppy.it/80/100">http://placepuppy.it/80/100</a>"></p>
+<p>{% img <a href="http://placepuppy.it/150/100">http://placepuppy.it/150/100</a> %}
+{% img <a href="http://placepuppy.it/120/135">http://placepuppy.it/120/135</a> %}
+{% img <a href="http://placepuppy.it/80/100">http://placepuppy.it/80/100</a> %}</p>
 
 <h4><strong>placekitten.com</strong> &ndash; для любителей котят</h4>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placekitten.com/g/160/120&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placekitten.com/g/120/135&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placekitten.com/g/180/100&quot;</span><span class="nt">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:html %}
+<img src="http://placekitten.com/g/160/120">
+<img src="http://placekitten.com/g/120/135">
+<img src="http://placekitten.com/g/180/100">
+{% endcodeblock %}</p>
 
-<p><img class="<a" src="href="http://placekitten.com/g/160/120">http://placekitten.com/g/160/120</a>">
-<img class="<a" src="href="http://placekitten.com/g/120/135">http://placekitten.com/g/120/135</a>">
-<img class="<a" src="href="http://placekitten.com/g/180/100">http://placekitten.com/g/180/100</a>"></p>
+<p>{% img <a href="http://placekitten.com/g/160/120">http://placekitten.com/g/160/120</a> %}
+{% img <a href="http://placekitten.com/g/120/135">http://placekitten.com/g/120/135</a> %}
+{% img <a href="http://placekitten.com/g/180/100">http://placekitten.com/g/180/100</a> %}</p>
 
 <h4><strong>placekitten.com</strong> &ndash; для больших любителей</h4>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://beerhold.it/225/280&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://beerhold.it/280/235&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://beerhold.it/280/300&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://beerhold.it/400/300&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://beerhold.it/270/260&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://beerhold.it/280/200/s&quot;</span><span class="nt">&gt;</span><span class="c">&lt;!-- sepia --&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:html %}
+<img src="http://beerhold.it/225/280">
+<img src="http://beerhold.it/280/235">
+<img src="http://beerhold.it/280/300">
+<img src="http://beerhold.it/400/300">
+<img src="http://beerhold.it/270/260">
+<img src="http://beerhold.it/280/200/s"><!-- sepia -->
+{% endcodeblock %}</p>
 
-<p><img class="<a" src="href="http://beerhold.it/225/280">http://beerhold.it/225/280</a>">
-<img class="<a" src="href="http://beerhold.it/280/235">http://beerhold.it/280/235</a>">
-<img class="<a" src="href="http://beerhold.it/280/300">http://beerhold.it/280/300</a>">
-<img class="<a" src="href="http://beerhold.it/400/300">http://beerhold.it/400/300</a>">
-<img class="<a" src="href="http://beerhold.it/270/260">http://beerhold.it/270/260</a>">
-<img class="<a" src="href="http://beerhold.it/280/200/s">http://beerhold.it/280/200/s</a>"><!-- sepia --></p>
+<p>{% img <a href="http://beerhold.it/225/280">http://beerhold.it/225/280</a> %}
+{% img <a href="http://beerhold.it/280/235">http://beerhold.it/280/235</a> %}
+{% img <a href="http://beerhold.it/280/300">http://beerhold.it/280/300</a> %}
+{% img <a href="http://beerhold.it/400/300">http://beerhold.it/400/300</a> %}
+{% img <a href="http://beerhold.it/270/260">http://beerhold.it/270/260</a> %}
+{% img <a href="http://beerhold.it/280/200/s">http://beerhold.it/280/200/s</a> %}<!-- sepia --></p>
 
 <h4>если пропал интернет</h4>
 
@@ -443,12 +421,12 @@ Bootstrap имеет активное сообщество, в качестве 
   <entry>
     <title type="html"><![CDATA[Темы для Bootstrap 3]]></title>
     <link href="http://dordenis.github.io/fronted/themes-for-bootstrap-3/"/>
-    <updated>2014-01-21T00:18:00-08:00</updated>
+    <updated>2014-01-21T00:18:00-05:00</updated>
     <id>http://dordenis.github.io/fronted/themes-for-bootstrap-3</id>
     <content type="html"><![CDATA[<ul>
 <li><h4>AdminLTE Control Panel &amp; Dashboard</h4>
 
-<p><img src="/images/post/themes/AdminLTE.png">
+<p>{% img /images/post/themes/AdminLTE.png %}
 <a href="http://almsaeedstudio.com/preview/">Demo</a>
 <a href="https://github.com/almasaeed2010/AdminLTE">Download</a></p></li>
 </ul>
@@ -460,76 +438,76 @@ Bootstrap имеет активное сообщество, в качестве 
 <ul>
 <li><h4>First &ndash; Mobile First Web App Theme</h4>
 
-<p><img src="/images/post/themes/first.png">
+<p>{% img /images/post/themes/first.png %}
 <a href="http://themeforest.net/item/first-mobile-first-web-app-theme/5002403?WT.ac=portfolio_item&amp;WT.seg_1=portfolio_item&amp;WT.z_author=Flatfull">Buy</a>
 <a href="http://flatfull.com/themes/first/index.html">Demo</a></p></li>
 <li><h4>Material Design</h4>
 
-<p><img src="/images/post/themes/material-design.png">
+<p>{% img /images/post/themes/material-design.png %}
 <a href="https://fezvrasta.github.io/bootstrap-material-design/">Demo</a></p></li>
 <li><h4>Stanley – Freelancer Theme</h4>
 
-<p><img src="/images/post/themes/stanley.png">
+<p>{% img /images/post/themes/stanley.png %}
 <a href="http://blacktie.co/demo/stanley/">Demo</a>
 <a href="http://bit.ly/1eRSs8n">Download</a></p></li>
 <li><h4>Flatty – App Landing Page</h4>
 
-<p><img src="/images/post/themes/flatty.png">
+<p>{% img /images/post/themes/flatty.png %}
 <a href="http://blacktie.co/demo/flatty/">Demo</a>
 <a href="http://bit.ly/18QS8X2">Download</a></p></li>
 <li><h4>SMPL – A Simple Contact Page</h4>
 
-<p><img src="/images/post/themes/smpl.png">
+<p>{% img /images/post/themes/smpl.png %}
 <a href="http://blacktie.co/demo/smpl/">Demo</a>
 <a href="http://bit.ly/1gBAjzO">Download</a></p></li>
 <li><h4>Bolt – Flat One Page Theme</h4>
 
-<p><img src="/images/post/themes/bolt.png">
+<p>{% img /images/post/themes/bolt.png %}
 <a href="http://blacktie.co/demo/bolt/">Demo</a>
 <a href="http://bit.ly/1eve3Er">Download</a></p></li>
 <li><h4>Small – Dribbble Portfolio Theme</h4>
 
-<p><img src="/images/post/themes/small.png">
+<p>{% img /images/post/themes/small.png %}
 <a href="http://blacktie.co/demo/small/">Demo</a>
 <a href="http://bit.ly/1fEate0">Download</a></p></li>
 <li><h4>Link – Bootstrap 3 Agency Theme</h4>
 
-<p><img src="/images/post/themes/link.png">
+<p>{% img /images/post/themes/link.png %}
 <a href="http://blacktie.co/demo/link/">Demo</a>
 <a href="http://bit.ly/1i0HRLk">Download</a></p></li>
 <li><h4>Spot – Freelance &amp; Agency Theme</h4>
 
-<p><img src="/images/post/themes/spot.png">
+<p>{% img /images/post/themes/spot.png %}
 <a href="http://blacktie.co/demo/spot/">Demo</a>
 <a href="http://bit.ly/16PuFBr">Download</a></p></li>
 <li><h4>Minimal – Dark Bootstrap 3 Theme</h4>
 
-<p><img src="/images/post/themes/minimal.png">
+<p>{% img /images/post/themes/minimal.png %}
 <a href="http://blacktie.co/demo/minimal/">Demo</a>
 <a href="http://bit.ly/1h1qJay">Download</a></p></li>
 <li><h4>Munter – One Page Theme</h4>
 
-<p><img src="/images/post/themes/munter.png">
+<p>{% img /images/post/themes/munter.png %}
 <a href="http://blacktie.co/demo/munter/">Demo</a>
 <a href="http://bit.ly/17549aE">Download</a></p></li>
 <li><h4>Victoria – Simple vCard</h4>
 
-<p><img src="/images/post/themes/victoria.png">
+<p>{% img /images/post/themes/victoria.png %}
 <a href="http://blacktie.co/demo/victoria/">Demo</a>
 <a href="http://bit.ly/1evXlo0">Download</a></p></li>
 <li><h4>Onassis – Agency One Page Theme</h4>
 
-<p><img src="/images/post/themes/onassis.png">
+<p>{% img /images/post/themes/onassis.png %}
 <a href="http://blacktie.co/demo/onassis/">Demo</a>
 <a href="http://bit.ly/17ipauW">Download</a></p></li>
 <li><h4>Kelvin – Resume Theme</h4>
 
-<p><img src="/images/post/themes/kelvin.png">
+<p>{% img /images/post/themes/kelvin.png %}
 <a href="http://blacktie.co/demo/kelvin/">Demo</a>
 <a href="http://bit.ly/19mILw1">Download</a></p></li>
 <li><h4>Pratt – App Landing Page</h4>
 
-<p><img src="/images/post/themes/pratt.png">
+<p>{% img /images/post/themes/pratt.png %}
 <a href="http://blacktie.co/demo/pratt/">Demo</a>
 <a href="http://bit.ly/1g3Bskf">Download</a></p></li>
 </ul>

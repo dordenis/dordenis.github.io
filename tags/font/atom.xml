@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: font | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/font/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2015-11-11T01:00:18-08:00</updated>
+  <updated>2015-12-21T02:59:44-05:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -16,9 +16,9 @@
   <entry>
     <title type="html"><![CDATA[Material Design Icons – приятный набор иконок для вашего веб приложения]]></title>
     <link href="http://dordenis.github.io/fronted/material-design-icons/"/>
-    <updated>2015-11-10T03:13:00-08:00</updated>
+    <updated>2015-11-10T03:13:00-05:00</updated>
     <id>http://dordenis.github.io/fronted/material-design-icons</id>
-    <content type="html"><![CDATA[<p><img class="no-boreder center" src="/images/post/material-design-icons/icons-set.png"></p>
+    <content type="html"><![CDATA[<p>{% img no-boreder center /images/post/material-design-icons/icons-set.png %}</p>
 
 <p>Всем хорошо известный бесплатный набор иконок <a href="https://fortawesome.github.io/Font-Awesome/icons/">Font Awesome</a>.
 Он практически стал промышленным стандартом в вебе.
