@@ -1,0 +1,577 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Мультиязычный сайт с помощью Yii | Ajaxblog</title>
+
+	<meta name="author" content="Denis Doroshenko">
+
+
+	<meta name="description" content=" Мультиязычный сайт с помощью Yii "> 
+
+
+	<meta name="keywords" content="gettext, мультиязычность">
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Ajaxblog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+	<link href="/stylesheets/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 7]><link href="/stylesheets/font-awesome-ie7.css" rel="stylesheet" type="text/css"><![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="/javascripts/scroll.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">Ajaxblog</a></h1>
+<h4></h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Блог</a></li>
+	<li><a href="/resume">Резюме</a></li>
+	<!-- li><a href="/portfolio">Portfolio</a></li -->
+	<li><a href="/archives">Архив</a></li>
+	<li><i class="icon icon-rss"></i> <a href="/atom.xml">RSS</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Блог</a></li>
+	<li><a href="/resume">Резюме</a></li>
+	<!-- li><a href="/portfolio">Portfolio</a></li -->
+	<li><a href="/archives">Архив</a></li>
+	<li><i class="icon icon-rss"></i> <a href="/atom.xml">RSS</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:dordenis.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Мультиязычный сайт с помощью Yii</h2>
+	<div class="entry-content">
+		<div class="meta">
+            <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-21T15:33:00-04:00" pubdate data-updated="true">21 Июля 2013</time></div>
+            <div class="categories">
+
+
+	<a class='category' href='/categories/yii/'>yii</a>
+
+
+</div>
+            <div class="tags">
+
+
+  
+	
+	    gettext</br>
+	
+	    мультиязычность</br>
+	
+  
+
+</div>
+            
+        </div>
+		<p>Для одного из проекта, возникла необходимость в организации поддержки мультиязычности на сайте. Причем URL должны быть в определенном виде:</p>
+
+<p><a href="http://site.ru/ru/contacts">http://site.ru/ru/contacts</a> для русского языка  <br/>
+<a href="http://site.ru/en/contacts">http://site.ru/en/contacts</a> для английского языка</p>
+
+<!-- more -->
+
+
+<h3>Расширяем CUrlManager.</h3>
+
+<p>Создаем файл <strong>protected/components/UrlManager.php</strong></p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">UrlManager</span> <span class="k">extends</span> <span class="nx">CUrlManager</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">public</span> <span class="k">function</span> <span class="nf">createUrl</span><span class="p">(</span><span class="nv">$route</span><span class="p">,</span><span class="nv">$params</span><span class="o">=</span><span class="k">array</span><span class="p">(),</span><span class="nv">$ampersand</span><span class="o">=</span><span class="s1">&#39;&amp;&#39;</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$params</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">if</span> <span class="p">(</span><span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">user</span><span class="o">-&gt;</span><span class="na">hasState</span><span class="p">(</span><span class="s1">&#39;language&#39;</span><span class="p">))</span>
+</span><span class='line'>                <span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">language</span> <span class="o">=</span> <span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">user</span><span class="o">-&gt;</span><span class="na">getState</span><span class="p">(</span><span class="s1">&#39;language&#39;</span><span class="p">);</span>
+</span><span class='line'>            <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">cookies</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]))</span>
+</span><span class='line'>                <span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">language</span> <span class="o">=</span> <span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">cookies</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">value</span><span class="p">;</span>
+</span><span class='line'>            <span class="nv">$params</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]</span><span class="o">=</span><span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">language</span><span class="p">;</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="k">return</span> <span class="k">parent</span><span class="o">::</span><span class="na">createUrl</span><span class="p">(</span><span class="nv">$route</span><span class="p">,</span> <span class="nv">$params</span><span class="p">,</span> <span class="nv">$ampersand</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Согласно нашему условию, выбранный язык должен быть частью URL. Это значит, что $_GET[&lsquo;language&rsquo;] должен быть определен. Для реализации этого мы переопределяем функцию createUrl() класса CUrlManager. Если язык в строке не указан, тогда мы его ищем в переменной сессии, затем в куках, и если до этого пользователь не менял язык то устанавливаем язык приложения по умолчанию. И затем формируем правильную строку URL уже с языком как параметр.</p>
+
+<h3>Редактируем наш Controller</h3>
+
+<p>Добавляем следующий код в <strong>protected/components/Controller.php</strong></p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$id</span><span class="p">,</span> <span class="nv">$module</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$id</span><span class="p">,</span> <span class="nv">$module</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// If there is a post-request, redirect the application to the provided url of the selected language</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nv">$language</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">];</span>
+</span><span class='line'>        <span class="nv">$MultilangReturnUrl</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="nv">$language</span><span class="p">];</span>
+</span><span class='line'>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirect</span><span class="p">(</span><span class="nv">$MultilangReturnUrl</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="c1">// Set the application language if provided by GET, session or cookie</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">language</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">];</span>
+</span><span class='line'>        <span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">user</span><span class="o">-&gt;</span><span class="na">setState</span><span class="p">(</span><span class="s1">&#39;language&#39;</span><span class="p">,</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]);</span>
+</span><span class='line'>        <span class="nv">$cookie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CHttpCookie</span><span class="p">(</span><span class="s1">&#39;language&#39;</span><span class="p">,</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]);</span>
+</span><span class='line'>        <span class="nv">$cookie</span><span class="o">-&gt;</span><span class="na">expire</span> <span class="o">=</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="mi">60</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">*</span> <span class="mi">365</span><span class="p">);</span> <span class="c1">// (1 year)</span>
+</span><span class='line'>        <span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">cookies</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$cookie</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">user</span><span class="o">-&gt;</span><span class="na">hasState</span><span class="p">(</span><span class="s1">&#39;language&#39;</span><span class="p">))</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">language</span> <span class="o">=</span> <span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">user</span><span class="o">-&gt;</span><span class="na">getState</span><span class="p">(</span><span class="s1">&#39;language&#39;</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">cookies</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]))</span> <span class="p">{</span>
+</span><span class='line'>        <span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">language</span> <span class="o">=</span> <span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">cookies</span><span class="p">[</span><span class="s1">&#39;language&#39;</span><span class="p">]</span><span class="o">-&gt;</span><span class="na">value</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">gettext</span><span class="o">-&gt;</span><span class="na">setLocale</span><span class="p">();</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Мы расширяем конструктор класса и добавляем язык для приложения. Так как все контроллеры будут наследоваться с этого контроллера, язык приложения будет установлен явно на каждый запрос.
+Если не установленYii::app()&ndash;>language явно для каждого запроса в URL, он будет браться из конфигурационного файла приложения. Если же он не указан в конфигурационном фале, он будет идентичен Yii::app()&ndash;>sourceLanguage, который по умолчанию &lsquo;en_us&rsquo;.</p>
+
+<h3>Редактируем конфиг файл</h3>
+
+<p>Вносим изменения в <strong>protected/config/main.php</strong></p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'><span class="k">return </span>array<span class="o">(</span>
+</span><span class='line'>    ...
+</span><span class='line'>    <span class="s1">&#39;sourceLanguage&#39;</span><span class="o">=</span>&gt;<span class="s1">&#39;en&#39;</span>,
+</span><span class='line'>    <span class="s1">&#39;language&#39;</span> <span class="o">=</span>&gt; <span class="s1">&#39;ru&#39;</span>,
+</span><span class='line'>    ...
+</span><span class='line'>
+</span><span class='line'>    // application components
+</span><span class='line'>    <span class="s1">&#39;components&#39;</span> <span class="o">=</span>&gt; array<span class="o">(</span>
+</span><span class='line'>        <span class="s1">&#39;gettext&#39;</span> <span class="o">=</span>&gt; array<span class="o">(</span>
+</span><span class='line'>            <span class="s1">&#39;class&#39;</span> <span class="o">=</span>&gt; <span class="s1">&#39;ext.gettext.components.GetText&#39;</span>,
+</span><span class='line'>
+</span><span class='line'>            // следующие параметры не обезательны
+</span><span class='line'>            <span class="s1">&#39;domain&#39;</span> <span class="o">=</span>&gt; <span class="s1">&#39;имя домена&#39;</span>, // defualt messages
+</span><span class='line'>            <span class="s1">&#39;locale_dir&#39;</span> <span class="o">=</span>&gt; <span class="s1">&#39;путь до папки с переводами&#39;</span>, // defualt Yii::app<span class="o">()</span>-&gt;basePath.DIRECTORY_SEPARATOR.<span class="s1">&#39;messages&#39;</span>;
+</span><span class='line'>            <span class="s1">&#39;locale&#39;</span> <span class="o">=</span>&gt; array<span class="o">(</span>
+</span><span class='line'>                // установленные на компьютере локале
+</span><span class='line'>                // locale -a
+</span><span class='line'>                <span class="s1">&#39;ru&#39;</span> <span class="o">=</span>&gt;<span class="s1">&#39;ru_RU&#39;</span>,
+</span><span class='line'>                <span class="s1">&#39;en&#39;</span> <span class="o">=</span>&gt; <span class="s1">&#39;en_US&#39;</span>,
+</span><span class='line'>             <span class="o">)</span>
+</span><span class='line'>        <span class="o">)</span>,
+</span><span class='line'>        ...
+</span><span class='line'>    <span class="o">)</span>;
+</span><span class='line'><span class="o">)</span>;
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Добавляем расширение</h3>
+
+<p>Создаем файл <strong>protected/extensions/gettext/components/GetText.php</strong></p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="o">&lt;?</span><span class="nx">php</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">GetText</span> <span class="k">extends</span> <span class="nx">CApplicationComponent</span>
+</span><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="sd">/**</span>
+</span><span class='line'><span class="sd">     * @var GetText domain.</span>
+</span><span class='line'><span class="sd">     */</span>
+</span><span class='line'>    <span class="k">public</span> <span class="nv">$domain</span> <span class="o">=</span> <span class="s1">&#39;messages&#39;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="sd">/**</span>
+</span><span class='line'><span class="sd">     * @var Language in yii.</span>
+</span><span class='line'><span class="sd">     */</span>
+</span><span class='line'>    <span class="k">public</span> <span class="nv">$language</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="sd">/**</span>
+</span><span class='line'><span class="sd">     * @var Directory containing gettext messages.</span>
+</span><span class='line'><span class="sd">     */</span>
+</span><span class='line'>    <span class="k">public</span> <span class="nv">$locale_dir</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="sd">/**</span>
+</span><span class='line'><span class="sd">     * @var array locale (locale -a)</span>
+</span><span class='line'><span class="sd">     */</span>
+</span><span class='line'>    <span class="k">public</span> <span class="nv">$locale</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+</span><span class='line'>        <span class="s1">&#39;ru&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;ru_RU&#39;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s1">&#39;en&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;en_US&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="sd">/**</span>
+</span><span class='line'><span class="sd">     * Initialize php&#39;s gettext.</span>
+</span><span class='line'><span class="sd">     */</span>
+</span><span class='line'>    <span class="k">public</span> <span class="k">function</span> <span class="nf">init</span><span class="p">()</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">setLocale</span><span class="p">();</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="sd">/**</span>
+</span><span class='line'><span class="sd">     * Bind the gettext domain and make it the default</span>
+</span><span class='line'><span class="sd">     */</span>
+</span><span class='line'>    <span class="k">public</span> <span class="k">function</span> <span class="nf">bindDomain</span><span class="p">()</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">bindtextdomain</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">domain</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">locale_dir</span><span class="p">))</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">throw</span> <span class="k">new</span> <span class="nx">Exception</span><span class="p">(</span><span class="s2">&quot;Found folder to translations </span><span class="si">{</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">locale_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>        <span class="nb">bind_textdomain_codeset</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">domain</span><span class="p">,</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">);</span>
+</span><span class='line'>        <span class="nb">textdomain</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">domain</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="sd">/**</span>
+</span><span class='line'><span class="sd">     * Get canonical locale to the format required for gettext</span>
+</span><span class='line'><span class="sd">     */</span>
+</span><span class='line'>    <span class="k">public</span> <span class="k">function</span> <span class="nf">getLocale</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="nv">$locale</span> <span class="o">=</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">locale</span><span class="p">[</span><span class="nv">$id</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">locale</span><span class="p">[</span><span class="nv">$id</span><span class="p">]</span> <span class="o">:</span> <span class="nv">$id</span><span class="p">;</span>
+</span><span class='line'>        <span class="nv">$locale</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="nv">$locale</span><span class="p">);</span>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$locale</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="nv">$locale</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">strtoupper</span><span class="p">(</span><span class="nv">$locale</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span><span class='line'>        <span class="k">return</span> <span class="nb">implode</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="nv">$locale</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="sd">/**</span>
+</span><span class='line'><span class="sd">     * Set locale</span>
+</span><span class='line'><span class="sd">     */</span>
+</span><span class='line'>    <span class="k">public</span> <span class="k">function</span> <span class="nf">setLocale</span><span class="p">()</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">language</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">language</span> <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">language</span> <span class="o">:</span> <span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">language</span><span class="p">;</span>
+</span><span class='line'>        <span class="nv">$locale</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getLocale</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">language</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">locale_dir</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">locale_dir</span> <span class="o">?</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">locale_dir</span> <span class="o">:</span> <span class="nx">Yii</span><span class="o">::</span><span class="na">app</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">basePath</span> <span class="o">.</span> <span class="nx">DIRECTORY_SEPARATOR</span> <span class="o">.</span> <span class="s1">&#39;messages&#39;</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">setlocale</span><span class="p">(</span><span class="nx">LC_ALL</span><span class="p">,</span> <span class="nv">$locale</span> <span class="o">.</span> <span class="s1">&#39;.utf8&#39;</span><span class="p">,</span> <span class="nv">$locale</span> <span class="o">.</span> <span class="s1">&#39;.utf-8&#39;</span><span class="p">,</span> <span class="nv">$locale</span> <span class="o">.</span> <span class="s1">&#39;.UTF8&#39;</span><span class="p">,</span> <span class="nv">$locale</span> <span class="o">.</span> <span class="s1">&#39;.UTF-8&#39;</span><span class="p">))</span> <span class="p">{</span>
+</span><span class='line'>            <span class="k">throw</span> <span class="k">new</span> <span class="nx">Exception</span><span class="p">(</span><span class="s2">&quot;Not installed in the system locale </span><span class="si">{</span><span class="nv">$locale</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
+</span><span class='line'>        <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nx">header</span><span class="p">(</span><span class="s1">&#39;Content-Language: &#39;</span> <span class="o">.</span> <span class="nb">str_replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">language</span><span class="p">));</span>
+</span><span class='line'>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">bindDomain</span><span class="p">();</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Размешаем переводы</h3>
+
+<p>Создаем в папке <strong>protected/messages</strong>, следующию структуру каталогов. Где и размещаем наши переводы.</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>messages
+</span><span class='line'>        en_US
+</span><span class='line'>             LC_MESSAGES
+</span><span class='line'>                      messages.mo
+</span><span class='line'>                      messages.po
+</span><span class='line'>        ru_RU
+</span><span class='line'>             LC_MESSAGES
+</span><span class='line'>                      messages.mo
+</span><span class='line'>                      messages.po
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>6. Что делать если не работает</h1>
+
+<ol>
+<li>Проверить установлена в систему нужная локаль (locale -a)</li>
+<li>Проверить работу setlocale(), должно вернуться имя локале</li>
+<li>Проверить работу bindtextdomain(), должно вернуться путь до файлов перевода</li>
+</ol>
+
+
+	</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+
+    <footer id="footer">
+        <div class="inner">
+            <div class="row-fluid">
+    <span class="span12"><section>
+  <h3>Категории</h3>
+    <ul id="category-list"><li><a href='/categories/fronted'>fronted (5)</a></li><li><a href='/categories/linux'>linux (3)</a></li><li><a href='/categories/mysql'>mysql (1)</a></li><li><a href='/categories/ngnix'>ngnix (1)</a></li><li><a href='/categories/octopress'>octopress (2)</a></li><li><a href='/categories/php'>php (4)</a></li><li><a href='/categories/yii'>yii (1)</a></li></ul>
+</section>
+</span>
+</div>
+            <div class="copyright">
+    Copyright &copy; 2015
+    
+        Denis Doroshenko
+    
+    Powered by Octopress.
+</div>
+        </div>
+    </footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'ajaxblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://dordenis.github.io/yii/multilanguage-website-with-yii/';
+        var disqus_url = 'http://dordenis.github.io/yii/multilanguage-website-with-yii/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+</body>
+</html>

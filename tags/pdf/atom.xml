@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: pdf | Ajaxblog]]></title>
   <link href="http://dordenis.github.io/tags/pdf/atom.xml" rel="self"/>
   <link href="http://dordenis.github.io/"/>
-  <updated>2015-12-21T03:12:15-05:00</updated>
+  <updated>2015-12-21T03:17:36-05:00</updated>
   <id>http://dordenis.github.io/</id>
   <author>
     <name><![CDATA[Denis Doroshenko]]></name>
@@ -20,7 +20,7 @@
     <id>http://dordenis.github.io/linux/console-pdf-viewer</id>
     <content type="html"><![CDATA[<p>Как то нужно было быстро посмотреть pdf файл в консоле. Быстрое гугление показало, что нет готовых читалок под консоль. Но можно использовать хитрый трюк.</p>
 
-<p>{% img /images/post/console-pdf-viewer/1.png %}</p>
+<p><img src="/images/post/console-pdf-viewer/1.png"></p>
 
 <p><strong>pdftohtml</strong> &ndash; инструмент командной строки для преобразования PDF-файлов в HTML и другие форматы.</p>
 
@@ -29,29 +29,31 @@
 
 <h3><strong>Устанавливаем</strong></h3>
 
-<p>{% codeblock lang:sh %}
-sudo apt-get install pdftohtml
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>sudo apt-get install pdftohtml
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h3><strong>Используем</strong></h3>
 
-<p>{% codeblock lang:sh %}
-pdftohtml some_file.pdf
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>pdftohtml some_file.pdf
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>а дальше уже смотрим в каким-то текстовом браузере</p>
 
-<p>{% codeblock lang:sh %}
-lynx some_file.pdf
-// or
-elinks some_file.pdf
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>lynx some_file.pdf
+</span><span class='line'>// or
+</span><span class='line'>elinks some_file.pdf
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>если не установлен не один из них, не беда, конвертируем в простой текст</p>
 
-<p>{% codeblock lang:sh %}
-pdftotext some_file.pdf
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='sh'><span class='line'>pdftotext some_file.pdf
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   

@@ -1,0 +1,327 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>18 новых jquery плагинов для вашего сайта | Ajaxblog</title>
+
+	<meta name="author" content="Denis Doroshenko">
+
+
+	<meta name="description" content=" 18 новых jquery плагинов для вашего сайта "> 
+
+
+	<meta name="keywords" content="jquery, js">
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="Ajaxblog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+	<link href="/stylesheets/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <!--[if lt IE 7]><link href="/stylesheets/font-awesome-ie7.css" rel="stylesheet" type="text/css"><![endif]-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="/javascripts/scroll.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
+
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+	
+</head>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">Ajaxblog</a></h1>
+<h4></h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Блог</a></li>
+	<li><a href="/resume">Резюме</a></li>
+	<!-- li><a href="/portfolio">Portfolio</a></li -->
+	<li><a href="/archives">Архив</a></li>
+	<li><i class="icon icon-rss"></i> <a href="/atom.xml">RSS</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Блог</a></li>
+	<li><a href="/resume">Резюме</a></li>
+	<!-- li><a href="/portfolio">Portfolio</a></li -->
+	<li><a href="/archives">Архив</a></li>
+	<li><i class="icon icon-rss"></i> <a href="/atom.xml">RSS</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:dordenis.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">18 новых Jquery плагинов для вашего сайта</h2>
+	<div class="entry-content">
+		<div class="meta">
+            <div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-01-13T14:00:00-05:00" pubdate data-updated="true">13 Января 2015</time></div>
+            <div class="categories">
+
+
+	<a class='category' href='/categories/fronted/'>fronted</a>
+
+
+</div>
+            <div class="tags">
+
+
+  
+	
+	    jquery</br>
+	
+	    js</br>
+	
+  
+
+</div>
+            
+        </div>
+		<h4><a href="http://osvaldas.info/audio-player-responsive-and-touch-friendly">Адаптивный Audio Player</a></h4>
+
+<p>Это адаптивный аудио-плеер является идеальным примером работе JQuery. Вы просто подключаете плагин и получаете красивый аудио-плеер с удобным интерфейсом.</p>
+
+<p><img class="center" src="/images/post/18-jquery-plugins/01.png"></p>
+
+<!-- more -->
+
+
+<h4><a href="http://www.berriart.com/sidr/">Sidr</a></h4>
+
+<p>Сейчас стало модным использовать выдвижное меню. мода пришла с мобильных приложений. Благодоря этому плагину мы можем использовать этот функционал и в браузере</p>
+
+<p><img class="center" src="/images/post/18-jquery-plugins/02.png"></p>
+
+<h4><a href="http://jpanelmenu.com/">jPanelMenu</a></h4>
+
+<p>Еще одна идея интерфейса пришедшая из мобильного мира в большой веб.</p>
+
+<p><img class="center" src="/images/post/18-jquery-plugins/03.png"></p>
+
+<h4><a href="http://nick-jonas.github.io/imageloader/">Imageloader</a></h4>
+
+<p>Прекрасный плагин для загрузки картинок с различными эффектами появления картинок после загрузки.</p>
+
+<p><img class="center" src="/images/post/18-jquery-plugins/04.png"></p>
+
+<h4><a href="http://paulkinzett.github.io/toolbar/">Toolbar.js</a></h4>
+
+<p>Этот плагин позволит создать небольшое меню, всплывающей подсказки над любым элементами.</p>
+
+<p><img class="center" src="/images/post/18-jquery-plugins/05.png"></p>
+
+<h4><a href="http://stevenbenner.github.io/jquery-powertip/">JQuery PowerTip</a></h4>
+
+<p>Плагин с подсказками, на все случае жизни.</p>
+
+<p><img class="center" src="/images/post/18-jquery-plugins/06.png"></p>
+
+<h4><a href="http://goto.io/jqtimeline/">jqTimeline</a></h4>
+
+<p>Плагин jqTimeline предлагает уникальную функциональность. Вы можете создать горизонтальную шкалу с датами и событиями на эту дату. Пользователь могут нажать на события для отображения дополнительной информации по данной дате.</p>
+
+<p><img class="center" src="/images/post/18-jquery-plugins/07.png"></p>
+
+<h4><a href="http://brutaldesign.github.io/swipebox/">Swipebox</a></h4>
+
+<p>Очередной плагин  для галерее изображений. Основное отличие, адаптированный для планшетов и смартфонов.</p>
+
+<p><img class="center" src="/images/post/18-jquery-plugins/08.png"></p>
+
+<h4><a href="http://www.mixitup.io/">MixItUp</a></h4>
+
+<p>Плагин сортировки картинок, выглядит красиво, но сфера применения весьма узка.</p>
+
+<p><img class="center" src="/images/post/18-jquery-plugins/09.png"></p>
+
+<h4><a href="http://markgoodyear.com/labs/scrollup/">Scrollup</a></h4>
+
+<p>Плагин который скролирует содержание страницы к своему началу.</p>
+
+<p><img class="center" src="/images/post/18-jquery-plugins/10.png"></p>
+
+<h4><a href="http://ivaynberg.github.io/select2/">Select2</a></h4>
+
+<p>Один из самых полезных и известных плагинов. Очень люблю его и использую везде где только можно.</p>
+
+<p><img class="center" src="/images/post/18-jquery-plugins/11.png"></p>
+
+<h4><a href="http://vortex.montezuma.it/">Vortex</a></h4>
+
+<p>Плагин для создания галерее. Но весьма необычной.</p>
+
+<p><img class="center" src="/images/post/18-jquery-plugins/12.png"></p>
+
+<h4><a href="http://damirfoy.com/iCheck/">iCheck</a></h4>
+
+<p>Красивейшая кастамизация стандартных элементов формы.</p>
+
+<p><img class="center" src="/images/post/18-jquery-plugins/13.png"></p>
+
+<h4><a href="http://manos.malihu.gr/tuts/custom-scrollbar-plugin/complete_examples.html">Custom Scrollbar Plugin</a></h4>
+
+<p>Продолжаем идею предыдущего проекта, кастамизируем полосу прокрутку.</p>
+
+<p><img class="center" src="/images/post/18-jquery-plugins/14.png"></p>
+
+<h4><a href="http://als.musings.it/">Any List Scroller</a></h4>
+
+<p>Плагин для создания слайд-шоу, весьма интересный.</p>
+
+<p><img class="center" src="/images/post/18-jquery-plugins/15.png"></p>
+
+<h4><a href="http://toddmotto.com/labs/superbox/">Superbox</a></h4>
+
+<p>Нравиться, как отображается найденные картинки в Google поиске, вот вам плагин повторяющий этот функционал.</p>
+
+<p><img class="center" src="/images/post/18-jquery-plugins/16.png"></p>
+
+<h4><a href="http://kopolo.ru/for-webmasters/kgallery/example_typical.html">KGallery</a></h4>
+
+<p>Тоже самое что предыдущий плагин, но более классический способ отображения.</p>
+
+<p><img class="center" src="/images/post/18-jquery-plugins/17.png"></p>
+
+<h4><a href="http://bxslider.com/examples">bxSlider</a></h4>
+
+<p>Неплохая альтернатива предыдущим плагинам.</p>
+
+<p><img class="center" src="/images/post/18-jquery-plugins/18.png"></p>
+
+	</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+
+    <footer id="footer">
+        <div class="inner">
+            <div class="row-fluid">
+    <span class="span12"><section>
+  <h3>Категории</h3>
+    <ul id="category-list"><li><a href='/categories/fronted'>fronted (5)</a></li><li><a href='/categories/linux'>linux (3)</a></li><li><a href='/categories/mysql'>mysql (1)</a></li><li><a href='/categories/ngnix'>ngnix (1)</a></li><li><a href='/categories/octopress'>octopress (2)</a></li><li><a href='/categories/php'>php (4)</a></li><li><a href='/categories/yii'>yii (1)</a></li></ul>
+</section>
+</span>
+</div>
+            <div class="copyright">
+    Copyright &copy; 2015
+    
+        Denis Doroshenko
+    
+    Powered by Octopress.
+</div>
+        </div>
+    </footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'ajaxblog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://dordenis.github.io/fronted/18-jquery-plugins/';
+        var disqus_url = 'http://dordenis.github.io/fronted/18-jquery-plugins/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+</body>
+</html>
